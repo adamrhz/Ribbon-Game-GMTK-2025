@@ -85,6 +85,7 @@ namespace Ribbon
         {
             if(IsJump && !CanAscend && Player.YSpeed > PhysicsInfo.JumpCutoff)
             {
+                Debug.Log("CutOff");
                 Player.YSpeed = PhysicsInfo.JumpCutoff;
             }
             Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity);

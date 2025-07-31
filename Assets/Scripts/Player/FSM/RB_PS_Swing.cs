@@ -24,7 +24,7 @@ namespace Ribbon
 
                 int Direction = (int)Mathf.Sign(Vector3.Dot(vel, Vector3.ProjectOnPlane(Rb.velocity, (SwingingTarget.transform.position - Player.transform.position).normalized)));
                 RelativeSpeed = vel.magnitude * Direction;
-                Rb.velocity = Vector3.Project(Rb.velocity, (SwingingTarget.transform.position - Player.transform.position).normalized);
+                RelativeSpeed = 0;
             }
             else
             {
@@ -56,6 +56,10 @@ namespace Ribbon
 
         public override void OnFixedUpdate()
         {
+            if(!Machine.IsCurrentState<RB_PS_Swing>())
+            {
+                return;
+            }
             AirMovement();
             GroundCheck();
 
@@ -76,30 +80,39 @@ namespace Ribbon
 
         private void AirMovement()
         {
+
+            Vector2 toPivot = (SwingingTarget.transform.position - Player.transform.position).normalized;
+            float angle = Mathf.Atan2(-toPivot.x, toPivot.y) * Mathf.Rad2Deg;
+            float ropeLength = Vector3.Distance(SwingingTarget.transform.position, Player.transform.position);
+            float angularAcceleration = (-PhysicsInfo.Gravity / ropeLength) * Mathf.Sin(angle) - (0.1f * RelativeSpeed);
+
+
+            RelativeSpeed += angularAcceleration * Time.fixedDeltaTime;
+
+            Debug.Log(angle);
             Vector2 MoveInput = Input.GetAxis2D("Move");
             int Sign = (int)Mathf.Sign(MoveInput.x);
             
-            if (MoveInput.x == 0)
-            {
-                RelativeSpeed -= Mathf.Sign(RelativeSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(RelativeSpeed));
-            }
-            else if (SameDirection(MoveInput.x, RelativeSpeed))
-            {
-                ApplyAcceleration(PhysicsInfo.AirAcceleration, Sign, ref RelativeSpeed);
-            }
-            else
-            {
-                ApplyAcceleration(PhysicsInfo.AirDeceleration, Sign, ref RelativeSpeed);
-            }
+            //if (MoveInput.x == 0)
+            //{
+            //    RelativeSpeed -= Mathf.Sign(RelativeSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(RelativeSpeed));
+            //}
+            //else if (SameDirection(MoveInput.x, RelativeSpeed))
+            //{
+            //    ApplyAcceleration(PhysicsInfo.AirAcceleration, Sign, ref RelativeSpeed);
+            //}
+            //else
+            //{
+            //    ApplyAcceleration(PhysicsInfo.AirDeceleration, Sign, ref RelativeSpeed);
+            //}
 
-            Vector2 toPivot = (SwingingTarget.transform.position - Player.transform.position).normalized;
             Vector2 tangent = Vector3.Cross(toPivot, Vector3.forward);
 
-            Vector2 tangentialVelocity = tangent * RelativeSpeed;
+            Vector2 tangentialVelocity = tangent * (RelativeSpeed * ropeLength);
             Vector2 gravityVelocity = new(0, PhysicsInfo.Gravity * Time.fixedDeltaTime);
             //Too lazy this shit is ass frl;
             //Strix do it pls -Adam
-            Rb.velocity = tangent * RelativeSpeed;
+            Rb.velocity = tangentialVelocity;
 
         }
     }

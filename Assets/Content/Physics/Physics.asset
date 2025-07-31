@@ -21,7 +21,7 @@ MonoBehaviour:
   AirDrag: 10
   JumpAmount: 2
   Gravity: 20
-  JumpStrength: 15
-  JumpCutoff: 8
+  JumpStrength: 12.5
+  JumpCutoff: 4
   MaxFallSpeed: 20
   CoyoteTime: 0.15
