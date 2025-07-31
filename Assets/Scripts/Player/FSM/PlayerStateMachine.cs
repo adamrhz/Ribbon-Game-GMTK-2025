@@ -14,6 +14,7 @@ namespace Ribbon
         {
             Add(new RB_PS_Ground());
             Add(new RB_PS_Air());
+            Add(new RB_PS_Swing());
             Initialize<RB_PS_Ground>();
         }
 

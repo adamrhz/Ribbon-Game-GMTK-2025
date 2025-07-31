@@ -38,6 +38,8 @@ namespace Ribbon
 
         [field: SerializeField] public float GroundSpeed;
         
+        public PlayerControllers Controllers = new PlayerControllers();
+
         public Rigidbody2D Rb;
         public PlayerStateMachine Machine;
         public PhysicsInfo PhysicsInfo;
@@ -45,11 +47,13 @@ namespace Ribbon
         public PlayerCollision Collision;
         public InputManager Input;
 
+        public DistanceJoint2D SwingJoint;
 
         private void Awake()
         {
             Init();
             Machine.Init();
+            Controllers.Init(this);
         }
 
         private void Init()
@@ -69,6 +73,17 @@ namespace Ribbon
         void Update()
         {
 
+            Controllers.Update();
+        }
+
+
+        public void OnObject(RWorldObject2D Obj, bool ToAir)
+        {
+            if (ToAir)
+            {
+                Machine.Get<RB_PS_Air>().CanDoubleJump = true;
+                Machine.Set<RB_PS_Air>(); return;
+            }
         }
     }
 }

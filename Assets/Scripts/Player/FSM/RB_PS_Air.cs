@@ -8,7 +8,7 @@ namespace Ribbon
     public class RB_PS_Air : PlayerState
     {
         public bool IsJump = false;
-        public bool DoubleJump = false;
+        public bool CanDoubleJump = false;
         public bool CanAscend = false;
 
         public RB_PS_Air() : base(1)
@@ -21,6 +21,16 @@ namespace Ribbon
                 Visual.SetTrigger("Jump");
                 JumpRequested = false;
                 CanAscend = true;
+            }
+            else
+            {
+
+                CanAscend = false;
+            }
+
+            if (Machine.PreviousState is not RB_PS_Air)
+            {
+                CanDoubleJump = true;
             }
         }
 
@@ -45,11 +55,11 @@ namespace Ribbon
 
         public override void OnFixedUpdate()
         {
-            if(JumpRequested && !DoubleJump)
+            if(JumpRequested && CanDoubleJump)
             {
                 Player.YSpeed = PhysicsInfo.JumpStrength/2f;
                 IsJump = true;
-                DoubleJump = true;
+                CanDoubleJump = false;
                 Machine.Set<RB_PS_Air>();
                 return;
             }

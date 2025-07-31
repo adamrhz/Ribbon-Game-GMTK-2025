@@ -31,7 +31,7 @@ namespace Ribbon
             {
                 Player.YSpeed = PhysicsInfo.JumpStrength;
                 Machine.Get<RB_PS_Air>().IsJump = true;
-                Machine.Get<RB_PS_Air>().DoubleJump = false;
+                Machine.Get<RB_PS_Air>().CanDoubleJump = false;
                 Machine.Set<RB_PS_Air>();
                 return;
             }
@@ -62,6 +62,7 @@ namespace Ribbon
         private void GroundMovement()
         {
             Vector2 MoveInput =Input.GetAxis2D("Move");
+            Debug.Log(MoveInput);
             int Sign = (int)Mathf.Sign(MoveInput.x);
             if (MoveInput.x == 0)
             {
