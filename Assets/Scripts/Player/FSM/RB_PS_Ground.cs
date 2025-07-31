@@ -62,7 +62,6 @@ namespace Ribbon
         private void GroundMovement()
         {
             Vector2 MoveInput =Input.GetAxis2D("Move");
-            Debug.Log(MoveInput);
             int Sign = (int)Mathf.Sign(MoveInput.x);
             if (MoveInput.x == 0)
             {

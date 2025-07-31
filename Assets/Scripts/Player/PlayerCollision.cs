@@ -23,9 +23,15 @@ namespace Ribbon
 
             if (groundRay)
             {
+
                 Player.transform.position = groundRay.point + Vector2.up * .5f;
                 Player.SurfaceAngle = CalculateAngle(groundRay.normal);
                 Debug.DrawRay(Player.transform.position, -groundRay.normal * GroundRaycastDistance, Color.green);
+                if (groundRay.collider.TryGetComponent(out RWorldObject2D worldObject))
+                {
+                    worldObject.OnPlayerStand.Invoke(Player);
+                }
+
                 return true;
             }
             
@@ -43,6 +49,10 @@ namespace Ribbon
                 Player.transform.position = airRay.point + Vector2.up * .5f;
                 Player.SurfaceAngle = CalculateAngle(airRay.normal);
                 Debug.DrawRay(Player.transform.position, Vector3.down * GroundRaycastDistance, Color.green);
+                if (airRay.collider.TryGetComponent(out RWorldObject2D worldObject))
+                {
+                    worldObject.OnPlayerLand.Invoke(Player);
+                }
                 return true;
             }
             

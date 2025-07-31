@@ -308,7 +308,19 @@ MonoBehaviour:
       m_Calls: []
   OnPlayerStand:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 658148252}
+        m_TargetAssemblyTypeName: Ribbon.MovingPlatform, Assembly-CSharp
+        m_MethodName: OnPlayerStandOn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPlayerLeaveGround:
     m_PersistentCalls:
       m_Calls: []
@@ -572,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 764489624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.069, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

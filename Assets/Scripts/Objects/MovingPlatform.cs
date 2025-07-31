@@ -60,6 +60,13 @@ namespace Ribbon
 
         }
 
+        public void OnPlayerStandOn(Player player)
+        {
+            Debug.Log("Standing on moving platform");
+            player.transform.position += (Vector3)Rb.velocity * Time.fixedDeltaTime;
+        }
+
+
         // Update is called once per frame
         void FixedUpdate()
         {
