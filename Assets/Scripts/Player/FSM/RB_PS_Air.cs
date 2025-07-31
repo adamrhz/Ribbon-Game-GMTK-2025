@@ -8,12 +8,14 @@ namespace Ribbon
     public class RB_PS_Air : PlayerState
     {
         public bool IsJump = false;
+        public bool DoubleJump = false;
         public bool CanAscend = false;
 
         public override void OnEnter()
         {
             if (IsJump)
             {
+                JumpRequested = false;
                 CanAscend = true;
             }
         }
@@ -25,6 +27,7 @@ namespace Ribbon
 
         public override void OnUpdate()
         {
+            base.OnUpdate();
             CheckInput();
         }
 
@@ -39,6 +42,14 @@ namespace Ribbon
 
         public override void OnFixedUpdate()
         {
+            if(JumpRequested && !DoubleJump)
+            {
+                Player.YSpeed = PhysicsInfo.JumpStrength/1.25f;
+                IsJump = true;
+                DoubleJump = true;
+                Machine.Set<RB_PS_Air>();
+                return;
+            }
             AirMovement();
             GroundCheck();
 
@@ -72,11 +83,11 @@ namespace Ribbon
             }
             else if (SameDirection(MoveInput.x))
             {
-                ApplyAcceleration(PhysicsInfo.Acceleration, Sign);
+                ApplyAcceleration(PhysicsInfo.AirAcceleration, Sign);
             }
             else
             {
-                ApplyAcceleration(PhysicsInfo.Deceleration, Sign);
+                ApplyAcceleration(PhysicsInfo.AirDeceleration, Sign);
             }
         }
     }

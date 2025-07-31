@@ -12,6 +12,7 @@ namespace Ribbon
         public Rigidbody2D Rb => Player.Rb;
         public PhysicsInfo PhysicsInfo => Player.PhysicsInfo;
         public PlayerCollision Collision => Player.Collision;
+        public bool JumpRequested = false;
 
         public override void OnEnter()
         {
@@ -22,7 +23,13 @@ namespace Ribbon
         {
 
         }
-
+        public override void OnUpdate()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                JumpRequested = true;
+            }
+        }
 
         public void ApplyAcceleration(float acceleration, int Sign)
         {

@@ -12,8 +12,14 @@ namespace Ribbon
         public float Acceleration = 10f;          
         public float Deceleration = 40f;   
         public float Friction = 12.5f;      
-        public float MaxSpeed = 40f;        
+        public float MaxSpeed = 40f;
 
+
+
+
+        public float AirAcceleration = 10f;
+        public float AirDeceleration = 40f;
+        public int JumpAmount = 2;
         public float Gravity = 30f;       
         public float JumpStrength = 15f;  
         public float JumpCutoff = 8f;  

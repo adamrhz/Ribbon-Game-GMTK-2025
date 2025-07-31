@@ -8,7 +8,6 @@ namespace Ribbon
     public class RB_PS_Ground : PlayerState
     {
         public float CoyoteTime;
-        public bool JumpRequested = false;
         public override void OnEnter()
         {
             CoyoteTime = PhysicsInfo.CoyoteTime;
@@ -21,14 +20,6 @@ namespace Ribbon
             JumpRequested = false;
         }
 
-        public override void OnUpdate()
-        {
-
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                JumpRequested = true;
-            }
-        }
 
         public override void OnFixedUpdate()
         {
@@ -36,6 +27,7 @@ namespace Ribbon
             {
                 Player.YSpeed = PhysicsInfo.JumpStrength;
                 Machine.Get<RB_PS_Air>().IsJump = true;
+                Machine.Get<RB_PS_Air>().DoubleJump = false;
                 Machine.Set<RB_PS_Air>();
                 return;
             }
