@@ -272,6 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b238df807af14624098e6ac4d673db14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xSpeed: 0
+  <SurfaceAngle>k__BackingField: 0
+  GroundSpeed: 0
   Rb: {fileID: 1011216976}
   Machine: {fileID: 1011216973}
   PhysicsInfo: {fileID: 11400000, guid: 647deb927355c5745883125a58d4d6ca, type: 2}
@@ -281,7 +284,9 @@ MonoBehaviour:
     CollisionMask:
       serializedVersion: 2
       m_Bits: 1
-    GroundRaycastDistance: 0.1
+    GroundRaycastDistance: 1.1
+    AirRaycastDistance: 0.5
+    IsGrounded: 0
   Input: {fileID: 2103606669}
 --- !u!4 &1011216975
 Transform:
@@ -292,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 1011216971}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51, y: -1.1, z: 0}
+  m_LocalPosition: {x: -5.51, y: -0.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -326,9 +331,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1011216977
 MonoBehaviour:
@@ -23323,7 +23328,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -23629,33 +23634,13 @@ CompositeCollider2D:
     m_Paths:
     - - {x: 75.49997, y: 11}
       - {x: 75.49997, y: 13}
-      - {x: 69.31249, y: 12.999998}
-      - {x: 69, y: 12.843734}
-      - {x: 68.99997, y: 12.8125}
-      - {x: 68.93749, y: 12.812498}
-      - {x: 68.5, y: 12.593734}
-      - {x: 68.49997, y: 12.5}
-      - {x: 68.31249, y: 12.499998}
-      - {x: 68, y: 12.343734}
-      - {x: 67.99997, y: 12.3125}
-      - {x: 67.93749, y: 12.312498}
-      - {x: 67.5, y: 12.093734}
-      - {x: 67.49997, y: 12}
+      - {x: 69.31249, y: 12.999997}
+      - {x: 67.49999, y: 12}
       - {x: 63.5, y: 11.99997}
       - {x: 63.500034, y: 11}
     - - {x: 41.499973, y: 9}
-      - {x: 41.499973, y: 10}
-      - {x: 39.5, y: 10.00003}
-      - {x: 39.499985, y: 10.093759}
-      - {x: 39.062492, y: 10.3125}
-      - {x: 39, y: 10.31253}
-      - {x: 38.999985, y: 10.343759}
-      - {x: 38.687496, y: 10.5}
-      - {x: 38.5, y: 10.50003}
-      - {x: 38.499985, y: 10.593759}
-      - {x: 38.062492, y: 10.8125}
-      - {x: 38, y: 10.81253}
-      - {x: 37.999985, y: 10.843759}
+      - {x: 41.499973, y: 10.000002}
+      - {x: 39.499992, y: 10.093753}
       - {x: 37.687496, y: 11}
       - {x: 31.5, y: 10.99997}
       - {x: 31.500029, y: 9}
@@ -23667,115 +23652,43 @@ CompositeCollider2D:
       - {x: 75.50003, y: -3}
     - - {x: 65.49997, y: -3}
       - {x: 65.49997, y: 6}
-      - {x: 57.312492, y: 5.999997}
-      - {x: 57, y: 5.843734}
-      - {x: 56.99997, y: 5.8125}
-      - {x: 56.937492, y: 5.812497}
-      - {x: 56.5, y: 5.593734}
-      - {x: 56.49997, y: 5.5}
-      - {x: 56.312492, y: 5.499997}
-      - {x: 56, y: 5.343734}
-      - {x: 55.99997, y: 5.3125}
-      - {x: 55.937492, y: 5.312497}
-      - {x: 55.5, y: 5.093734}
-      - {x: 55.49997, y: 5}
+      - {x: 57.312492, y: 5.9999967}
+      - {x: 55.499992, y: 5}
       - {x: 51.5, y: 4.999971}
       - {x: 51.499973, y: 1}
-      - {x: 49.312492, y: 0.9999973}
-      - {x: 49, y: 0.84373343}
-      - {x: 48.999973, y: 0.8125}
-      - {x: 48.937496, y: 0.8124973}
-      - {x: 48.5, y: 0.59373343}
-      - {x: 48.499973, y: 0.5}
-      - {x: 48.312492, y: 0.49999732}
-      - {x: 48, y: 0.3437334}
-      - {x: 47.999973, y: 0.3125}
-      - {x: 47.937496, y: 0.31249732}
-      - {x: 47.5, y: 0.0937334}
-      - {x: 47.499973, y: 0}
+      - {x: 49.312492, y: 0.99999684}
+      - {x: 47.499992, y: 0}
       - {x: 43.5, y: -0.000029300001}
       - {x: 43.499973, y: -1}
       - {x: 37.5, y: -0.9999706}
       - {x: 37.499973, y: 2}
       - {x: 33.5, y: 1.9999708}
       - {x: 33.499973, y: 1}
-      - {x: 27.5, y: 1.0000294}
-      - {x: 27.499994, y: 1.1250076}
-      - {x: 27.124989, y: 1.5}
-      - {x: 27, y: 1.5000294}
-      - {x: 26.999994, y: 1.6250076}
-      - {x: 26.624989, y: 2}
-      - {x: 26.5, y: 2.0000293}
-      - {x: 26.499992, y: 2.1250076}
-      - {x: 26.124989, y: 2.5}
-      - {x: 26, y: 2.5000293}
-      - {x: 25.999992, y: 2.6250076}
-      - {x: 25.624989, y: 3}
-      - {x: 25.5, y: 3.0000293}
-      - {x: 25.499992, y: 3.1250076}
-      - {x: 25.124989, y: 3.5}
-      - {x: 25, y: 3.5000296}
-      - {x: 24.999992, y: 3.6250076}
-      - {x: 24.624989, y: 4}
-      - {x: 24.5, y: 4.0000296}
-      - {x: 24.499992, y: 4.1250076}
-      - {x: 24.124989, y: 4.5}
-      - {x: 24, y: 4.5000296}
-      - {x: 23.999992, y: 4.6250076}
-      - {x: 23.624989, y: 5}
-      - {x: 23.5, y: 5.0000296}
-      - {x: 23.499992, y: 5.1250076}
-      - {x: 23.124989, y: 5.5}
-      - {x: 23, y: 5.5000296}
-      - {x: 22.999992, y: 5.6250076}
-      - {x: 22.624989, y: 6}
-      - {x: 22.5, y: 6.0000296}
-      - {x: 22.499992, y: 6.1250076}
-      - {x: 22.124989, y: 6.5}
-      - {x: 22, y: 6.5000296}
-      - {x: 21.999992, y: 6.6250076}
+      - {x: 27.499994, y: 1.0000079}
       - {x: 21.624989, y: 7}
       - {x: 15.5, y: 6.9999704}
       - {x: 15.499971, y: 0}
-      - {x: 5.3124943, y: -0.0000027}
-      - {x: 5, y: -0.1562666}
-      - {x: 4.9999704, y: -0.1875}
-      - {x: 4.9374943, y: -0.1875027}
-      - {x: 4.5, y: -0.4062666}
-      - {x: 4.4999704, y: -0.5}
-      - {x: 4.3124943, y: -0.5000027}
-      - {x: 4, y: -0.6562666}
-      - {x: 3.9999704, y: -0.6875}
-      - {x: 3.9374945, y: -0.6875027}
-      - {x: 3.5, y: -0.9062666}
-      - {x: 3.4999704, y: -1}
+      - {x: 5.3124943, y: -0.0000032}
+      - {x: 3.4999936, y: -1}
       - {x: -6.5, y: -1.0000293}
       - {x: -6.499971, y: -3}
-    - - {x: 14.999971, y: 5.5}
-      - {x: 14.999992, y: 5.7812576}
-      - {x: 14.9687395, y: 5.8125}
-      - {x: 13.531241, y: 5.8124924}
-      - {x: 13.5, y: 5.781239}
+    - - {x: 14.999967, y: 5.5}
+      - {x: 14.968723, y: 5.812499}
+      - {x: 13.5, y: 5.781222}
       - {x: 13.500029, y: 5.5}
-    - - {x: 11.49997, y: 4}
-      - {x: 11.499992, y: 4.2812576}
-      - {x: 11.4687395, y: 4.3125}
-      - {x: 10.031241, y: 4.3124924}
-      - {x: 10, y: 4.281239}
+    - - {x: 11.499968, y: 4}
+      - {x: 11.468724, y: 4.312499}
+      - {x: 10, y: 4.281222}
       - {x: 10.00003, y: 4}
-    - - {x: 14.499971, y: 2.5}
-      - {x: 14.499992, y: 2.7812576}
-      - {x: 14.4687395, y: 2.8125}
-      - {x: 13.031241, y: 2.8124924}
-      - {x: 13, y: 2.7812393}
+    - - {x: 14.499967, y: 2.5}
+      - {x: 14.468723, y: 2.8124995}
+      - {x: 13, y: 2.7812216}
       - {x: 13.00003, y: 2.5}
-    - - {x: 9.99997, y: 1.5}
-      - {x: 9.999992, y: 1.7812576}
-      - {x: 9.9687395, y: 1.8125}
-      - {x: 8.531241, y: 1.8124924}
-      - {x: 8.5, y: 1.7812393}
+    - - {x: 9.999968, y: 1.5}
+      - {x: 9.968724, y: 1.8124994}
+      - {x: 8.5, y: 1.7812216}
       - {x: 8.50003, y: 1.5}
-  m_VertexDistance: 0.0005
+  m_VertexDistance: 0.1
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 1245546981}
@@ -23802,9 +23715,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!19719996 &1245546987
 TilemapCollider2D:
@@ -23975,7 +23888,7 @@ Transform:
   m_GameObject: {fileID: 1477171405}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.38, y: 4.27, z: -10}
+  m_LocalPosition: {x: 3.38, y: 2.02, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24006,7 +23919,7 @@ Transform:
   m_GameObject: {fileID: 1735858698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24192,8 +24105,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1011216975}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &1956319737
-CircleCollider2D:
+--- !u!70 &1956319737
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -24226,8 +24139,9 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.5}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.40889725, y: 0.61}
+  m_Direction: 0
 --- !u!1 &2103606668
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626bd21bf52aff442b70abee26e3b573, type: 3}
   m_Name: Physics
   m_EditorClassIdentifier: 
-  Acceleration: 30
+  Acceleration: 20
   Deceleration: 100
-  Friction: 80
-  MaxSpeed: 14
+  Friction: 40
+  MaxSpeed: 9.706667
   AirAcceleration: 15
   AirDeceleration: 80
-  AirDrag: 40
+  AirDrag: 10
   JumpAmount: 2
   Gravity: 20
   JumpStrength: 15
