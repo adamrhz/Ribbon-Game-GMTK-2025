@@ -82,6 +82,7 @@ namespace Ribbon
             if (ToAir)
             {
                 Machine.Get<RB_PS_Air>().CanDoubleJump = true;
+                Machine.Get<RB_PS_Air>().IsJump = false;
                 Machine.Set<RB_PS_Air>(); return;
             }
         }

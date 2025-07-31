@@ -315,6 +315,8 @@ MonoBehaviour:
   Speed: 1
   Positions:
   - {x: 0, y: 4, z: 0}
+  - {x: 4, y: 4, z: 0}
+  - {x: 4, y: 0, z: 0}
 --- !u!50 &658148253
 Rigidbody2D:
   serializedVersion: 4

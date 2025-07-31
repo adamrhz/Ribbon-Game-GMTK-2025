@@ -60,6 +60,7 @@ namespace Ribbon
                 Player.YSpeed = PhysicsInfo.JumpStrength/2f;
                 IsJump = true;
                 CanDoubleJump = false;
+                JumpRequested = false;
                 Machine.Set<RB_PS_Air>();
                 return;
             }
