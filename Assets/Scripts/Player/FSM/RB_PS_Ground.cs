@@ -36,13 +36,16 @@ namespace Ribbon
                 return;
             }
             GroundMovement();
-            GroundCheck();
 
+            Player.XSpeed = Mathf.Cos(Player.SurfaceAngle * Mathf.Deg2Rad) * Player.GroundSpeed;
+            Player.YSpeed = Mathf.Sin(Player.SurfaceAngle * Mathf.Deg2Rad) * Player.GroundSpeed;
+            
+            GroundCheck();
         }
 
         private void GroundCheck()
         {
-            if (!Collision.IsGrounded())
+            if (!Collision.DoGroundCollision())
             {
                 CoyoteTime -= Time.fixedDeltaTime;
                 if(CoyoteTime <= 0)
@@ -58,19 +61,19 @@ namespace Ribbon
 
         private void GroundMovement()
         {
-            Vector2 MoveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            Vector2 MoveInput =Input.GetAxis2D("Move");
             int Sign = (int)Mathf.Sign(MoveInput.x);
             if (MoveInput.x == 0)
             {
-                Player.XSpeed -= Mathf.Sign(Player.XSpeed) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.XSpeed));
+                Player.GroundSpeed -= Mathf.Sign(Player.GroundSpeed) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.GroundSpeed));
             }
-            else if (SameDirection(MoveInput.x))
+            else if (SameDirection(MoveInput.x, Player.GroundSpeed))
             {
-                ApplyAcceleration(PhysicsInfo.Acceleration, Sign);
+                ApplyAcceleration(PhysicsInfo.Acceleration, Sign, ref Player.GroundSpeed);
             }
             else
             {
-                ApplyAcceleration(PhysicsInfo.Deceleration, Sign);
+                ApplyAcceleration(PhysicsInfo.Deceleration, Sign, ref Player.GroundSpeed);
             }
         }
     }

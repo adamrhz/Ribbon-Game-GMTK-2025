@@ -14,6 +14,7 @@ namespace Ribbon
         public PhysicsInfo PhysicsInfo => Player.PhysicsInfo;
         public PlayerCollision Collision => Player.Collision;
         public PlayerVisual Visual => Player.Visual;
+        public InputManager Input => Player.Input;
         public bool JumpRequested = false;
 
         public PlayerState(int number = -1)
@@ -31,20 +32,21 @@ namespace Ribbon
         }
         public override void OnUpdate()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetButtonDown("Jump"))
             {
                 JumpRequested = true;
             }
         }
 
-        public void ApplyAcceleration(float acceleration, int Sign)
+        public void ApplyAcceleration(float acceleration, int Sign, ref float Speed)
         {
-            Player.XSpeed = Mathf.Clamp(Player.XSpeed + (acceleration * Sign * Time.fixedDeltaTime), -PhysicsInfo.MaxSpeed, PhysicsInfo.MaxSpeed);
+            if (Mathf.Abs(Speed) < PhysicsInfo.MaxSpeed)
+                Speed = Mathf.Clamp(Speed + acceleration * Sign * Time.fixedDeltaTime, -PhysicsInfo.MaxSpeed, PhysicsInfo.MaxSpeed);
         }
 
-        public bool SameDirection(float XInput)
+        public bool SameDirection(float XInput, float Speed)
         {
-            return Player.XSpeed == 0 || Mathf.Sign(XInput) == Mathf.Sign(Player.XSpeed);
+            return Speed == 0 || Mathf.Sign(XInput) == Mathf.Sign(Speed);
         }
 
     }

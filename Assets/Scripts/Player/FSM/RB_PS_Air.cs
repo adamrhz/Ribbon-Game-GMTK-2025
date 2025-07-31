@@ -37,8 +37,7 @@ namespace Ribbon
 
         public void CheckInput()
         {
-
-            if (IsJump && CanAscend && !Input.GetKey(KeyCode.Space))
+            if (IsJump && CanAscend && !Input.GetButton("Jump"))
             {
                 CanAscend = false;
             }
@@ -61,11 +60,12 @@ namespace Ribbon
         private void GroundCheck()
         {
             Debug.Log("Checking if grounded in air state");
-            if (Collision.IsGrounded() && Player.YSpeed <= 0)
+            if (Collision.DoAirCollision() && Player.YSpeed <= 0)
             {
                 Player.YSpeed = 0;
                 Debug.Log("Grounded in air state, switching to ground state");
                 Machine.Set<RB_PS_Ground>();
+                Player.GroundSpeed = Player.XSpeed;
             }
         }
 
@@ -79,19 +79,23 @@ namespace Ribbon
             Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity);
 
 
-            Vector2 MoveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            Vector2 MoveInput = Input.GetAxis2D("Move");
             int Sign = (int)Mathf.Sign(MoveInput.x);
+            float targetXSpeed = Player.XSpeed;
+            
             if (MoveInput.x == 0)
             {
                 Player.XSpeed -= Mathf.Sign(Player.XSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(Player.XSpeed));
             }
-            else if (SameDirection(MoveInput.x))
+            else if (SameDirection(MoveInput.x, Player.XSpeed))
             {
-                ApplyAcceleration(PhysicsInfo.AirAcceleration, Sign);
+                ApplyAcceleration(PhysicsInfo.AirAcceleration, Sign, ref targetXSpeed);
+                Player.XSpeed = targetXSpeed;
             }
             else
             {
-                ApplyAcceleration(PhysicsInfo.AirDeceleration, Sign);
+                ApplyAcceleration(PhysicsInfo.AirDeceleration, Sign, ref targetXSpeed);
+                Player.XSpeed = targetXSpeed;
             }
         }
     }

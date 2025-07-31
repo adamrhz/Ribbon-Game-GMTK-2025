@@ -5,15 +5,12 @@ using UnityEngine;
 
 namespace Ribbon
 {
-
     public class PlayerVisual : MonoBehaviour
     {
 
         public Player Player;
         public Animator Animator;
         public SpriteRenderer Sprite;
-
-
 
         // Start is called before the first frame update
         void Start()
@@ -24,14 +21,11 @@ namespace Ribbon
         // Update is called once per frame
         void Update()
         {
-
-            float XSpeed = Player.XSpeed;
-
-
-
+            float XSpeed = Player.GroundSpeed;
+            
             if (Mathf.Abs(XSpeed) > .01f)
             {
-                if(XSpeed > 0 && Sprite.flipX == true)
+                if(XSpeed > 0 && Sprite.flipX)
                 {
                     Sprite.flipX = false;
                 }
@@ -47,7 +41,7 @@ namespace Ribbon
         }
         public void SetTrigger(string name)
         {
-            if (Animator != null)
+            if (Animator)
             {
                 Animator.SetTrigger(name);
             }
