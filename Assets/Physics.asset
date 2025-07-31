@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626bd21bf52aff442b70abee26e3b573, type: 3}
+  m_Name: Physics
+  m_EditorClassIdentifier: 
+  Acceleration: 30
+  Deceleration: 100
+  Friction: 25
+  MaxSpeed: 14
+  Gravity: 30
+  JumpStrength: 15
+  JumpCutoff: 8
+  MaxFallSpeed: 30
+  CoyoteTime: 0.15
