@@ -44,7 +44,7 @@ namespace Ribbon
         {
             if(JumpRequested && !DoubleJump)
             {
-                Player.YSpeed = PhysicsInfo.JumpStrength/1.25f;
+                Player.YSpeed = PhysicsInfo.JumpStrength/2f;
                 IsJump = true;
                 DoubleJump = true;
                 Machine.Set<RB_PS_Air>();

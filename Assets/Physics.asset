@@ -16,8 +16,11 @@ MonoBehaviour:
   Deceleration: 100
   Friction: 25
   MaxSpeed: 14
-  Gravity: 30
+  AirAcceleration: 30
+  AirDeceleration: 80
+  JumpAmount: 2
+  Gravity: 20
   JumpStrength: 15
   JumpCutoff: 8
-  MaxFallSpeed: 30
+  MaxFallSpeed: 20
   CoyoteTime: 0.15
