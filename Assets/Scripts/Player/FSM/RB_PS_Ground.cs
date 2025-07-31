@@ -9,8 +9,6 @@ namespace Ribbon
     {
         public float CoyoteTime;
 
-
-
         public RB_PS_Ground() : base(0)
         {
         }
