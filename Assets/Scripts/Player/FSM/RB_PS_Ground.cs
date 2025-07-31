@@ -8,6 +8,12 @@ namespace Ribbon
     public class RB_PS_Ground : PlayerState
     {
         public float CoyoteTime;
+
+
+
+        public RB_PS_Ground() : base(0)
+        {
+        }
         public override void OnEnter()
         {
             CoyoteTime = PhysicsInfo.CoyoteTime;

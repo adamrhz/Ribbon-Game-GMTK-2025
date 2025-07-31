@@ -11,10 +11,14 @@ namespace Ribbon
         public bool DoubleJump = false;
         public bool CanAscend = false;
 
+        public RB_PS_Air() : base(1)
+        {
+        }
         public override void OnEnter()
         {
             if (IsJump)
             {
+                Visual.SetTrigger("Jump");
                 JumpRequested = false;
                 CanAscend = true;
             }
@@ -79,7 +83,7 @@ namespace Ribbon
             int Sign = (int)Mathf.Sign(MoveInput.x);
             if (MoveInput.x == 0)
             {
-                Player.XSpeed -= Mathf.Sign(Player.XSpeed) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.XSpeed));
+                Player.XSpeed -= Mathf.Sign(Player.XSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(Player.XSpeed));
             }
             else if (SameDirection(MoveInput.x))
             {

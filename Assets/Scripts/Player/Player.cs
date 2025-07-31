@@ -39,7 +39,7 @@ namespace Ribbon
         public Rigidbody2D Rb;
         public PlayerStateMachine Machine;
         public PhysicsInfo PhysicsInfo;
-
+        public PlayerVisual Visual;
         public PlayerCollision Collision;
 
 
@@ -53,6 +53,7 @@ namespace Ribbon
         {
             Rb = GetComponent<Rigidbody2D>();
             Machine = GetComponent<PlayerStateMachine>();
+            Visual= GetComponent<PlayerVisual>();
         }
 
         // Start is called before the first frame update

@@ -19,6 +19,7 @@ namespace Ribbon
 
         public float AirAcceleration = 10f;
         public float AirDeceleration = 40f;
+        public float AirDrag = 40f;
         public int JumpAmount = 2;
         public float Gravity = 30f;       
         public float JumpStrength = 15f;  

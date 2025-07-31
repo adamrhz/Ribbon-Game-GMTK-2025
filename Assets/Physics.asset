@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Acceleration: 30
   Deceleration: 100
-  Friction: 25
+  Friction: 80
   MaxSpeed: 14
-  AirAcceleration: 30
+  AirAcceleration: 15
   AirDeceleration: 80
+  AirDrag: 40
   JumpAmount: 2
   Gravity: 20
   JumpStrength: 15

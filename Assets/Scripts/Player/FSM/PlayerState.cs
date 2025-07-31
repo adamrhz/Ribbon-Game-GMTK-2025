@@ -6,14 +6,20 @@ namespace Ribbon
 {
     public class PlayerState : State
     {
+        public int StateNumber = -1;
         public Player Player;
         public PlayerStateMachine Machine;
         public Transform Transform;
         public Rigidbody2D Rb => Player.Rb;
         public PhysicsInfo PhysicsInfo => Player.PhysicsInfo;
         public PlayerCollision Collision => Player.Collision;
+        public PlayerVisual Visual => Player.Visual;
         public bool JumpRequested = false;
 
+        public PlayerState(int number = -1)
+        {
+            StateNumber = number;
+        }
         public override void OnEnter()
         {
 

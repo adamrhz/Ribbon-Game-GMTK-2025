@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ namespace Ribbon
         public Player Player;
         public Animator Animator;
         public SpriteRenderer Sprite;
+
+
 
         // Start is called before the first frame update
         void Start()
@@ -26,7 +29,7 @@ namespace Ribbon
 
 
 
-            if (XSpeed != 0)
+            if (Mathf.Abs(XSpeed) > .01f)
             {
                 if(XSpeed > 0 && Sprite.flipX == true)
                 {
@@ -39,6 +42,15 @@ namespace Ribbon
             }
 
             Animator?.SetFloat("XSpeed", Mathf.Abs(XSpeed));
+            Animator?.SetFloat("YSpeed", Player.YSpeed);
+            Animator?.SetInteger("State", Player.Machine.CurrentState.StateNumber);
+        }
+        public void SetTrigger(string name)
+        {
+            if (Animator != null)
+            {
+                Animator.SetTrigger(name);
+            }
         }
     }
 
