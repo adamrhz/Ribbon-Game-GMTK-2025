@@ -12,6 +12,8 @@ namespace Ribbon
         public bool CanAscend = false;
         public bool IsJumpDouble = false;
 
+        private bool canApplyInput = false;
+
         public RB_PS_Air() : base(1)
         {
         }
@@ -29,14 +31,22 @@ namespace Ribbon
             }
             else
             {
-
                 CanAscend = false;
             }
 
-            if (Machine.PreviousState is not RB_PS_Air)
+            if (Machine.PreviousState is not RB_PS_Air or RB_PS_Swing)
             {
                 CanDoubleJump = true;
             }
+
+            canApplyInput = false;
+            Player.StartCoroutine(ReenableInputs());
+        }
+
+        private IEnumerator ReenableInputs()
+        {
+            yield return new WaitForSeconds(0.05f);
+            canApplyInput = true;
         }
 
         public override void OnExit()
@@ -60,6 +70,9 @@ namespace Ribbon
 
         public override void OnFixedUpdate()
         {
+            Transform.rotation = Quaternion.Lerp(Transform.rotation,
+                Quaternion.identity, 5 * Time.deltaTime);
+            
             if(JumpRequested && CanDoubleJump)
             {
                 Debug.Log("Double Jump requested");
@@ -77,6 +90,8 @@ namespace Ribbon
             GroundCheck();
                       
 
+            Transform.localScale = Vector3.Lerp(Transform.localScale,
+                Vector3.one, 10 * Time.deltaTime);
         }
         private void GroundCheck()
         {
@@ -93,15 +108,14 @@ namespace Ribbon
 
         private void AirMovement()
         {
-            if(IsJump && !CanAscend && Player.YSpeed > PhysicsInfo.JumpCutoff)
+            if(IsJump && !CanAscend && Player.YSpeed > PhysicsInfo.JumpCutoff && Machine.PreviousState is not RB_PS_Swing)
             {
                 Debug.Log("CutOff");
                 Player.YSpeed = PhysicsInfo.JumpCutoff;
             }
             Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity);
 
-
-            Vector2 MoveInput = Input.GetAxis2D("Move");
+            Vector2 MoveInput = canApplyInput ? Input.GetAxis2D("Move") : Vector2.zero;
             int Sign = (int)Mathf.Sign(MoveInput.x);
             float targetXSpeed = Player.XSpeed;
             

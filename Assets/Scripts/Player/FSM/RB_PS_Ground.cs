@@ -16,6 +16,8 @@ namespace Ribbon
         {
             CoyoteTime = PhysicsInfo.CoyoteTime;
             JumpRequested = false;
+            
+            Visual.SquashAnimator.Play("SwitchDir", 0, 0);
         }
 
         public override void OnExit()
@@ -62,19 +64,21 @@ namespace Ribbon
 
         private void GroundMovement()
         {
-            Vector2 MoveInput =Input.GetAxis2D("Move");
-            int Sign = (int)Mathf.Sign(MoveInput.x);
+            Vector2 MoveInput = Input.GetAxis2D("Move");
+            
+            Debug.LogFormat("speed dir: {0}, input dir: {1}", Math.Sign(Player.GroundSpeed), Math.Sign(MoveInput.x));
+            
             if (MoveInput.x == 0)
             {
                 Player.GroundSpeed -= Mathf.Sign(Player.GroundSpeed) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.GroundSpeed));
             }
             else if (SameDirection(MoveInput.x, Player.GroundSpeed))
             {
-                ApplyAcceleration(PhysicsInfo.Acceleration, Sign, ref Player.GroundSpeed);
+                ApplyAcceleration(PhysicsInfo.Acceleration, MoveInput.x, ref Player.GroundSpeed);
             }
             else
             {
-                ApplyAcceleration(PhysicsInfo.Deceleration, Sign, ref Player.GroundSpeed);
+                ApplyAcceleration(PhysicsInfo.Deceleration, MoveInput.x, ref Player.GroundSpeed);
             }
         }
     }

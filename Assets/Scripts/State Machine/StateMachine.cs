@@ -45,14 +45,14 @@ namespace Ribbon
             return CurrentState is G;
         }
 
-        public void Set<G>() where G : T
+        public virtual void Set<G>(bool TriggerEnter = true) where G : T
         {
             NextState = AvailableStates.Find(s => s is G);
             CurrentState.OnExit();
             PreviousState = CurrentState;
             CurrentState = NextState;
             NextState = null;
-            CurrentState.OnEnter();
+            if (TriggerEnter) CurrentState.OnEnter();
         }
 
 
