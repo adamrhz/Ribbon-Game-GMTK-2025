@@ -72,7 +72,6 @@ namespace Ribbon
         // Update is called once per frame
         void Update()
         {
-
             Controllers.Update();
         }
 

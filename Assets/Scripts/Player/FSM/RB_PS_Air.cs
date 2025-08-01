@@ -10,6 +10,7 @@ namespace Ribbon
         public bool IsJump = false;
         public bool CanDoubleJump = false;
         public bool CanAscend = false;
+        public bool IsJumpDouble = false;
 
         public RB_PS_Air() : base(1)
         {
@@ -18,7 +19,11 @@ namespace Ribbon
         {
             if (IsJump)
             {
-                Visual.SetTrigger("Jump");
+                if (IsJumpDouble = false)
+                {
+                    Visual.SetTrigger("Jump");
+                }
+                
                 JumpRequested = false;
                 CanAscend = true;
             }
@@ -57,15 +62,20 @@ namespace Ribbon
         {
             if(JumpRequested && CanDoubleJump)
             {
-                Player.YSpeed = PhysicsInfo.JumpStrength/2f;
+                Debug.Log("Double Jump requested");
+                Player.YSpeed = PhysicsInfo.JumpStrength/1.5f;
                 IsJump = true;
+                IsJumpDouble = true;
                 CanDoubleJump = false;
                 JumpRequested = false;
+                Visual.SetTrigger("DoubleJump");
                 Machine.Set<RB_PS_Air>();
                 return;
             }
+
             AirMovement();
             GroundCheck();
+                      
 
         }
         private void GroundCheck()

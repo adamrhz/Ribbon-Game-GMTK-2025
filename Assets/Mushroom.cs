@@ -18,7 +18,7 @@ namespace Ribbon
         {
             float FallSpeed = -player.YSpeed;
 
-            if(FallSpeed < 0)
+            if(FallSpeed < 0)
             {
                 return;
             }
