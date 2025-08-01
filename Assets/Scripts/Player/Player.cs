@@ -23,12 +23,7 @@ namespace Ribbon
         public float YSpeed
         {
             get => Rb.velocity.y;
-            set
-            {
-                Vector3 newVelocity = Rb.velocity;
-                newVelocity.y = value;
-                Rb.velocity = newVelocity;
-            }
+            set => Rb.velocity = new Vector2(Rb.velocity.x, value);
         }
 
         public float xSpeed;
@@ -47,7 +42,7 @@ namespace Ribbon
         public PlayerCollision Collision;
         public InputManager Input;
 
-        public DistanceJoint2D SwingJoint;
+        public SpringJoint2D SwingJoint;
 
         private void Awake()
         {
@@ -72,8 +67,9 @@ namespace Ribbon
         // Update is called once per frame
         void Update()
         {
-
             Controllers.Update();
+
+            Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
         }
 
 
