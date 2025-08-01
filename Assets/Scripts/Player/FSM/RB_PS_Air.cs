@@ -19,7 +19,7 @@ namespace Ribbon
         {
             if (IsJump)
             {
-                if (IsJumpDouble = false)
+                if (IsJumpDouble == false)
                 {
                     Visual.SetTrigger("Jump");
                 }
@@ -68,7 +68,7 @@ namespace Ribbon
                 IsJumpDouble = true;
                 CanDoubleJump = false;
                 JumpRequested = false;
-                Visual.SetTrigger("DoubleJump");
+                Visual.Play("Double Jump");
                 Machine.Set<RB_PS_Air>();
                 return;
             }
