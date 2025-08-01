@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Physics
   m_EditorClassIdentifier: 
   Acceleration: 20
-  Deceleration: 100
+  Deceleration: 200
   Friction: 40
   MaxSpeed: 9.706667
   AirAcceleration: 15
-  AirDeceleration: 80
-  AirDrag: 10
+  AirDeceleration: 160
+  AirDrag: 15
   JumpAmount: 2
   Gravity: 20
-  JumpStrength: 12.5
+  JumpStrength: 12
   JumpCutoff: 4
   MaxFallSpeed: 20
   CoyoteTime: 0.15

@@ -64,6 +64,11 @@ namespace Ribbon
                 Animator.SetTrigger(name);
             }
         }
+
+        public void Play(string name)
+        {
+            Animator?.Play(name);
+        }
     }
 
 }

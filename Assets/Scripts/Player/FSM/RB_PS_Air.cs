@@ -10,6 +10,7 @@ namespace Ribbon
         public bool IsJump = false;
         public bool CanDoubleJump = false;
         public bool CanAscend = false;
+        public bool IsJumpDouble = false;
 
         private bool canApplyInput = false;
 
@@ -20,7 +21,11 @@ namespace Ribbon
         {
             if (IsJump)
             {
-                Visual.SetTrigger("Jump");
+                if (IsJumpDouble == false)
+                {
+                    Visual.SetTrigger("Jump");
+                }
+                
                 JumpRequested = false;
                 CanAscend = true;
             }
@@ -70,15 +75,20 @@ namespace Ribbon
             
             if(JumpRequested && CanDoubleJump)
             {
-                Player.YSpeed = PhysicsInfo.JumpStrength/2f;
+                Debug.Log("Double Jump requested");
+                Player.YSpeed = PhysicsInfo.JumpStrength * PhysicsInfo.DoubleJumpMultiplier;
                 IsJump = true;
+                IsJumpDouble = true;
                 CanDoubleJump = false;
                 JumpRequested = false;
+                Visual.Play("Double Jump");
                 Machine.Set<RB_PS_Air>();
                 return;
             }
+
             AirMovement();
             GroundCheck();
+                      
 
             Transform.localScale = Vector3.Lerp(Transform.localScale,
                 Vector3.one, 10 * Time.deltaTime);
