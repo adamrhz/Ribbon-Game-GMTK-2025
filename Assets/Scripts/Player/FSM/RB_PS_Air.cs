@@ -76,7 +76,7 @@ namespace Ribbon
             if(JumpRequested && CanDoubleJump)
             {
                 Debug.Log("Double Jump requested");
-                Player.YSpeed = PhysicsInfo.JumpStrength/1.5f;
+                Player.YSpeed = PhysicsInfo.JumpStrength * PhysicsInfo.DoubleJumpMultiplier;
                 IsJump = true;
                 IsJumpDouble = true;
                 CanDoubleJump = false;

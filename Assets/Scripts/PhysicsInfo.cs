@@ -19,6 +19,7 @@ namespace Ribbon
         public int JumpAmount = 2;
         public float Gravity = 30f;       
         public float JumpStrength = 15f;  
+        public float DoubleJumpMultiplier = .75f;
         public float JumpCutoff = 8f;  
         public float MaxFallSpeed = 30f;  
         public float CoyoteTime = 0.15f;
