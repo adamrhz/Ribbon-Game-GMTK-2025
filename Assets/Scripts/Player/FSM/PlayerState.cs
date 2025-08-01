@@ -44,6 +44,13 @@ namespace Ribbon
                 JumpRequested = true;
             }
         }
+        public void SetDirection(float xspeed)
+        {
+            if (xspeed != 0)
+            {
+                Player.Direction = (int)Mathf.Sign(xspeed);
+            }
+        }
 
         public void ApplyAcceleration(float acceleration, float Input, ref float Speed)
         {

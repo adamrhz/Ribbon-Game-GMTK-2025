@@ -44,6 +44,7 @@ namespace Ribbon
 
         public SpringJoint2D SwingJoint;
 
+        public int Direction = 1;
         private void Awake()
         {
             Init();
@@ -68,8 +69,8 @@ namespace Ribbon
         void Update()
         {
             Controllers.Update();
-
-            Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
+            
+            //Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
         }
 
 

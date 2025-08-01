@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.AI;
 
 namespace Ribbon
 {
@@ -12,6 +13,8 @@ namespace Ribbon
         public SpriteRenderer Sprite;
 
         public Animator SquashAnimator;
+
+        public LineRenderer IndicatorLine, AttachRibbonLine;
 
         public int SpriteDirection;
         private int previousSpriteDirection;
@@ -26,18 +29,8 @@ namespace Ribbon
         private void Update()
         {
             float XSpeed = Player.GroundSpeed;
-            
-            if (Mathf.Abs(XSpeed) > .01f)
-            {
-                if(XSpeed > 0)
-                {
-                    SpriteDirection = 1;
-                }
-                else if (XSpeed < 0)
-                {
-                    SpriteDirection = -1;
-                }
-            }
+
+            SpriteDirection = Player.Direction;
 
             if (Player.Machine.CurrentState is RB_PS_Swing swing)
             {
@@ -65,6 +58,30 @@ namespace Ribbon
             }
         }
 
+        public void ToggleIndicatorLine(Vector2? target)
+        {
+            if (target.HasValue)
+            {
+                IndicatorLine.positionCount = 2;
+                IndicatorLine.SetPositions(new Vector3[]{Player.transform.position, (Vector3)target});
+            }
+            else
+            {
+                IndicatorLine.positionCount = 0;
+            }
+        }
+        public void ToggleRibbonAttachLine(Vector2? target)
+        {
+            if (target.HasValue)
+            {
+                AttachRibbonLine.positionCount = 2;
+                AttachRibbonLine.SetPositions(new Vector3[] { Player.transform.position, (Vector3)target });
+            }
+            else
+            {
+                AttachRibbonLine.positionCount = 0;
+            }
+        }
         public void Play(string name)
         {
             Animator?.Play(name);

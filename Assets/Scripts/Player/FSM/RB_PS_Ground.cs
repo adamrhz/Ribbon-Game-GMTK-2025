@@ -26,6 +26,13 @@ namespace Ribbon
             JumpRequested = false;
         }
 
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            SetDirection(Player.GroundSpeed);
+        }
+
+
 
         public override void OnFixedUpdate()
         {
@@ -66,7 +73,6 @@ namespace Ribbon
         {
             Vector2 MoveInput = Input.GetAxis2D("Move");
             
-            Debug.LogFormat("speed dir: {0}, input dir: {1}", Math.Sign(Player.GroundSpeed), Math.Sign(MoveInput.x));
             
             if (MoveInput.x == 0)
             {
