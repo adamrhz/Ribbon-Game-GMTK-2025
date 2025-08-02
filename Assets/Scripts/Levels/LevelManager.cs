@@ -132,6 +132,7 @@ namespace Ribbon
         }
         public IEnumerator NotifyLoopChange(int loop)
         {
+            List<GameLoopEvent> LoopObjects = new List<GameLoopEvent>(LevelManager.LoopObjects);
             Player.Instance.Input.BlockInput = true;
             yield return new WaitForSecondsRealtime(1f); // Simulating whatever cool wait ending sequence you want here
             Vector3 SpawnPoint = Vector3.zero;
@@ -152,13 +153,14 @@ namespace Ribbon
                 playerCamera.discreteTarget = loopObject.transform.position;
                 while (Mathf.Abs(playerCamera.transform.position.x - loopObject.transform.position.x) > 5f)
                 {
-                    if (!Player.Instance.Visual.Sprite.isVisible && !resetPlayerPosition)
-                    {
-                        resetPlayerPosition = true;
-                        Player.Instance.Direction = 1;
-                        Player.Instance.transform.position = SpawnPoint;
-                    }
                     yield return null;
+                }
+
+                if (!Player.Instance.Visual.Sprite.isVisible && !resetPlayerPosition)
+                {
+                    resetPlayerPosition = true;
+                    Player.Instance.Direction = 1;
+                    Player.Instance.transform.position = SpawnPoint;
                 }
                 if (loopObject.Loop != loop)
                 {
@@ -172,6 +174,12 @@ namespace Ribbon
                 yield return null;
             }
 
+            if (!Player.Instance.Visual.Sprite.isVisible && !resetPlayerPosition)
+            {
+                resetPlayerPosition = true;
+                Player.Instance.Direction = 1;
+                Player.Instance.transform.position = SpawnPoint;
+            }
             playerCamera.Intro = false;
             yield return new WaitForSecondsRealtime(1f); // Ensure all updates are processed before notifying
             Player.Instance.Input.BlockInput = false;
