@@ -13839,7 +13839,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1032292571}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 377128178902192960, guid: f9ddfd8dd00c51349a8a4131cd942077, type: 3}
       propertyPath: m_Name
@@ -13888,35 +13888,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 377128178902192960, guid: f9ddfd8dd00c51349a8a4131cd942077, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 811714421}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9ddfd8dd00c51349a8a4131cd942077, type: 3}
---- !u!4 &811714419 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2951552511973124099, guid: f9ddfd8dd00c51349a8a4131cd942077, type: 3}
-  m_PrefabInstance: {fileID: 811714418}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &811714420 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 377128178902192960, guid: f9ddfd8dd00c51349a8a4131cd942077, type: 3}
-  m_PrefabInstance: {fileID: 811714418}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &811714421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811714420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e995c27703804478158b192c540b6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoopsIn: 01000000
-  Loop: 0
 --- !u!1001 &860134209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14510,7 +14483,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 811714419}
   - {fileID: 142490213}
   - {fileID: 1322839502}
   - {fileID: 860134210}
@@ -16485,3 +16457,4 @@ SceneRoots:
   - {fileID: 1185407392}
   - {fileID: 1677362820}
   - {fileID: 590455970}
+  - {fileID: 811714418}
