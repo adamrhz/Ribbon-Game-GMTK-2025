@@ -93,7 +93,6 @@ namespace Ribbon
             {
                 LoopObjects.Add(loopObject);
                 LoopObjects.Sort();
-                Debug.Log("Registered GameLoopEvent: " + loopObject.name);
             }
         }
         private void IncrementLoop()
@@ -103,7 +102,6 @@ namespace Ribbon
                 if (CurrentLoop == CurrentLevel.LoopCounts - 1)
                 {
                     StartCoroutine(LevelFinished());
-                    Debug.Log("Reached the end. YOU WON");
                     return;
                 }
             }
@@ -143,6 +141,7 @@ namespace Ribbon
         }
         public IEnumerator NotifyLoopChange(int loop)
         {
+            bool Skip = false;
             TimerActive = false;
             List<GameLoopEvent> LoopObjects = new List<GameLoopEvent>(LevelManager.LoopObjects);
             Player.Instance.Input.BlockInput = true;
@@ -153,7 +152,6 @@ namespace Ribbon
             Camera camera = Camera.main;
             PlayerCamera playerCamera = camera?.GetComponent<PlayerCamera>();
             playerCamera.Intro = true;
-            Debug.Log("Notifying loop change to " + loop);
             bool resetPlayerPosition = false;
             yield return new WaitForEndOfFrame(); // Ensure all updates are processed before notifying
 
@@ -163,8 +161,12 @@ namespace Ribbon
             foreach (GameLoopEvent loopObject in LoopObjects)
             {
                 playerCamera.discreteTarget = loopObject.transform.position;
-                while (Mathf.Abs(playerCamera.transform.position.x - loopObject.transform.position.x) > 5f)
+                while (Mathf.Abs(playerCamera.transform.position.x - loopObject.transform.position.x) > 5f && !Skip)
                 {
+                    if (Player.Instance.Input.GetAnyButton(true))
+                    {
+                        Skip = true;
+                    }
                     yield return null;
                 }
 
@@ -176,7 +178,6 @@ namespace Ribbon
                 }
                 if (loopObject.Loop != loop)
                 {
-
                     bool difference = loopObject.OnGameStart(loop);
                     if (ParticleEffectPrefab != null && difference)
                     {

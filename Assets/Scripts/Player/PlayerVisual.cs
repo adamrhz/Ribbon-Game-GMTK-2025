@@ -53,6 +53,22 @@ namespace Ribbon
             Animator?.SetFloat("YSpeed", Player.YSpeed);
             Animator?.SetInteger("State", Player?.Machine?.CurrentState?.StateNumber ?? 0);
 
+            if (Player.IsInvulnerable)
+            {
+                float ping = Mathf.PingPong(Time.time * 8, 1);
+                Sprite.enabled = ping > .5f;
+
+            }
+            else
+            {
+                if (Sprite.enabled == false)
+                {
+                    Sprite.enabled = true;
+                }
+            }
+
+
+
             if (SwingTrail)
                 SwingTrail.emitting = Player.Machine.CurrentState is RB_PS_Swing;
         }

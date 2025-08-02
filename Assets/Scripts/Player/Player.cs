@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 namespace Ribbon
@@ -37,6 +38,8 @@ namespace Ribbon
         
         public PlayerControllers Controllers = new PlayerControllers();
 
+        public int Health = 5;
+
         public Rigidbody2D Rb;
         public PlayerStateMachine Machine;
         public PhysicsInfo PhysicsInfo;
@@ -45,6 +48,7 @@ namespace Ribbon
         public InputManager Input;
         public AudioBankHolder AudioBankHolder;
 
+        public Collider2D PlayerCollider;
         public SpringJoint2D SwingJoint;
 
         public int Direction = 1;
@@ -53,9 +57,13 @@ namespace Ribbon
             Instance = this;
             Application.targetFrameRate = 0;
         }
-        
+
+        public bool IsInvulnerable => _invulnerabilityTimer > 0f;
+        private float _invulnerabilityTimer = 0f;
+
         public void Init()
         {
+            Health = 5;
             Direction = 1;
             Rb = GetComponent<Rigidbody2D>();
             Machine = GetComponent<PlayerStateMachine>();
@@ -78,14 +86,52 @@ namespace Ribbon
             }
         }
 
+
+        public void TriggerDamage()
+        {
+            if(IsInvulnerable || Machine.IsCurrentState<RB_PS_Death>()) return;
+            Health--;
+            if(Health <= 0)
+            {
+                TriggerDeath();
+                return;
+            }
+            ToggleInvulnerability(1f);
+            Machine.Set<RB_PS_Damage>();
+        }
+
+        public void ToggleInvulnerability(float v)
+        {
+            _invulnerabilityTimer = v;
+        }
+
+        public void TriggerDeath()
+        {
+            if(Machine.IsCurrentState<RB_PS_Death>()) return;
+            Machine.Set<RB_PS_Death>();
+        }
+
         // Update is called once per frame
         void Update()
         {
             Controllers.Update();
-            
+            HandleTimer(ref _invulnerabilityTimer);
+
             //Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
         }
+        public bool HandleTimer(ref float timer)
+        {
+            if (timer > 0)
+            {
+                timer = Mathf.Clamp(timer - Time.deltaTime, 0f, timer);
+                if(timer <= 0f)
+                {
+                    return true;
+                }
+            }
 
+            return false;
+        }
 
         public void OnObject(RWorldObject2D Obj, bool ToAir)
         {

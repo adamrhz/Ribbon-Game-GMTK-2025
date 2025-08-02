@@ -205,7 +205,29 @@ namespace Ribbon {
 				return Vector2.zero;
 			}
 		}
-	}
+
+        public bool GetAnyButton(bool bypassesBlock = false)
+        {
+            try
+            {
+                if (!BlockInput || bypassesBlock)
+
+
+					foreach(UButton button in Buttons)
+					{
+						if (button.pressed)
+						{
+							return true;
+                        }
+                    }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+    }
 
 	public class UAxis1D{
 		public string Name;

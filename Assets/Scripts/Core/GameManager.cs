@@ -5,63 +5,67 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+namespace Ribbon
 {
-    private const string GameManagerPrefabPath = "GameManager";
 
-    public static GameManager Instance
+    public class GameManager : MonoBehaviour
     {
+        private const string GameManagerPrefabPath = "GameManager";
 
-        get
+        public static GameManager Instance
         {
-            return _instance;
+
+            get
+            {
+                return _instance;
+            }
+
+            set
+            {
+                if (_instance == null)
+                {
+                    _instance = value;
+                }
+                else if (_instance != value)
+                {
+                    Debug.LogError("GameManager instance already exists. Cannot set a new instance.");
+                }
+            }
+
+        }
+        private static GameManager _instance;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        public static void Init()
+        {
+            GameObject GameManagerObject = Resources.Load<GameObject>(GameManagerPrefabPath);
+            GameObject gm = Instantiate(GameManagerObject);
+            Instance = gm.GetComponent<GameManager>();
+            DontDestroyOnLoad(Instance.gameObject);
+            GamePreference.SetPath(Application.persistentDataPath + "/RibbonData/game_preferences.json");
+            GamePreference.LoadFromFile();
+            SaveFileManager SFM = Instance.GetComponent<SaveFileManager>();
+            SFM?.LoadSave();
+
         }
 
-        set
+
+
+
+        // Start is called before the first frame update
+        void Start()
         {
-            if(_instance == null)
-            {
-                _instance = value;
-            }
-            else if(_instance != value)
-            {
-                Debug.LogError("GameManager instance already exists. Cannot set a new instance.");
-            }
+
         }
 
-    }
-    private static GameManager _instance;
+        // Update is called once per frame
+        void Update()
+        {
+        }
 
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    public static void Init()
-    {
-        GameObject GameManagerObject = Resources.Load<GameObject>(GameManagerPrefabPath);
-        GameObject gm = Instantiate(GameManagerObject);
-        Instance = gm.GetComponent<GameManager>();
-        DontDestroyOnLoad(Instance.gameObject);
-        GamePreference.SetPath(Application.persistentDataPath + "/RibbonData/game_preferences.json");
-        GamePreference.LoadFromFile();
-        SaveFileManager SFM = Instance.GetComponent<SaveFileManager>();
-        SFM?.LoadSave();
-
-    }
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
-    public static void LevelFinished()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        public static void LevelFinished()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
