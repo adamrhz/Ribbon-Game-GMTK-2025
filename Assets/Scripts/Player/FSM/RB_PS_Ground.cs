@@ -54,10 +54,8 @@ namespace Ribbon
                     _idleTimer = 0;
                 }
             }
-                SetDirection(Player.GroundSpeed);
+            SetDirection(Player.GroundSpeed);
         }
-
-
 
         public override void OnFixedUpdate()
         {
@@ -70,12 +68,11 @@ namespace Ribbon
                 Machine.Set<RB_PS_Air>();
                 return;
             }
+            GroundCheck();
             GroundMovement();
-
+            
             Player.XSpeed = Mathf.Cos(Player.SurfaceAngle * Mathf.Deg2Rad) * Player.GroundSpeed;
             Player.YSpeed = Mathf.Sin(Player.SurfaceAngle * Mathf.Deg2Rad) * Player.GroundSpeed;
-            
-            GroundCheck();
         }
 
         private void GroundCheck()
@@ -97,21 +94,34 @@ namespace Ribbon
         private void GroundMovement()
         {
             Vector2 MoveInput = Input.GetAxis2D("Move");
-            
+
+            float maxSpeed = PhysicsInfo.MaxSpeed + Mathf.Sin(Player.SurfaceAngle * Mathf.Deg2Rad) * 3;
             
             if (MoveInput.x == 0)
             {
                 Player.GroundSpeed -= Mathf.Sign(Player.GroundSpeed) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.GroundSpeed));
-
-
             }
-            else if (SameDirection(MoveInput.x, Player.GroundSpeed))
+            else if (MoveInput.x > 0)
             {
-                ApplyAcceleration(PhysicsInfo.Acceleration, MoveInput.x, ref Player.GroundSpeed);
+                if (Player.GroundSpeed < 0)
+                {
+                    Player.GroundSpeed += PhysicsInfo.Deceleration * Time.fixedDeltaTime;
+                }
+                else if (Player.GroundSpeed < maxSpeed)
+                {
+                    Player.GroundSpeed = Mathf.Min(Player.GroundSpeed + PhysicsInfo.Acceleration * Time.fixedDeltaTime, maxSpeed);
+                }
             }
             else
             {
-                ApplyAcceleration(PhysicsInfo.Deceleration, MoveInput.x, ref Player.GroundSpeed);
+                if (Player.GroundSpeed > 0)
+                {
+                    Player.GroundSpeed -= PhysicsInfo.Deceleration * Time.fixedDeltaTime;
+                }
+                else if (Player.GroundSpeed > -maxSpeed)
+                {
+                    Player.GroundSpeed = Mathf.Max(Player.GroundSpeed - PhysicsInfo.Acceleration * Time.fixedDeltaTime, -maxSpeed);
+                }
             }
         }
     }

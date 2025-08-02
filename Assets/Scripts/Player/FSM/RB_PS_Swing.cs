@@ -107,7 +107,7 @@ namespace Ribbon
         public override void OnFixedUpdate()
         {
             if(!Machine.IsCurrentState<RB_PS_Swing>()){return;}
-            ZAngle = Mathf.LerpAngle(ZAngle, swingAngle * Mathf.Rad2Deg, 5 * (1 + Rb.velocity.magnitude / 3) * Time.deltaTime);
+            ZAngle = Mathf.LerpAngle(ZAngle, SwingAngle * Mathf.Rad2Deg, 5 * (1 + Rb.velocity.magnitude / 3) * Time.deltaTime);
             AirMovement();
             if (!Machine.IsCurrentState<RB_PS_Swing>()) { return; }
             GroundCheck();
@@ -124,10 +124,10 @@ namespace Ribbon
             }
         }
         private float previousSwingAngle;
-        private float swingAngle;
+        public float SwingAngle;
         public float deltaAngle;
 
-        public Vector2 SwingTangent;
+        public Vector2 SwingTangent, SwingNormal;
         private float swingLerpIntensity;
         private Vector2 previousVelocity;
 
@@ -135,13 +135,13 @@ namespace Ribbon
         {
             previousVelocity = Rb.velocity;
             
-            Vector2 toPivot = (SwingingTarget.transform.position - Player.transform.position).normalized;
-            swingAngle = Mathf.Atan2(-toPivot.x, toPivot.y);
-            deltaAngle = Mathf.DeltaAngle(previousSwingAngle * Mathf.Rad2Deg, swingAngle * Mathf.Rad2Deg) * Mathf.Deg2Rad;
-            previousSwingAngle = swingAngle;
+            SwingNormal = (SwingingTarget.transform.position - Player.transform.position).normalized;
+            SwingAngle = Mathf.Atan2(-SwingNormal.x, SwingNormal.y);
+            deltaAngle = Mathf.DeltaAngle(previousSwingAngle * Mathf.Rad2Deg, SwingAngle * Mathf.Rad2Deg) * Mathf.Deg2Rad;
+            previousSwingAngle = SwingAngle;
 
             float ropeLength = Vector3.Distance(SwingingTarget.transform.position, Player.transform.position);
-            float angularAcceleration = (PhysicsInfo.Gravity / ropeLength) * Mathf.Sin(swingAngle); //adam youre getting the sine of a deg angle using a rad function
+            float angularAcceleration = (PhysicsInfo.Gravity / ropeLength) * Mathf.Sin(SwingAngle); //adam youre getting the sine of a deg angle using a rad function
             
             RelativeSpeed += angularAcceleration * Time.fixedDeltaTime;
             Vector2 MoveInput = Input.GetAxis2D("Move");
@@ -162,7 +162,7 @@ namespace Ribbon
 
             // you do know there's a perpendicular function in unity2d right
             // Vector2 tangent = Vector3.Cross(toPivot, Vector3.forward);
-            SwingTangent = -Vector2.Perpendicular(toPivot.normalized);
+            SwingTangent = -Vector2.Perpendicular(SwingNormal.normalized);
 
             Vector2 tangentialVelocity = SwingTangent * (RelativeSpeed * ropeLength);
             Vector2 gravityVelocity = new(0, PhysicsInfo.Gravity * Time.fixedDeltaTime);

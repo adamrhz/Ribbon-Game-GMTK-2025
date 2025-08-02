@@ -15,6 +15,9 @@ namespace Ribbon
         public Animator SquashAnimator;
 
         public LineRenderer IndicatorLine, AttachRibbonLine;
+        public TrailRenderer SwingTrail;
+
+        [Header("Attach Ribbon Visual")] public int AttachRibbonLinePointCount = 20;
 
         public int SpriteDirection;
         private int previousSpriteDirection;
@@ -49,6 +52,9 @@ namespace Ribbon
             Animator?.SetFloat("XSpeed", Mathf.Abs(XSpeed));
             Animator?.SetFloat("YSpeed", Player.YSpeed);
             Animator?.SetInteger("State", Player?.Machine?.CurrentState?.StateNumber ?? 0);
+
+            if (SwingTrail)
+                SwingTrail.emitting = Player.Machine.CurrentState is RB_PS_Swing;
         }
         public void SetTrigger(string name)
         {
@@ -74,8 +80,21 @@ namespace Ribbon
         {
             if (target.HasValue)
             {
-                AttachRibbonLine.positionCount = 2;
-                AttachRibbonLine.SetPositions(new Vector3[] { Player.transform.position, (Vector3)target });
+                AttachRibbonLine.positionCount = AttachRibbonLinePointCount;
+                for (int i = 0; i < AttachRibbonLinePointCount; i++)
+                {
+                    if (Player.Machine.CurrentState is not RB_PS_Swing Swing) return;
+                    
+                    Vector3 pointOffset = Vector2.zero;
+
+                    float speedMultiplier = Player.Rb.velocity.sqrMagnitude / 100;
+
+                    float angle = i * 1.0f / AttachRibbonLinePointCount * Mathf.PI;
+
+                    pointOffset = Swing.SwingTangent * SpriteDirection * (Mathf.Sin(angle) * 0.12f * speedMultiplier);
+                    
+                    AttachRibbonLine.SetPosition(i, Vector3.Lerp(Player.transform.position, (Vector3)target, i * 1.0f / AttachRibbonLinePointCount) + pointOffset);
+                }
             }
             else
             {

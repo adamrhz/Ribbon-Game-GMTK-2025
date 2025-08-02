@@ -14,6 +14,8 @@ namespace Ribbon
         private Vector2 rbVelocityTarget;
         public float MinimumYPoint;
 
+        public Vector2 XYLimits;
+
         public bool Intro = false;
         public Vector3 discreteTarget;
         public float IntroLerpSpeed = 15f;
@@ -36,17 +38,16 @@ namespace Ribbon
         {
             if (!Intro)
             {
-
                 rbVelocityTarget = Vector2.Lerp(rbVelocityTarget, Vector2.Scale(Target.Rb.velocity, new Vector2(4, 1)),
                     3 * Time.deltaTime);
-                Vector3 playerPivot = (Vector2)Target.transform.position + rbVelocityTarget * (3 * Time.fixedDeltaTime);
+                Vector3 playerPivot = (Vector2)Target.Rb.position + rbVelocityTarget * (3 * Time.fixedDeltaTime);
 
                 swingSwitchTarget = Mathf.Lerp(swingSwitchTarget, Target.Machine.CurrentState is RB_PS_Swing ? .9f : Mathf.Lerp(swingSwitchTarget, 0, 204 * Time.deltaTime),
                     7 * Time.deltaTime);
 
                 var finalPoint = Vector3.Lerp(playerPivot, swingPoint, swingSwitchTarget);
 
-                transform.position = Vector3.Lerp(transform.position, new Vector3(finalPoint.x, Mathf.Max(finalPoint.y, MinimumYPoint), -ZDepth),
+                transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Max(finalPoint.x, XYLimits.x), Mathf.Max(finalPoint.y, XYLimits.y), -ZDepth),
                     10 * Time.deltaTime);
             }
             else
@@ -55,7 +56,7 @@ namespace Ribbon
                 {
                     rbVelocityTarget = Vector2.zero;
                     swingPoint = Target.transform.position;
-                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(discreteTarget.x, Mathf.Max(discreteTarget.y, MinimumYPoint), -ZDepth), IntroLerpSpeed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(discreteTarget.x, Mathf.Max(discreteTarget.y, XYLimits.y), -ZDepth), IntroLerpSpeed * Time.deltaTime);
                     swingSwitchTarget = 0;
                 }
             }

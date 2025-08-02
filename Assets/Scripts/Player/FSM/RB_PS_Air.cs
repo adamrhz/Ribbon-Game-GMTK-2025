@@ -26,6 +26,7 @@ namespace Ribbon
                     Visual.Play("Jump");
                 }
                 Player.AudioBankHolder.Play("Jump");
+                Visual.SquashAnimator.Play("Jump", 0, 0);
                 JumpRequested = false;
                 CanAscend = true;
             }
@@ -83,6 +84,7 @@ namespace Ribbon
                 CanDoubleJump = false;
                 JumpRequested = false;
                 Visual.Play("Double Jump");
+                Visual.SquashAnimator.Play("Jump", 0, 0);
                 Machine.Set<RB_PS_Air>();
                 return;
             }
@@ -116,18 +118,26 @@ namespace Ribbon
             
             if (MoveInput.x == 0)
             {
-                Player.XSpeed -= Mathf.Sign(Player.XSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(Player.XSpeed));
-            }
-            else if (SameDirection(MoveInput.x, Player.XSpeed))
-            {
-                ApplyAcceleration(PhysicsInfo.AirAcceleration, Sign, ref targetXSpeed);
-                Player.XSpeed = targetXSpeed;
+                targetXSpeed -= Mathf.Sign(targetXSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(targetXSpeed));
             }
             else
             {
-                ApplyAcceleration(PhysicsInfo.AirDeceleration, Sign, ref targetXSpeed);
-                Player.XSpeed = targetXSpeed;
+                if (Mathf.Approximately(Mathf.Sign(MoveInput.x), Mathf.Sign(targetXSpeed)))
+                {
+                    if (Mathf.Abs(targetXSpeed) < PhysicsInfo.MaxSpeed)
+                        targetXSpeed += Mathf.Sign(MoveInput.x) *
+                                        PhysicsInfo.AirAcceleration
+                                        * Time.fixedDeltaTime;
+                }
+                else
+                {
+                    targetXSpeed += Mathf.Sign(MoveInput.x) * 
+                                    PhysicsInfo.AirDeceleration 
+                                    * Time.fixedDeltaTime;
+                }
             }
+            
+            Player.XSpeed = targetXSpeed;
         }
     }
 }
