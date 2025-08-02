@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
-
     private AudioSource audioSource;
     private bool _transitioning = false;
     public float volumeTransitionSpeed = 4f; // Speed at which volume changes

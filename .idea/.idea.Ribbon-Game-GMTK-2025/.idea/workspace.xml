@@ -6,20 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="87e467f5-7241-4f64-8e3d-938821fbefc6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Scenes/CharacterControllerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Scenes/CharacterControllerScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Scenes/LevelScenes/1-2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Scenes/LevelScenes/1-2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/TileSet2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/TileSet2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlatformContainer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlatformContainer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Smoke.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Smoke.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Animations/PlayerSquash/Skin.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Animations/PlayerSquash/Skin.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Objects/MovingPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Objects/MovingPlatform.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/FSM/RB_PS_Air.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/FSM/RB_PS_Air.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/FSM/RB_PS_Ground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/FSM/RB_PS_Ground.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/FSM/RB_PS_Swing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/FSM/RB_PS_Swing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCollision.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerVisual.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +119,7 @@
       <workItem from="1753901846740" duration="1374000" />
       <workItem from="1753977708647" duration="4116000" />
       <workItem from="1754060182018" duration="11216000" />
-      <workItem from="1754117517240" duration="4365000" />
+      <workItem from="1754117517240" duration="6465000" />
     </task>
     <servers />
   </component>

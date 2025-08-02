@@ -15,6 +15,7 @@ namespace Ribbon
         public Animator SquashAnimator;
 
         public LineRenderer IndicatorLine, AttachRibbonLine;
+        public TrailRenderer SwingTrail;
 
         [Header("Attach Ribbon Visual")] public int AttachRibbonLinePointCount = 20;
 
@@ -51,6 +52,9 @@ namespace Ribbon
             Animator?.SetFloat("XSpeed", Mathf.Abs(XSpeed));
             Animator?.SetFloat("YSpeed", Player.YSpeed);
             Animator?.SetInteger("State", Player?.Machine?.CurrentState?.StateNumber ?? 0);
+
+            if (SwingTrail)
+                SwingTrail.emitting = Player.Machine.CurrentState is RB_PS_Swing;
         }
         public void SetTrigger(string name)
         {

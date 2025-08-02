@@ -315,7 +315,7 @@ AudioSource:
   m_GameObject: {fileID: 635839170}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7894804820174757958, guid: 977cba0f2c2b7594ea41decd821633e8, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
@@ -702,6 +702,7 @@ MonoBehaviour:
   SquashAnimator: {fileID: 1735858700}
   IndicatorLine: {fileID: 1574242867}
   AttachRibbonLine: {fileID: 87782381}
+  SwingTrail: {fileID: 1873146305}
   AttachRibbonLinePointCount: 10
   SpriteDirection: 0
 --- !u!231 &1011216978

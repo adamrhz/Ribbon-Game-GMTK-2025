@@ -26,6 +26,7 @@ namespace Ribbon
                     Visual.Play("Jump");
                 }
                 Player.AudioBankHolder.Play("Jump");
+                Visual.SquashAnimator.Play("Jump", 0, 0);
                 JumpRequested = false;
                 CanAscend = true;
             }
@@ -83,6 +84,7 @@ namespace Ribbon
                 CanDoubleJump = false;
                 JumpRequested = false;
                 Visual.Play("Double Jump");
+                Visual.SquashAnimator.Play("Jump", 0, 0);
                 Machine.Set<RB_PS_Air>();
                 return;
             }

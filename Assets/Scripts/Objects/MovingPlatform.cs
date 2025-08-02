@@ -2,11 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-
-
 namespace Ribbon
 {
-
     public class MovingPlatform : RWorldObject2D
     {
         public float Speed = 1.0f; // Speed of the platform movement
@@ -56,19 +53,23 @@ namespace Ribbon
                 Gizmos.DrawSphere(startPos+p, .1f);
                 position = p;
             }
-
-
-
-
-
-
-
         }
 
         public void OnPlayerStandOn(Player player)
         {
             Debug.Log("Standing on moving platform");
-            player.transform.position += (Vector3)Rb.velocity * Time.fixedDeltaTime;
+            //player.transform.position += (Vector3)Rb.velocity * Time.fixedDeltaTime;
+            player.transform.SetParent(transform);
+            player.Machine.OnChangeState += MachineOnOnChangeState;
+        }
+
+        private void MachineOnOnChangeState(PlayerState oldState, PlayerState newState)
+        {
+            if (newState is RB_PS_Air)
+            {
+                newState.Player.transform.SetParent(null);
+                newState.Player.Machine.OnChangeState -= MachineOnOnChangeState;
+            }
         }
 
 
