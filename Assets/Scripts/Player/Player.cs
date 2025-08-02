@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Ribbon
 {
@@ -39,6 +40,7 @@ namespace Ribbon
         public PlayerControllers Controllers = new PlayerControllers();
 
         public int Health = 5;
+        public int ButtonCount = 0;
 
         public Rigidbody2D Rb;
         public PlayerStateMachine Machine;
@@ -52,6 +54,11 @@ namespace Ribbon
         public SpringJoint2D SwingJoint;
 
         public int Direction = 1;
+
+
+        public UnityEvent<int> OnHealthChanged = new UnityEvent<int>();
+        public UnityEvent<int> OnButtonAmountChanged = new UnityEvent<int>();
+
         private void Awake()
         {
             Instance = this;
@@ -59,6 +66,7 @@ namespace Ribbon
         }
 
         public bool IsInvulnerable => _invulnerabilityTimer > 0f;
+
         private float _invulnerabilityTimer = 0f;
 
         public void Init()
@@ -90,14 +98,20 @@ namespace Ribbon
         public void TriggerDamage()
         {
             if(IsInvulnerable || Machine.IsCurrentState<RB_PS_Death>()) return;
-            Health--;
-            if(Health <= 0)
+            SetHealth(Health - 1);
+            if (Health <= 0)
             {
                 TriggerDeath();
                 return;
             }
             ToggleInvulnerability(1f);
             Machine.Set<RB_PS_Damage>();
+        }
+
+        public void SetHealth(int amount)
+        {
+            Health = amount;
+            OnHealthChanged.Invoke(Health);
         }
 
         public void ToggleInvulnerability(float v)
@@ -119,6 +133,7 @@ namespace Ribbon
 
             //Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
         }
+
         public bool HandleTimer(ref float timer)
         {
             if (timer > 0)
@@ -131,6 +146,12 @@ namespace Ribbon
             }
 
             return false;
+        }
+
+        public void AddButton()
+        {
+            ButtonCount++;
+            OnButtonAmountChanged.Invoke(ButtonCount);
         }
 
         public void OnObject(RWorldObject2D Obj, bool ToAir)

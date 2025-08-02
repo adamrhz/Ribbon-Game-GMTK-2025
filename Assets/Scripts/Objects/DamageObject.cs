@@ -11,10 +11,16 @@ namespace Ribbon
         Normal,
         Death
     }
+    public enum ConditionType
+    {
+        None,
+        NegativeYSpeed,
+        PositiveYSpeed
+    }
     public class DamageObject : RWorldObject2D
     {
         public DamageType damageType = DamageType.Normal;
-
+        public ConditionType ConditionType = ConditionType.None;
 
         private void Start()
         {
@@ -23,7 +29,11 @@ namespace Ribbon
 
         public void OnTouchIt(Player player)
         {
-            switch(damageType)
+            if((ConditionType == ConditionType.NegativeYSpeed && player.YSpeed > 0) || (ConditionType == ConditionType.PositiveYSpeed && player.YSpeed < 0))
+            {
+                return;
+            }
+            switch (damageType)
             {
                 case DamageType.Normal:
                     player.TriggerDamage();

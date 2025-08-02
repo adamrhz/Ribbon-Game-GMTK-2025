@@ -24,7 +24,7 @@ namespace Ribbon
 
         public override void OnExit()
         {
-            Player.Health = 5;
+            Player.SetHealth(5);
             Input.BlockInput = false;
             LevelManager.Instance.TimerActive = true;
             Player.ToggleInvulnerability(1);
