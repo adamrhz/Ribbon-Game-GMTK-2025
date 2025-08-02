@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 526359026}
   - component: {fileID: 526359030}
   - component: {fileID: 526359027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   - component: {fileID: 625022265}
   - component: {fileID: 625022269}
   - component: {fileID: 625022266}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 635697799}
   - component: {fileID: 635697803}
   - component: {fileID: 635697800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,7 +948,7 @@ GameObject:
   - component: {fileID: 747818161}
   - component: {fileID: 747818158}
   - component: {fileID: 747818162}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,7 +1205,7 @@ GameObject:
   - component: {fileID: 831971524}
   - component: {fileID: 831971521}
   - component: {fileID: 831971525}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1441,6 +1441,7 @@ MonoBehaviour:
   <SurfaceAngle>k__BackingField: 0
   GroundSpeed: 0
   Controllers:
+    Controllers: []
     SwingController:
       Context: {fileID: 0}
       SwingingMask:
@@ -1452,12 +1453,12 @@ MonoBehaviour:
   Rb: {fileID: 1011216976}
   Machine: {fileID: 1011216973}
   PhysicsInfo: {fileID: 11400000, guid: 647deb927355c5745883125a58d4d6ca, type: 2}
-  Visual: {fileID: 0}
+  Visual: {fileID: 1011216977}
   Collision:
     Player: {fileID: 1011216974}
     CollisionMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 513
     GroundRaycastDistance: 1.1
     AirRaycastDistance: 0.5
     IsGrounded: 0
@@ -1501,13 +1502,13 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b78d339b7f16f6b4db3ac493e5fc8e84, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -1827,7 +1828,7 @@ GameObject:
   - component: {fileID: 1154803350}
   - component: {fileID: 1154803354}
   - component: {fileID: 1154803351}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1960,7 +1961,7 @@ GameObject:
   - component: {fileID: 1242815590}
   - component: {fileID: 1242815594}
   - component: {fileID: 1242815591}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28303,265 +28304,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1245546987}
-    m_ColliderPaths:
-    - - X: 915000000
-        Y: 250000000
-      - X: 895000000
-        Y: 250000000
-      - X: 895000000
-        Y: 90000000
-      - X: 835000000
-        Y: 90000000
-      - X: 835000000
-        Y: 50000000
-      - X: 755000000
-        Y: 50000000
-      - X: 755000000
-        Y: -30000000
-      - X: 915000000
-        Y: -30000000
-    - - X: 655000000
-        Y: 60000000
-      - X: 573124992
-        Y: 60000000
-      - X: 570000000
-        Y: 58437500
-      - X: 570000000
-        Y: 58125000
-      - X: 569374976
-        Y: 58125000
-      - X: 565000000
-        Y: 55937500
-      - X: 565000000
-        Y: 55000000
-      - X: 563124992
-        Y: 55000000
-      - X: 560000000
-        Y: 53437500
-      - X: 560000000
-        Y: 53125000
-      - X: 559374976
-        Y: 53125000
-      - X: 555000000
-        Y: 50937500
-      - X: 555000000
-        Y: 50000000
-      - X: 515000000
-        Y: 50000000
-      - X: 515000000
-        Y: 10000000
-      - X: 493124992
-        Y: 10000000
-      - X: 490000000
-        Y: 8437500
-      - X: 490000000
-        Y: 8125000
-      - X: 489375008
-        Y: 8125000
-      - X: 485000000
-        Y: 5937500
-      - X: 485000000
-        Y: 5000000
-      - X: 483124992
-        Y: 5000000
-      - X: 480000000
-        Y: 3437500
-      - X: 480000000
-        Y: 3125000
-      - X: 479375008
-        Y: 3125000
-      - X: 475000000
-        Y: 937500
-      - X: 475000000
-        Y: 0
-      - X: 435000000
-        Y: 0
-      - X: 435000000
-        Y: -10000000
-      - X: 375000000
-        Y: -10000000
-      - X: 375000000
-        Y: 20000000
-      - X: 335000000
-        Y: 20000000
-      - X: 335000000
-        Y: 10000000
-      - X: 275000000
-        Y: 10000000
-      - X: 275000000
-        Y: 11250000
-      - X: 271249984
-        Y: 15000000
-      - X: 270000000
-        Y: 15000000
-      - X: 270000000
-        Y: 16250000
-      - X: 266250000
-        Y: 20000000
-      - X: 265000000
-        Y: 20000000
-      - X: 265000000
-        Y: 21250000
-      - X: 261250000
-        Y: 25000000
-      - X: 260000000
-        Y: 25000000
-      - X: 260000000
-        Y: 26250000
-      - X: 256250000
-        Y: 30000000
-      - X: 255000000
-        Y: 30000000
-      - X: 255000000
-        Y: 31250000
-      - X: 251250000
-        Y: 35000000
-      - X: 250000000
-        Y: 35000000
-      - X: 250000000
-        Y: 36250000
-      - X: 246250000
-        Y: 40000000
-      - X: 245000000
-        Y: 40000000
-      - X: 245000000
-        Y: 41250000
-      - X: 241250000
-        Y: 45000000
-      - X: 240000000
-        Y: 45000000
-      - X: 240000000
-        Y: 46250000
-      - X: 236250000
-        Y: 50000000
-      - X: 235000000
-        Y: 50000000
-      - X: 235000000
-        Y: 51250000
-      - X: 231250000
-        Y: 55000000
-      - X: 230000000
-        Y: 55000000
-      - X: 230000000
-        Y: 56250000
-      - X: 226250000
-        Y: 60000000
-      - X: 225000000
-        Y: 60000000
-      - X: 225000000
-        Y: 61250000
-      - X: 221250000
-        Y: 65000000
-      - X: 220000000
-        Y: 65000000
-      - X: 220000000
-        Y: 66250000
-      - X: 216250000
-        Y: 70000000
-      - X: 155000000
-        Y: 70000000
-      - X: 155000000
-        Y: 0
-      - X: 53125000
-        Y: 0
-      - X: 50000000
-        Y: -1562500
-      - X: 50000000
-        Y: -1875000
-      - X: 49375000
-        Y: -1875000
-      - X: 45000000
-        Y: -4062500
-      - X: 45000000
-        Y: -5000000
-      - X: 43125000
-        Y: -5000000
-      - X: 40000000
-        Y: -6562500
-      - X: 40000000
-        Y: -6875000
-      - X: 39375000
-        Y: -6875000
-      - X: 35000000
-        Y: -9062500
-      - X: 35000000
-        Y: -10000000
-      - X: -65000000
-        Y: -10000000
-      - X: -65000000
-        Y: 230000000
-      - X: -85000000
-        Y: 230000000
-      - X: -85000000
-        Y: -30000000
-      - X: 655000000
-        Y: -30000000
-    - - X: 755000000
-        Y: 130000000
-      - X: 693124992
-        Y: 130000000
-      - X: 690000000
-        Y: 128437504
-      - X: 690000000
-        Y: 128125000
-      - X: 689374976
-        Y: 128125000
-      - X: 685000000
-        Y: 125937504
-      - X: 685000000
-        Y: 125000000
-      - X: 683124992
-        Y: 125000000
-      - X: 680000000
-        Y: 123437504
-      - X: 680000000
-        Y: 123125000
-      - X: 679374976
-        Y: 123125000
-      - X: 675000000
-        Y: 120937504
-      - X: 675000000
-        Y: 120000000
-      - X: 635000000
-        Y: 120000000
-      - X: 635000000
-        Y: 110000000
-      - X: 755000000
-        Y: 110000000
-    - - X: 415000000
-        Y: 100000000
-      - X: 395000000
-        Y: 100000000
-      - X: 395000000
-        Y: 100937504
-      - X: 390624992
-        Y: 103125000
-      - X: 390000000
-        Y: 103125000
-      - X: 390000000
-        Y: 103437504
-      - X: 386875008
-        Y: 105000000
-      - X: 385000000
-        Y: 105000000
-      - X: 385000000
-        Y: 105937504
-      - X: 380624992
-        Y: 108125000
-      - X: 380000000
-        Y: 108125000
-      - X: 380000000
-        Y: 108437504
-      - X: 376875008
-        Y: 110000000
-      - X: 315000000
-        Y: 110000000
-      - X: 315000000
-        Y: 90000000
-      - X: 415000000
-        Y: 90000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 91.49997, y: -3}
@@ -28764,7 +28507,7 @@ GameObject:
   - component: {fileID: 1390770034}
   - component: {fileID: 1390770031}
   - component: {fileID: 1390770035}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28916,7 +28659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1426794750
 Grid:
   m_ObjectHideFlags: 0
@@ -28954,7 +28697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1446215719}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29622,7 +29365,7 @@ GameObject:
   - component: {fileID: 1762776035}
   - component: {fileID: 1762776039}
   - component: {fileID: 1762776036}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29755,7 +29498,7 @@ GameObject:
   - component: {fileID: 1866044167}
   - component: {fileID: 1866044171}
   - component: {fileID: 1866044168}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30140,7 +29883,7 @@ GameObject:
   - component: {fileID: 2016859968}
   - component: {fileID: 2016859965}
   - component: {fileID: 2016859969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30287,7 +30030,7 @@ GameObject:
   - component: {fileID: 2086414498}
   - component: {fileID: 2086414502}
   - component: {fileID: 2086414499}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30420,7 +30163,7 @@ GameObject:
   - component: {fileID: 2091756441}
   - component: {fileID: 2091756445}
   - component: {fileID: 2091756442}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30694,7 +30437,7 @@ GameObject:
   - component: {fileID: 2119762963}
   - component: {fileID: 2119762967}
   - component: {fileID: 2119762964}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

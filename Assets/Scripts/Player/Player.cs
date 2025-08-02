@@ -52,9 +52,7 @@ namespace Ribbon
         {
             Instance = this;
         }
-
-
-
+        
         public void Init()
         {
             Direction = 1;

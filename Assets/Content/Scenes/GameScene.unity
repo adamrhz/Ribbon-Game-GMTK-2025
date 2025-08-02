@@ -629,7 +629,7 @@ MonoBehaviour:
     Player: {fileID: 1011216974}
     CollisionMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 513
     GroundRaycastDistance: 1.1
     AirRaycastDistance: 0.5
     IsGrounded: 0
@@ -673,13 +673,13 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b78d339b7f16f6b4db3ac493e5fc8e84, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -702,6 +702,7 @@ MonoBehaviour:
   SquashAnimator: {fileID: 1735858700}
   IndicatorLine: {fileID: 1574242867}
   AttachRibbonLine: {fileID: 87782381}
+  AttachRibbonLinePointCount: 10
   SpriteDirection: 0
 --- !u!231 &1011216978
 SpringJoint2D:
@@ -928,6 +929,7 @@ MonoBehaviour:
   Target: {fileID: 1011216974}
   ZDepth: 10
   MinimumYPoint: 3.3
+  XYLimits: {x: 6.88, y: 3.3}
   Intro: 0
   discreteTarget: {x: 0, y: 0, z: 0}
   IntroLerpSpeed: 20

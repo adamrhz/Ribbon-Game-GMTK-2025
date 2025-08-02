@@ -23,8 +23,8 @@ namespace Ribbon
 
             if (groundRay)
             {
-
-                Player.transform.position = groundRay.point + Vector2.up * .5f;
+                Player.Rb.position = Vector3.ProjectOnPlane(Player.Rb.position, Vector3.up) 
+                                            + (groundRay.point.y + 0.5f) * Vector3.up;
                 Player.SurfaceAngle = CalculateAngle(groundRay.normal);
                 Debug.DrawRay(Player.transform.position, -groundRay.normal * GroundRaycastDistance, Color.green);
                 if (groundRay.collider.TryGetComponent(out RWorldObject2D worldObject))
