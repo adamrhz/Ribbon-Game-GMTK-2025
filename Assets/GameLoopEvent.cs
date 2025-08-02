@@ -13,6 +13,8 @@ namespace Ribbon
         private void Start()
         {
             LevelManager.RegisterLoopObject(this);
+            Loop = -1;
+            gameObject.SetActive(false);
         }
 
 

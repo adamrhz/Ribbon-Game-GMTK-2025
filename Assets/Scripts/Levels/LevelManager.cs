@@ -83,6 +83,7 @@ namespace Ribbon
             playerCamera.ForcePosition(playerCamera.discreteTarget);
             yield return new WaitForEndOfFrame();
             yield return NotifyLoopChange(CurrentLoop);
+            Player.Instance.Input.BlockInput = true;
             Player.Instance.Visual.Play("IdleMad");
             yield return new WaitForSecondsRealtime(.5f); // Simulating whatever cool wait ending sequence you want here
             Player.Instance.AudioBankHolder.Play("ReadySetGo");
