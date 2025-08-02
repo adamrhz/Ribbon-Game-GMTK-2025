@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Ribbon
@@ -11,9 +12,12 @@ namespace Ribbon
         private float swingSwitchTarget;
 
         private Vector2 rbVelocityTarget;
-
         public float MinimumYPoint;
-        
+
+        public bool Intro = false;
+        public Vector3 discreteTarget;
+        public float IntroLerpSpeed = 15f;
+
         public void Start()
         {
             transform.SetParent(null);
@@ -30,18 +34,36 @@ namespace Ribbon
 
         public void Update()
         {
-            rbVelocityTarget = Vector2.Lerp(rbVelocityTarget, Vector2.Scale(Target.Rb.velocity, new Vector2(4, 1)),
-                3 * Time.deltaTime);
-            Vector3 playerPivot = (Vector2)Target.transform.position + rbVelocityTarget * (3 * Time.fixedDeltaTime);
-            
-            swingSwitchTarget = Mathf.Lerp(swingSwitchTarget, Target.Machine.CurrentState is RB_PS_Swing ? .9f : Mathf.Lerp(swingSwitchTarget, 0, 204 * Time.deltaTime),
-                7 * Time.deltaTime);
+            if (!Intro)
+            {
 
-            var finalPoint = Vector3.Lerp(playerPivot, swingPoint, swingSwitchTarget);
-            
-            transform.position = Vector3.Lerp(transform.position, new Vector3(finalPoint.x, Mathf.Max(finalPoint.y, MinimumYPoint), -ZDepth),
-                10 * Time.deltaTime);
+                rbVelocityTarget = Vector2.Lerp(rbVelocityTarget, Vector2.Scale(Target.Rb.velocity, new Vector2(4, 1)),
+                    3 * Time.deltaTime);
+                Vector3 playerPivot = (Vector2)Target.transform.position + rbVelocityTarget * (3 * Time.fixedDeltaTime);
+
+                swingSwitchTarget = Mathf.Lerp(swingSwitchTarget, Target.Machine.CurrentState is RB_PS_Swing ? .9f : Mathf.Lerp(swingSwitchTarget, 0, 204 * Time.deltaTime),
+                    7 * Time.deltaTime);
+
+                var finalPoint = Vector3.Lerp(playerPivot, swingPoint, swingSwitchTarget);
+
+                transform.position = Vector3.Lerp(transform.position, new Vector3(finalPoint.x, Mathf.Max(finalPoint.y, MinimumYPoint), -ZDepth),
+                    10 * Time.deltaTime);
+            }
+            else
+            {
+                if (discreteTarget != Vector3.zero)
+                {
+                    rbVelocityTarget = Vector2.zero;
+                    swingPoint = Target.transform.position;
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(discreteTarget.x, Mathf.Max(discreteTarget.y, MinimumYPoint), -ZDepth), IntroLerpSpeed * Time.deltaTime);
+                    swingSwitchTarget = 0;
+                }
+            }
         }
-        
+
+        public void ForcePosition(Vector3 discreteTarget)
+        {
+            transform.position = new(discreteTarget.x, discreteTarget.y -ZDepth);
+        }
     }
 }

@@ -7,6 +7,8 @@ namespace Ribbon
 {
     public class Player : MonoBehaviour
     {
+
+        public static Player Instance { get; private set; }
         public float XSpeed
         {
             get => Rb.velocity.x;
@@ -41,21 +43,27 @@ namespace Ribbon
         public PlayerVisual Visual;
         public PlayerCollision Collision;
         public InputManager Input;
+        public AudioBankHolder AudioBankHolder;
 
         public SpringJoint2D SwingJoint;
 
+        public int Direction = 1;
         private void Awake()
         {
-            Init();
-            Machine.Init();
-            Controllers.Init(this);
+            Instance = this;
         }
 
-        private void Init()
+
+
+        public void Init()
         {
+            Direction = 1;
             Rb = GetComponent<Rigidbody2D>();
             Machine = GetComponent<PlayerStateMachine>();
-            Visual= GetComponent<PlayerVisual>();
+            Visual = GetComponent<PlayerVisual>();
+            Machine.Init();
+            Controllers.Init(this);
+            transform.position = GameObject.Find("SpawnPoint")?.transform.position ?? Vector3.zero;
         }
 
         // Start is called before the first frame update
@@ -68,8 +76,8 @@ namespace Ribbon
         void Update()
         {
             Controllers.Update();
-
-            Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
+            
+            //Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
         }
 
 

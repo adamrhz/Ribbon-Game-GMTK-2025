@@ -19,13 +19,13 @@ namespace Ribbon
         }
         public override void OnEnter()
         {
-            if (IsJump)
+            if (IsJump || IsJumpDouble)
             {
                 if (IsJumpDouble == false)
                 {
-                    Visual.SetTrigger("Jump");
+                    Visual.Play("Jump");
                 }
-                
+                Player.AudioBankHolder.Play("Jump");
                 JumpRequested = false;
                 CanAscend = true;
             }
@@ -51,6 +51,7 @@ namespace Ribbon
 
         public override void OnExit()
         {
+            JumpRequested = false;
             IsJump = false;
         }
 
@@ -58,6 +59,7 @@ namespace Ribbon
         {
             base.OnUpdate();
             CheckInput();
+            SetDirection(Player.XSpeed);
         }
 
         public void CheckInput()
@@ -75,7 +77,6 @@ namespace Ribbon
             
             if(JumpRequested && CanDoubleJump)
             {
-                Debug.Log("Double Jump requested");
                 Player.YSpeed = PhysicsInfo.JumpStrength * PhysicsInfo.DoubleJumpMultiplier;
                 IsJump = true;
                 IsJumpDouble = true;
@@ -85,21 +86,16 @@ namespace Ribbon
                 Machine.Set<RB_PS_Air>();
                 return;
             }
-
             AirMovement();
             GroundCheck();
-                      
-
             Transform.localScale = Vector3.Lerp(Transform.localScale,
                 Vector3.one, 10 * Time.deltaTime);
         }
         private void GroundCheck()
         {
-            Debug.Log("Checking if grounded in air state");
             if (Collision.DoAirCollision() && Player.YSpeed <= 0)
             {
                 Player.YSpeed = 0;
-                Debug.Log("Grounded in air state, switching to ground state");
                 Machine.Set<RB_PS_Ground>();
                 Player.GroundSpeed = Player.XSpeed;
             }
@@ -110,7 +106,6 @@ namespace Ribbon
         {
             if(IsJump && !CanAscend && Player.YSpeed > PhysicsInfo.JumpCutoff && Machine.PreviousState is not RB_PS_Swing)
             {
-                Debug.Log("CutOff");
                 Player.YSpeed = PhysicsInfo.JumpCutoff;
             }
             Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity);

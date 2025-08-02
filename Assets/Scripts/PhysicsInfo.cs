@@ -24,6 +24,8 @@ namespace Ribbon
         public float MaxFallSpeed = 30f;  
         public float CoyoteTime = 0.15f;
 
+
+        public float MaxSwingSpeed = 20f;
         public float SwingAccelerationDown, SwingDecelerationUp;
     }
 }

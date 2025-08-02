@@ -63,7 +63,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -106,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1186456558488778710}
   - component: {fileID: 4044022333508940732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6012561686310557844}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SwingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

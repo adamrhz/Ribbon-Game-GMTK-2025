@@ -9,11 +9,16 @@ namespace Ribbon
     {
         public float CoyoteTime;
 
+        private bool _isIdle;
+        private string _idleAnim = "IdleMad";
+        private float _idleTimer;
         public RB_PS_Ground() : base(0)
         {
         }
         public override void OnEnter()
         {
+            ZAngle = 0;
+            Transform.localScale = Vector3.one;
             CoyoteTime = PhysicsInfo.CoyoteTime;
             JumpRequested = false;
             
@@ -25,6 +30,33 @@ namespace Ribbon
             CoyoteTime = PhysicsInfo.CoyoteTime;
             JumpRequested = false;
         }
+
+        public override void OnUpdate()
+        {
+            base.OnUpdate();
+            if(Player.GroundSpeed == 0 && !_isIdle)
+            {
+                _isIdle = true;
+            }
+            else if(Player.GroundSpeed != 0 && _isIdle)
+            {
+                _isIdle = false;
+                _idleTimer = 0;
+            }
+
+            if (_isIdle && !Visual.IsPlaying(_idleAnim))
+            {
+
+                _idleTimer += Time.deltaTime;
+                if(_idleTimer >= 6f)
+                {
+                    Visual.Play(_idleAnim);
+                    _idleTimer = 0;
+                }
+            }
+                SetDirection(Player.GroundSpeed);
+        }
+
 
 
         public override void OnFixedUpdate()
@@ -66,11 +98,12 @@ namespace Ribbon
         {
             Vector2 MoveInput = Input.GetAxis2D("Move");
             
-            Debug.LogFormat("speed dir: {0}, input dir: {1}", Math.Sign(Player.GroundSpeed), Math.Sign(MoveInput.x));
             
             if (MoveInput.x == 0)
             {
                 Player.GroundSpeed -= Mathf.Sign(Player.GroundSpeed) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.GroundSpeed));
+
+
             }
             else if (SameDirection(MoveInput.x, Player.GroundSpeed))
             {

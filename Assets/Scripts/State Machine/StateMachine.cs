@@ -14,11 +14,8 @@ namespace Ribbon
         public T PreviousState;
         public T NextState;
 
-        public List<T> AvailableStates
-        {
-            get;
-            set;
-        } = new();
+        [SerializeReference]
+        public List<T> AvailableStates= new List<T>();
 
         public virtual void Add(T state)
         {

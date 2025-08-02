@@ -19,6 +19,7 @@ namespace Ribbon
         [ShowIf("ExposeEvents")][Tooltip("Event that triggers when a player stands on the object")] public UnityEvent<Player> OnPlayerStand = new UnityEvent<Player>();
         [ShowIf("ExposeEvents")][Tooltip("Event that triggers when a player leaves the ground he is standing on")] public UnityEvent<Player> OnPlayerLeaveGround = new UnityEvent<Player>();
 
+        public Collider2D Collider2D;
         public virtual void Awake()
         {
             TOnEnter += (Col) =>
@@ -49,6 +50,8 @@ namespace Ribbon
             {
                 if (Col.gameObject.GetComponentInParent<Player>()) EOnCExit(Col.gameObject.GetComponentInParent<Player>());
             };
+
+            Collider2D = GetComponent<Collider2D>();
         }
 
         public virtual void EOnEnter(Player player)
