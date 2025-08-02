@@ -7,13 +7,13 @@
     <list default="true" id="87e467f5-7241-4f64-8e3d-938821fbefc6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Anim_MenuUI_FadeOut.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Anim_MenuUI_FadeOut.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Fade.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Fade.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Fonts/CutePixel Bitmap.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Fonts/CutePixel Bitmap.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StageButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StageButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StageButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Rope.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Rope.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerCamera.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHUD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHUD.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +125,7 @@
       <workItem from="1754060182018" duration="11216000" />
       <workItem from="1754117517240" duration="7090000" />
       <workItem from="1754127372510" duration="3800000" />
+      <workItem from="1754145401697" duration="4919000" />
     </task>
     <servers />
   </component>

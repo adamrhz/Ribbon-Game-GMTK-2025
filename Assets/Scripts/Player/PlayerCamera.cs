@@ -36,6 +36,9 @@ namespace Ribbon
 
         public void Update()
         {
+            float aspectRatio = Screen.width * 1.0f / Screen.height;
+            Vector2 levelBorders = new Vector2(XYLimits.x + (aspectRatio - 1.78f) * 5.6f, XYLimits.y);
+            
             if (!Intro)
             {
                 rbVelocityTarget = Vector2.Lerp(rbVelocityTarget, Vector2.Scale(Target.Rb.velocity, new Vector2(4, 1)),
@@ -47,7 +50,7 @@ namespace Ribbon
 
                 var finalPoint = Vector3.Lerp(playerPivot, swingPoint, swingSwitchTarget);
 
-                transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Max(finalPoint.x, XYLimits.x), Mathf.Max(finalPoint.y, XYLimits.y), -ZDepth),
+                transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Max(finalPoint.x, levelBorders.x), Mathf.Max(finalPoint.y, levelBorders.y), -ZDepth),
                     10 * Time.deltaTime);
             }
             else
@@ -56,7 +59,7 @@ namespace Ribbon
                 {
                     rbVelocityTarget = Vector2.zero;
                     swingPoint = Target.transform.position;
-                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(discreteTarget.x, Mathf.Max(discreteTarget.y, XYLimits.y), -ZDepth), IntroLerpSpeed * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, new Vector3(discreteTarget.x, Mathf.Max(discreteTarget.y, levelBorders.y), -ZDepth), IntroLerpSpeed * Time.deltaTime);
                     swingSwitchTarget = 0;
                 }
             }
