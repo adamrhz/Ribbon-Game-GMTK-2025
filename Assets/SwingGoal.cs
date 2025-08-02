@@ -9,13 +9,23 @@ namespace Ribbon
         public int Direction = 1;
         public float AngleTotal = 0;
         public int LoopsToComplete = 5;
+        private bool InCompleteState = false;
+        public GameObject SpriteObject;
+        private Animator SprAnim;
+
+        public void Start()
+        {
+            SprAnim = SpriteObject.GetComponent<Animator>();
+        }
 
         public void OnStartSwinging(Player player)
         {
             RB_PS_Swing swing = player.Machine.Get<RB_PS_Swing>();
+            InCompleteState = false;
             LoopsAround = 0;
             AngleTotal = 0;
             Direction = (int)Mathf.Sign(swing.RelativeSpeed);
+            AnimationChecks();
         }
         public void WhileSwinging(Player player)
         {
@@ -43,8 +53,11 @@ namespace Ribbon
                     LevelManager.LoopEnd();
                     LoopsAround = 0;
                     AngleTotal = 0;
+                    InCompleteState = true;
                 }
             }
+
+            AnimationChecks();
         }
 
         public void OnStopSwinging(Player player)
@@ -57,6 +70,23 @@ namespace Ribbon
             }
             LoopsAround = 0;
             AngleTotal = 0;
+            AnimationChecks();
+        }
+
+        public void AnimationChecks()
+        {
+            if(LoopsAround > 0)
+            {
+                //Update animator with the corresponding value
+                string AnimationName = LoopsAround.ToString();
+                SprAnim?.Play(AnimationName);
+            }
+            else
+            {
+                //Update animator to empty frame
+                if (InCompleteState){SprAnim?.Play("5");}
+                else{SprAnim?.Play("Empty");}
+            }
         }
 
     }
