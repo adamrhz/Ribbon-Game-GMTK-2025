@@ -15,16 +15,37 @@ namespace Ribbon
         public CanvasGroup BestTimeCanvas;
 
         public bool isBestTimeVisible;
+
+        public Animator MenuAnimator;
+
+        private bool isPlaying;
         // Start is called before the first frame update
         void Start()
         {
             Instance = this;
         }
 
+        public void CloseGame() => Application.Quit();
+
         // Update is called once per frame
         void Update()
         {
             BestTimeCanvas.alpha = Mathf.Lerp(BestTimeCanvas.alpha, isBestTimeVisible ? 1 : 0, 20 * Time.deltaTime);
+        }
+
+        public void PrepareLoadLevel(LevelObject Target)
+        {
+            if (isPlaying) return;
+            MenuAnimator.Play("BeginPlay", 0, 0);
+            isPlaying = true;
+            StartCoroutine(LevelLoadSequence(Target));
+        }
+
+        private IEnumerator LevelLoadSequence(LevelObject Target)
+        {
+            yield return new WaitForSecondsRealtime(0.5f);
+            LevelManager.Instance.CurrentLevel = Target;
+            LevelManager.Instance.BeginLevel();
         }
     }
 

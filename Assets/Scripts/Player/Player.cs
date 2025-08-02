@@ -51,7 +51,7 @@ namespace Ribbon
         private void Awake()
         {
             Instance = this;
-            //Application.targetFrameRate = 30;
+            Application.targetFrameRate = 0;
         }
         
         public void Init()
@@ -68,9 +68,11 @@ namespace Ribbon
         // Start is called before the first frame update
         void Start()
         {
-            if(LevelManager.Instance == null)
+            Init();
+            Input.BlockInput = true;
+
+            if(!LevelManager.Instance)
             {
-                Init();
                 Debug.LogError("LevelManager instance is null. Please ensure it is initialized before Player starts.");
                 return;
             }

@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87e467f5-7241-4f64-8e3d-938821fbefc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/IO.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Materials/Ribbon 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Materials/Ribbon 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Materials/Ribbon.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Materials/Ribbon.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Materials/SmokeMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Materials/SmokeMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Scenes/CharacterControllerScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Scenes/CharacterControllerScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Anim_MenuUI_FadeOut.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Anim_MenuUI_FadeOut.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Fade.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Animations/MenuUI/Fade.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Fonts/CutePixel Bitmap.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Fonts/CutePixel Bitmap.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/1-2/1-2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/1-2/1-2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/2/BBB2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/2/BBB2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/2/New Palette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/2/New Palette.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/BonBowBon.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Sprites/Tileset/BonBowBon.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BouncyShroom.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BouncyShroom.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StageButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StageButton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/StageButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/StageButton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +124,7 @@
       <workItem from="1753977708647" duration="4116000" />
       <workItem from="1754060182018" duration="11216000" />
       <workItem from="1754117517240" duration="7090000" />
-      <workItem from="1754127372510" duration="2203000" />
+      <workItem from="1754127372510" duration="3800000" />
     </task>
     <servers />
   </component>

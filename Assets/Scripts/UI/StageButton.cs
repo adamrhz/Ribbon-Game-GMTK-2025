@@ -39,8 +39,7 @@ namespace Ribbon
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            LevelManager.Instance.CurrentLevel = AttachedLevel;
-            LevelManager.Instance.BeginLevel();
+            MenuManager.Instance.PrepareLoadLevel(AttachedLevel);
         }
     }
 }
