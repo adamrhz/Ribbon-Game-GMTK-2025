@@ -624,7 +624,7 @@ MonoBehaviour:
   Rb: {fileID: 1011216976}
   Machine: {fileID: 1011216973}
   PhysicsInfo: {fileID: 11400000, guid: 647deb927355c5745883125a58d4d6ca, type: 2}
-  Visual: {fileID: 0}
+  Visual: {fileID: 1011216977}
   Collision:
     Player: {fileID: 1011216974}
     CollisionMask:

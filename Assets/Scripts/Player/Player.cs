@@ -69,7 +69,12 @@ namespace Ribbon
         // Start is called before the first frame update
         void Start()
         {
-
+            if(LevelManager.Instance == null)
+            {
+                Init();
+                Debug.LogError("LevelManager instance is null. Please ensure it is initialized before Player starts.");
+                return;
+            }
         }
 
         // Update is called once per frame
