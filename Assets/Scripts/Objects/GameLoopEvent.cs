@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 
@@ -22,6 +23,12 @@ namespace Ribbon
         {
             LevelManager.UnregisterLoopObject(this);
         }
+
+        public bool WillChangeNextLoop(int Loop)
+        {
+            return LoopsIn.Contains(Loop) != gameObject.activeSelf;
+        }
+
         public bool OnGameStart(int Loop)
         {
             this.Loop = Loop;

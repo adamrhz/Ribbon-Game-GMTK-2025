@@ -35,6 +35,7 @@ namespace Ribbon
 
             ClearSave();
             InitializeDictionary(ref Saves);
+            InitializeStaticDictionnary();
         }
 
         public static void SetSaveFilePath(string newpath)

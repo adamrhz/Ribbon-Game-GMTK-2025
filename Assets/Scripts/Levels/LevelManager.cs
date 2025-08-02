@@ -120,12 +120,7 @@ namespace Ribbon
                 if(CurrentLevel.BestTime < 0 || LevelTimer < CurrentLevel.BestTime)
                 {
                     CurrentLevel.BestTime = LevelTimer;
-                    MenuManager.Instance.BestTime.text = "Best Time: " + LevelTimer.ToString("F2") + "s";
-                    MenuManager.Instance.isBestTimeVisible = true;
-                }
-                else
-                {
-                    MenuManager.Instance.isBestTimeVisible = false;
+                    SaveFileManager.SaveCompleteFile();
                 }
             }
 
@@ -160,6 +155,17 @@ namespace Ribbon
             playerCamera.discreteTarget = Vector3.Lerp(playerCamera.transform.position, SpawnPoint, 10 * Time.deltaTime);
             foreach (GameLoopEvent loopObject in LoopObjects)
             {
+                if (Player.Instance.Input.GetAnyButton(true))
+                {
+                    Skip = true;
+                }
+
+                if (!loopObject.WillChangeNextLoop(loop))
+                {
+                    yield return null;
+                    continue;
+                }
+
                 playerCamera.discreteTarget = loopObject.transform.position;
                 while (Mathf.Abs(playerCamera.transform.position.x - loopObject.transform.position.x) > 5f && !Skip)
                 {
@@ -168,10 +174,6 @@ namespace Ribbon
                         Skip = true;
                     }
                     yield return null;
-                }
-                if (Player.Instance.Input.GetAnyButton(true))
-                {
-                    Skip = true;
                 }
 
                 if (!Player.Instance.Visual.Sprite.isVisible && !resetPlayerPosition)
