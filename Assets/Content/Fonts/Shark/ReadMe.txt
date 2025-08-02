@@ -1,0 +1,1 @@
+After creating the Text gameobject, make sure to set Character spacing to -96
