@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
         GameObject gm = Instantiate(GameManagerObject);
         Instance = gm.GetComponent<GameManager>();
         DontDestroyOnLoad(Instance.gameObject);
+        GamePreference.SetPath(Application.persistentDataPath + "/RibbonData/game_preferences.json");
+        GamePreference.LoadFromFile();
+        SaveFileManager SFM = Instance.GetComponent<SaveFileManager>();
+        SFM?.LoadSave();
 
     }
 

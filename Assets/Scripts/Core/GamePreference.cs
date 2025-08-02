@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
+using Newtonsoft.Json;
 
 
 public enum Language
@@ -56,7 +58,7 @@ public static class GamePreference
         if (!string.IsNullOrEmpty(filePath))
         {
             Dictionary<string, object> sanitizedData = new Dictionary<string, object>(data);
-            //Save at path
+            RibbonFileWriter.WriteFile(filePath, JsonConvert.SerializeObject(sanitizedData, Formatting.Indented));
         }
     }
 
@@ -64,7 +66,12 @@ public static class GamePreference
     {
         if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath))
         {
-            //Load at path
+            string json = RibbonFileWriter.ReadFile(filePath);
+            {
+                Dictionary<string, object> sanitizedData = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
+                data = sanitizedData
+                ?? data;
+            }
         }
     }
     private static void Set<T>(string key, T value)
@@ -88,7 +95,38 @@ public static class GamePreference
 
 
 
+    public static void SetFieldByName(string nameOfField, object val)
+    {
+        if (data.TryGetValue(nameOfField, out object existing))
+        {
+            var existingType = existing?.GetType();
+            var newType = val?.GetType();
 
+            if (existingType == newType || (val != null && existingType?.IsAssignableFrom(newType) == true))
+            {
+                data[nameOfField] = val;
+                SaveToFile();
+            }
+            else
+            {
+                try
+                {
+                    object converted = System.Convert.ChangeType(val, existingType);
+                    data[nameOfField] = converted;
+                    SaveToFile();
+                }
+                catch
+                {
+                    Debug.LogWarning($"[GamePreference] <color=yellow>Failed to assign value to '{nameOfField}'</color> : type mismatch ({newType} to {existingType})");
+                }
+            }
+        }
+        else
+        {
+            data[nameOfField] = val;
+            SaveToFile();
+        }
+    }
 
 
 

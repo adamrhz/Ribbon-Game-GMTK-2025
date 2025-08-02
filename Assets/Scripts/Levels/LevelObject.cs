@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "New Level Object", menuName = "Ribbon/ScriptableObjects/Level Object", order = 51)]
-public class LevelObject : ScriptableObject
+public class LevelObject : SavableObject
 {
     public string LevelName = "New Level";
     public int LoopCounts = 3;
@@ -14,6 +14,7 @@ public class LevelObject : ScriptableObject
     public int ID; // used for saving since ints are easier to keep track of
 
 
+    [Savable(-1)]public float BestTime = -1;
     public bool SecretStartPicked = false;
 
 }

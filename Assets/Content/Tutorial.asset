@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559d3f89254892d4690947a13dac1cc8, type: 3}
   m_Name: Tutorial
   m_EditorClassIdentifier: 
+  UID: 2e4b9f782eafbc547919f70044e870b4
   LevelName: New Level
   LoopCounts: 3
   SceneName: 1-2
   MusicTrack: {fileID: 8300000, guid: a151509b26069aa43b0dfe17dc60ca0c, type: 3}
   FinalLapMusicTrack: {fileID: 8300000, guid: 1f0449fb070b0cb448c46c1b37db51c0, type: 3}
+  ID: 0
+  BestTime: -1
   SecretStartPicked: 0

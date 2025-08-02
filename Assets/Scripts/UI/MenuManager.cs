@@ -9,7 +9,7 @@ namespace Ribbon
     {
         public static MenuManager Instance;
 
-        [Header("UI")] 
+        [Header("UI")]
         public TMP_Text BestTime;
 
         public CanvasGroup BestTimeCanvas;
@@ -19,10 +19,15 @@ namespace Ribbon
         public Animator MenuAnimator;
 
         private bool isPlaying;
+
+
+        public GameObject[] Menus;
+
         // Start is called before the first frame update
         void Start()
         {
             Instance = this;
+            MusicPlayer.Stop();
         }
 
         public void CloseGame() => Application.Quit();
@@ -39,6 +44,15 @@ namespace Ribbon
             MenuAnimator.Play("BeginPlay", 0, 0);
             isPlaying = true;
             StartCoroutine(LevelLoadSequence(Target));
+        }
+
+        public void SetMenu(int index)
+        {
+            if (index < 0 || index >= Menus.Length) return;
+            for (int i = 0; i < Menus.Length; i++)
+            {
+                Menus[i].SetActive(i == index);
+            }
         }
 
         private IEnumerator LevelLoadSequence(LevelObject Target)

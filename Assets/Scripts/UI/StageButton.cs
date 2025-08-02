@@ -27,7 +27,15 @@ namespace Ribbon
         public void OnPointerEnter(PointerEventData eventData)
         {
             IsHovered = true;
+            float time = 0;
+            if (AttachedLevel)
+            {
+                time = AttachedLevel.BestTime > 0 ? AttachedLevel.BestTime : 0;
+            }
+            string bestTimeText = System.TimeSpan.FromSeconds(time)
+            .ToString(@"mm\:ss\:fff");
             MenuManager.Instance.isBestTimeVisible = true;
+            MenuManager.Instance.BestTime.SetText(bestTimeText);
             MenuManager.Instance.BestTime.rectTransform.position = startPoint + Vector2.down * 70;
         }
 

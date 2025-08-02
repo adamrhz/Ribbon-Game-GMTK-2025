@@ -42,6 +42,8 @@ namespace Ribbon
         public int CurrentLoop = 0;
 
         public AssetReferenceGameObject ParticleEffectPrefab;
+        public float LevelTimer = 0;
+        public bool TimerActive = false;
 
         private void Awake()
         {
@@ -59,11 +61,13 @@ namespace Ribbon
 
         private void Start()
         {
-            
+            LevelTimer = 0;   
         }
 
         public IEnumerator LevelStart()
         {
+            LevelTimer = 0;
+            TimerActive = false;
             Player.Instance.Input.BlockInput = true;
             Player.Instance.Init();
             PlayerCamera playerCamera = Camera.main?.GetComponent<PlayerCamera>();
@@ -73,12 +77,14 @@ namespace Ribbon
             playerCamera.ForcePosition(playerCamera.discreteTarget);
             yield return new WaitForEndOfFrame();
             yield return NotifyLoopChange(CurrentLoop);
+            TimerActive = false;
             Player.Instance.Input.BlockInput = true;
             Player.Instance.Visual.Play("IdleMad");
             yield return new WaitForSecondsRealtime(.5f); // Simulating whatever cool wait ending sequence you want here
             Player.Instance.AudioBankHolder.Play("ReadySetGo");
             yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
             Player.Instance.Input.BlockInput = false;
+            TimerActive = true;
 
         }
         public static void RegisterLoopObject(GameLoopEvent loopObject)
@@ -108,7 +114,22 @@ namespace Ribbon
 
         public IEnumerator LevelFinished()
         {
+            TimerActive = false;
             Player.Instance.Input.BlockInput = true;
+
+            if (CurrentLevel)
+            {
+                if(CurrentLevel.BestTime < 0 || LevelTimer < CurrentLevel.BestTime)
+                {
+                    CurrentLevel.BestTime = LevelTimer;
+                    MenuManager.Instance.BestTime.text = "Best Time: " + LevelTimer.ToString("F2") + "s";
+                    MenuManager.Instance.isBestTimeVisible = true;
+                }
+                else
+                {
+                    MenuManager.Instance.isBestTimeVisible = false;
+                }
+            }
 
 
             yield return new WaitForSecondsRealtime(3f); // Simulating whatever cool wait ending sequence you want here
@@ -122,6 +143,7 @@ namespace Ribbon
         }
         public IEnumerator NotifyLoopChange(int loop)
         {
+            TimerActive = false;
             List<GameLoopEvent> LoopObjects = new List<GameLoopEvent>(LevelManager.LoopObjects);
             Player.Instance.Input.BlockInput = true;
             yield return new WaitForSecondsRealtime(1f); // Simulating whatever cool wait ending sequence you want here
@@ -181,6 +203,7 @@ namespace Ribbon
                     MusicPlayer.MPlayer.PlaySong(CurrentLevel.FinalLapMusicTrack, true);
                 }
             }
+            TimerActive = true;
 
         }
 
@@ -189,9 +212,9 @@ namespace Ribbon
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.L))
+            if (TimerActive)
             {
-                IncrementLoop();
+                LevelTimer += Time.deltaTime;
             }
         }
 
