@@ -174,7 +174,7 @@ namespace Ribbon
                 yield return null;
             }
 
-            if (!Player.Instance.Visual.Sprite.isVisible && !resetPlayerPosition)
+            if (!resetPlayerPosition)
             {
                 resetPlayerPosition = true;
                 Player.Instance.Direction = 1;
