@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7836407696776838894}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SpriteCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 8914982558245578413}
   - component: {fileID: 443022047990491597}
   - component: {fileID: 3362026421224929473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}

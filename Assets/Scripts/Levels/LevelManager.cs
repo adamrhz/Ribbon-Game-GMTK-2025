@@ -135,7 +135,7 @@ namespace Ribbon
                 Player.Instance.Visual.Play("Ness");
             }
             yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
-            GameManager.LevelFinished();
+            StartCoroutine(RestartSequence());
 
         }
         public IEnumerator NotifyLoopChange(int loop)

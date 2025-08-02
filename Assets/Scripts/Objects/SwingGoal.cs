@@ -29,25 +29,22 @@ namespace Ribbon
         }
         public void WhileSwinging(Player player)
         {
-            if(player.Input.BlockInput) return;
+            if (player.Input.BlockInput) return;
             RB_PS_Swing swing = player.Machine.Get<RB_PS_Swing>();
-            if(swing.RelativeSpeed != 0)
+            Debug.Log(swing.Direction + " " + Direction + " ");
+            if ((int)Mathf.Sign(swing.Direction) != (int)Mathf.Sign(Direction))
             {
-                if((int)Mathf.Sign(player.Direction) != (int)Mathf.Sign(Direction))
-                {
-                    LoopsAround = 0;
-                    AngleTotal = 0;
-                    Direction = (int)Mathf.Sign(player.Direction);
-                }
+                LoopsAround = 0;
+                AngleTotal = 0;
+                Direction = (int)Mathf.Sign(player.Direction);
             }
-
             AngleTotal += Mathf.Abs(swing.deltaAngle) * Mathf.Rad2Deg;
-            if(AngleTotal > 360)
+            if (AngleTotal > 360)
             {
                 AngleTotal -= 360;
                 LoopsAround++;
 
-                if(LoopsAround >= LoopsToComplete)
+                if (LoopsAround >= LoopsToComplete)
                 {
                     Debug.Log("Swing Goal Completed!");
                     LevelManager.LoopEnd();
@@ -78,7 +75,7 @@ namespace Ribbon
 
         public void AnimationChecks()
         {
-            if(LoopsAround > 0)
+            if (LoopsAround > 0)
             {
                 //Update animator with the corresponding value
                 string AnimationName = LoopsAround.ToString();
@@ -87,8 +84,8 @@ namespace Ribbon
             else
             {
                 //Update animator to empty frame
-                if (InCompleteState){SprAnim?.Play("5");}
-                else{SprAnim?.Play("Empty");}
+                if (InCompleteState) { SprAnim?.Play("5"); }
+                else { SprAnim?.Play("Empty"); }
             }
         }
 
