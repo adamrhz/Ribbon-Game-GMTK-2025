@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 namespace Ribbon
@@ -12,6 +13,8 @@ namespace Ribbon
 
         private float calculatedDistance;
 
+
+        public int Direction;
         public RB_PS_Swing() : base(2)
         {
         }
@@ -88,7 +91,7 @@ namespace Ribbon
             swingLerpIntensity = Mathf.Lerp(swingLerpIntensity, 14, 4 * Time.deltaTime);
 
 
-            SetDirection(RelativeSpeed);
+            SetDirection(Direction);
 
         }
 
@@ -173,7 +176,7 @@ namespace Ribbon
             Rb.velocity = Vector2.ClampMagnitude(Rb.velocity, PhysicsInfo.MaxSwingSpeed);
             Debug.DrawLine(Transform.position, (Vector2)Transform.position + SwingTangent.normalized);
 
-
+            Direction = (int)Mathf.Sign(Vector2.Dot(Rb.velocity, SwingTangent));
             if(SwingingTarget.TryGetComponent(out SwingGoal SwingGoal))
             {
                 SwingGoal.WhileSwinging(Player);
