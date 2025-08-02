@@ -25730,7 +25730,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.5
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -25743,7 +25743,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &1477171408
@@ -25773,7 +25773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AssetsPPU: 100
+  m_AssetsPPU: 128
   m_RefResolutionX: 1920
   m_RefResolutionY: 1080
   m_UpscaleRT: 0
@@ -25795,7 +25795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Target: {fileID: 1011216974}
   ZDepth: 10
-  MinimumYPoint: 3.3
+  MinimumYPoint: 1.3
 --- !u!1 &1735858698
 GameObject:
   m_ObjectHideFlags: 0
