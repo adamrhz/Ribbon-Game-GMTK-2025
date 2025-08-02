@@ -22,7 +22,7 @@ MonoBehaviour:
   JumpAmount: 2
   Gravity: 20
   JumpStrength: 12.5
-  DoubleJumpMultiplier: 0.75
+  DoubleJumpMultiplier: 0.6
   JumpCutoff: 4
   MaxFallSpeed: 20
   CoyoteTime: 0.15
