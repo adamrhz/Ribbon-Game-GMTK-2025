@@ -45,6 +45,10 @@ namespace Ribbon
         public float LevelTimer = 0;
         public bool TimerActive = false;
 
+        public bool GamePaused = false;
+
+        private float holdMenuTimer;
+
         private void Awake()
         {
             Instance = this;
@@ -213,12 +217,48 @@ namespace Ribbon
             TimerActive = true;
 
         }
-
-
-
+        
+        private bool isRestarting;
+        public RectTransform RestartTransition;
+        
+        private IEnumerator RestartSequence()
+        {
+            while (RestartTransition.localScale.x < .94f)
+            {
+                RestartTransition.localScale =
+                    Vector3.Lerp(RestartTransition.localScale, Vector3.one, 8 * Time.unscaledDeltaTime);
+                yield return null;
+            }
+            SceneManager.LoadScene("GameScene"); // gonna replace this with an IEnumerator for the transition soonish
+            Time.timeScale = 1;
+        }
+        
         // Update is called once per frame
         void Update()
         {
+            if (Player.Instance.Input.GetButtonDown("Pause"))
+            {
+                GamePaused = !GamePaused;
+                Time.timeScale = GamePaused ? Mathf.Epsilon : 1;
+            }
+
+            if (GamePaused)
+            {
+                if (Input.anyKey && !Player.Instance.Input.GetButton("Pause"))
+                {
+                    holdMenuTimer += Time.unscaledDeltaTime;
+                    if (holdMenuTimer >= 0.5f)
+                    {
+                        if (!isRestarting)
+                        {
+                            isRestarting = true;
+                            StartCoroutine(RestartSequence());
+                        }
+                    }
+                }
+                else holdMenuTimer = 0;
+            }
+
             if (TimerActive)
             {
                 LevelTimer += Time.deltaTime;
