@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,17 +32,13 @@ public class GameManager : MonoBehaviour
     }
     private static GameManager _instance;
 
-
-    public static UnityEvent<int> OnLoopChange = new UnityEvent<int>();
-
-    public int CurrentLoop = 0;
-
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Init()
     {
         GameObject GameManagerObject = Resources.Load<GameObject>(GameManagerPrefabPath);
-        Instantiate(GameManagerObject);
-        Instance = GameManagerObject.GetComponent<GameManager>();
+        GameObject gm = Instantiate(GameManagerObject);
+        Instance = gm.GetComponent<GameManager>();
+        DontDestroyOnLoad(Instance.gameObject);
 
     }
 
@@ -56,16 +54,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-            IncrementLoop();
-        }
     }
 
-    private void IncrementLoop()
+    public static void LevelFinished()
     {
-        CurrentLoop++;
-        OnLoopChange.Invoke(CurrentLoop);
-        Debug.Log("Current Loop: " + CurrentLoop);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

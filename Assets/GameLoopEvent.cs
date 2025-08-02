@@ -1,34 +1,51 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameLoopEvent : MonoBehaviour
+
+namespace Ribbon
 {
-    public int[] LoopsIn = new int[0];
-
-    private void Start()
+    public class GameLoopEvent : MonoBehaviour, IComparable<GameLoopEvent>
     {
-        if(GameManager.Instance != null)
+        public int[] LoopsIn = new int[0];
+        public int Loop = 0;
+        private void Start()
         {
-            GameManager.OnLoopChange.AddListener(OnGameStart);
+            LevelManager.RegisterLoopObject(this);
         }
-    }
 
-    public void OnGameStart(int Loop)
-    {
 
-        gameObject.SetActive(false);
-
-        Debug.Log("GameLoopEvent OnGameStart called for " + gameObject.name);
-
-        foreach (int inLoop in LoopsIn)
+        public void OnDestroy()
         {
-            if(Loop == inLoop)
+            LevelManager.UnregisterLoopObject(this);
+        }
+        public bool OnGameStart(int Loop)
+        {
+            this.Loop = Loop;
+
+
+
+            foreach (int inLoop in LoopsIn)
             {
-                Debug.Log("GameLoopEvent OnGameStart: Loop " + inLoop + " matched for " + gameObject.name);
-                gameObject.SetActive(true);
-                return;
+                if (Loop == inLoop)
+                {
+                    gameObject.SetActive(true);
+                    return true;
+                }
             }
+
+            if (gameObject.activeSelf)
+            {
+                gameObject.SetActive(false);
+                return true;
+            }
+            return false;
+        }
+
+        public int CompareTo(GameLoopEvent other)
+        {
+            return (int)Mathf.Sign(other.transform.position.x - transform.position.x);
         }
     }
 }

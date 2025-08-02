@@ -19,13 +19,13 @@ namespace Ribbon
         }
         public override void OnEnter()
         {
-            if (IsJump)
+            if (IsJump || IsJumpDouble)
             {
                 if (IsJumpDouble == false)
                 {
-                    Visual.SetTrigger("Jump");
+                    Visual.Play("Jump");
                 }
-                
+                Player.AudioBankHolder.Play("Jump");
                 JumpRequested = false;
                 CanAscend = true;
             }
@@ -77,7 +77,6 @@ namespace Ribbon
             
             if(JumpRequested && CanDoubleJump)
             {
-                Debug.Log("Double Jump requested");
                 Player.YSpeed = PhysicsInfo.JumpStrength * PhysicsInfo.DoubleJumpMultiplier;
                 IsJump = true;
                 IsJumpDouble = true;
@@ -107,7 +106,6 @@ namespace Ribbon
         {
             if(IsJump && !CanAscend && Player.YSpeed > PhysicsInfo.JumpCutoff && Machine.PreviousState is not RB_PS_Swing)
             {
-                Debug.Log("CutOff");
                 Player.YSpeed = PhysicsInfo.JumpCutoff;
             }
             Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity);

@@ -41,24 +41,43 @@ namespace Ribbon
 
             Visual.ToggleIndicatorLine(null);
             Player.SwingJoint.frequency = 0.01f;
+
+
+
+            if (SwingingTarget.TryGetComponent(out SwingGoal SwingGoal))
+            {
+                SwingGoal.OnStartSwinging(Player);
+            }
         }
 
         public override void OnExit()
         {
+
+
             Visual.ToggleRibbonAttachLine(null);
             Player.SwingJoint.enabled = false;
             Player.SwingJoint.connectedBody = null;
+
+
+            if (SwingingTarget.TryGetComponent(out SwingGoal SwingGoal))
+            {
+                SwingGoal.OnStopSwinging(Player);
+            }
+
             SwingingTarget = null;
             
             Rb.gravityScale = 1;
+            Machine.Get<RB_PS_Air>().CanDoubleJump = true;
         }
 
         public override void OnUpdate()
         {
             base.OnUpdate();
             CheckInput();
-
-            Visual.ToggleRibbonAttachLine(SwingingTarget.transform.position);
+            if(SwingingTarget != null)
+            {
+                Visual.ToggleRibbonAttachLine(SwingingTarget.transform.position);
+            }
             Player.SwingJoint.distance = Mathf.Lerp(Player.SwingJoint.distance, calculatedDistance / 1.2f / (1 + Rb.velocity.magnitude / 40), 1.2f * Time.deltaTime);
             Player.SwingJoint.frequency = Mathf.Lerp(Player.SwingJoint.frequency, 10, 0.8f * Time.deltaTime);
 
@@ -78,11 +97,9 @@ namespace Ribbon
             if (!Input.GetButton("Jump"))
             {
 
-                Debug.Log("On Jump Released, Velocity is : " + Rb.velocity);
-
                 Machine.Get<RB_PS_Air>().IsJump = false;
                 Machine.Get<RB_PS_Air>().JumpRequested = false;
-                Machine.Set<RB_PS_Air>(false);
+                Machine.Set<RB_PS_Air>();
                 Visual.Play("Double Jump");
             }
         }
@@ -98,18 +115,17 @@ namespace Ribbon
         }
         private void GroundCheck()
         {
-            Debug.Log("Checking if grounded in air state");
             if (Collision.DoAirCollision())
             {
                 Player.YSpeed = 0;
                 Player.GroundSpeed = RelativeSpeed;
-                Debug.Log("Grounded in air state, switching to ground state");
                 Machine.Set<RB_PS_Ground>();
                 Player.GroundSpeed = Player.XSpeed;
             }
         }
-
+        private float previousSwingAngle;
         private float swingAngle;
+        public float deltaAngle;
 
         public Vector2 SwingTangent;
         private float swingLerpIntensity;
@@ -121,6 +137,9 @@ namespace Ribbon
             
             Vector2 toPivot = (SwingingTarget.transform.position - Player.transform.position).normalized;
             swingAngle = Mathf.Atan2(-toPivot.x, toPivot.y);
+            deltaAngle = Mathf.DeltaAngle(previousSwingAngle * Mathf.Rad2Deg, swingAngle * Mathf.Rad2Deg) * Mathf.Deg2Rad;
+            previousSwingAngle = swingAngle;
+
             float ropeLength = Vector3.Distance(SwingingTarget.transform.position, Player.transform.position);
             float angularAcceleration = (PhysicsInfo.Gravity / ropeLength) * Mathf.Sin(swingAngle); //adam youre getting the sine of a deg angle using a rad function
             
@@ -153,6 +172,12 @@ namespace Ribbon
             Rb.AddForce(SwingTangent * MoveInput.x * (200 * ropeLength) * Time.fixedDeltaTime, ForceMode2D.Force);
             Rb.velocity = Vector2.ClampMagnitude(Rb.velocity, PhysicsInfo.MaxSwingSpeed);
             Debug.DrawLine(Transform.position, (Vector2)Transform.position + SwingTangent.normalized);
+
+
+            if(SwingingTarget.TryGetComponent(out SwingGoal SwingGoal))
+            {
+                SwingGoal.WhileSwinging(Player);
+            }
         }
     }
 }

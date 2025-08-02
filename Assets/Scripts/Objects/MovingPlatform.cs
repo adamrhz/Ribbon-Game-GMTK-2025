@@ -20,6 +20,7 @@ namespace Ribbon
         void Start()
         {
             Rb = GetComponent<Rigidbody2D>();
+            Rb.bodyType = RigidbodyType2D.Dynamic;
             _startPosition = transform.position;
             _movePositionsLinkedList = new LinkedList<Vector3>((Positions).ToList());
             _movePositionsLinkedList.AddFirst(Vector3.zero);
@@ -29,6 +30,10 @@ namespace Ribbon
 
         private void OnDrawGizmos()
         {
+            if (!enabled)
+            {
+                return;
+            }
             Vector3 startPos = transform.position;
             if (Application.isPlaying)
             {

@@ -48,7 +48,7 @@ namespace Ribbon
 
             Animator?.SetFloat("XSpeed", Mathf.Abs(XSpeed));
             Animator?.SetFloat("YSpeed", Player.YSpeed);
-            Animator?.SetInteger("State", Player.Machine.CurrentState.StateNumber);
+            Animator?.SetInteger("State", Player?.Machine?.CurrentState?.StateNumber ?? 0);
         }
         public void SetTrigger(string name)
         {
@@ -85,6 +85,11 @@ namespace Ribbon
         public void Play(string name)
         {
             Animator?.Play(name);
+        }
+
+        public bool IsPlaying(string idleAnim)
+        {
+            return Animator?.GetCurrentAnimatorStateInfo(0).IsName(idleAnim) ?? false;
         }
     }
 

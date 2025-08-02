@@ -29,12 +29,12 @@ namespace Ribbon
 
         public void Update()
         {
-            CurrentState.OnUpdate();
+            CurrentState?.OnUpdate();
         }
 
         public void FixedUpdate()
         {
-            CurrentState.OnFixedUpdate();
+            CurrentState?.OnFixedUpdate();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Ribbon
         public override void OnUpdate()
         {
             Player.Visual.ToggleIndicatorLine(null);
-            if (SwingingTarget)
+            if (SwingingTarget && !Player.Input.BlockInput)
             {
 
                 if (Player.Machine.IsCurrentState<RB_PS_Air>())
