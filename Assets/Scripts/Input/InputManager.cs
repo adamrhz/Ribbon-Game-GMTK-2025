@@ -215,7 +215,7 @@ namespace Ribbon {
 
 					foreach(UButton button in Buttons)
 					{
-						if (button.pressed)
+						if (button.hold || button.pressed)
 						{
 							return true;
                         }

@@ -130,12 +130,12 @@ namespace Ribbon
             }
 
 
-            yield return new WaitForSecondsRealtime(3f); // Simulating whatever cool wait ending sequence you want here
+            yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
             if (Player.Instance.Machine.IsCurrentState<RB_PS_Ground>())
             {
                 Player.Instance.Visual.Play("Ness");
             }
-            yield return new WaitForSecondsRealtime(3f); // Simulating whatever cool wait ending sequence you want here
+            yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
             GameManager.LevelFinished();
 
         }
@@ -145,7 +145,7 @@ namespace Ribbon
             TimerActive = false;
             List<GameLoopEvent> LoopObjects = new List<GameLoopEvent>(LevelManager.LoopObjects);
             Player.Instance.Input.BlockInput = true;
-            yield return new WaitForSecondsRealtime(1f); // Simulating whatever cool wait ending sequence you want here
+            yield return new WaitForSecondsRealtime(.4f); // Simulating whatever cool wait ending sequence you want here
             Vector3 SpawnPoint = Vector3.zero;
 
             SpawnPoint = GameObject.Find("SpawnPoint")?.transform.position ?? Vector3.zero;
@@ -168,6 +168,10 @@ namespace Ribbon
                         Skip = true;
                     }
                     yield return null;
+                }
+                if (Player.Instance.Input.GetAnyButton(true))
+                {
+                    Skip = true;
                 }
 
                 if (!Player.Instance.Visual.Sprite.isVisible && !resetPlayerPosition)

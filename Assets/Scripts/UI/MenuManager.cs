@@ -28,6 +28,7 @@ namespace Ribbon
         {
             Instance = this;
             MusicPlayer.Stop();
+            SetMenu(0);
         }
 
         public void CloseGame() => Application.Quit();
