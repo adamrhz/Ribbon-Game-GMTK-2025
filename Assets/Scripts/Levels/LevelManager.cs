@@ -13,8 +13,7 @@ namespace Ribbon
     public class LevelManager : MonoBehaviour
     {
         public LevelObject CurrentLevel;
-
-
+        
         public static LevelManager Instance
         {
 
@@ -37,8 +36,7 @@ namespace Ribbon
 
         }
         private static LevelManager _instance;
-
-
+        
         public static List<GameLoopEvent> LoopObjects = new List<GameLoopEvent>();
 
         public int CurrentLoop = 0;
@@ -50,9 +48,7 @@ namespace Ribbon
             Instance = this;
             CurrentLoop = 0;
         }
-
-
-
+        
         private void OnDisable()
         {
             if (Instance == this)
@@ -63,13 +59,7 @@ namespace Ribbon
 
         private void Start()
         {
-            if (CurrentLevel)
-            {
-                MusicPlayer.MPlayer.PlaySong(CurrentLevel.MusicTrack, true);
-            }
-
-            StartCoroutine(LevelStart());
-
+            
         }
 
         public IEnumerator LevelStart()
@@ -217,6 +207,16 @@ namespace Ribbon
                 LoopObjects.Remove(gameLoopEvent);
             }
             LoopObjects.TrimExcess();
+        }
+
+        public void BeginLevel()
+        {
+            if (CurrentLevel)
+            {
+                MusicPlayer.MPlayer.PlaySong(CurrentLevel.MusicTrack, true);
+            }
+
+            StartCoroutine(LevelStart());
         }
     }
 }

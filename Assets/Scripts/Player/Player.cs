@@ -51,6 +51,7 @@ namespace Ribbon
         private void Awake()
         {
             Instance = this;
+            //Application.targetFrameRate = 30;
         }
         
         public void Init()

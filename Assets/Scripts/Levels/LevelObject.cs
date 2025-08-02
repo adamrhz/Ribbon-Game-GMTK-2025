@@ -11,6 +11,7 @@ public class LevelObject : ScriptableObject
     public string SceneName = "Level1";//ToUseLater
     public AudioClip MusicTrack;
     public AudioClip FinalLapMusicTrack;
+    public int ID; // used for saving since ints are easier to keep track of
 
 
     public bool SecretStartPicked = false;
