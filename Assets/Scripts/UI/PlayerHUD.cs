@@ -8,6 +8,8 @@ namespace Ribbon
 {
     public sealed class PlayerHUD : MonoBehaviour
     {
+        public CanvasGroup HUDAlpha;
+        
         public TMP_Text ButtonCount, Timer;
         
         private const string UI_CORE_FORMAT = "<mspace=25>{0}";
@@ -20,16 +22,21 @@ namespace Ribbon
         public CanvasGroup PauseBackground;
 
         private float pauseAnchorY, pauseTooltipAnchorY;
-
+        
         private void Start()
         {
             pauseAnchorY = PausedText.GetComponent<RectTransform>().anchoredPosition.y;
             pauseTooltipAnchorY = Tooltip.anchoredPosition.y;
             PausedText.GetComponent<RectTransform>().anchoredPosition = Tooltip.anchoredPosition = new Vector2(0, 50);
+
+            HUDAlpha.alpha = 0;
         }
         
         public void Update()
         {
+            HUDAlpha.alpha = Mathf.Lerp(HUDAlpha.alpha, LevelManager.Instance.CurrentLevel ? 1 : 0,
+                4 * Time.unscaledDeltaTime);
+            
             PausedText.offsetTime = Time.unscaledTime;
             string attachRingText = RING_COUNT_ATTACH_111_FORMAT;
 

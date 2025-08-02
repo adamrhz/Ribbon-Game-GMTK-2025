@@ -36,7 +36,9 @@ namespace Ribbon
 
         public void Update()
         {
-            Vector2 levelBorders = new Vector2(XYLimits.x, XYLimits.y);
+            float aspectRatio = Screen.width * 1.0f / Screen.height;
+            Vector2 levelBorders = new Vector2(XYLimits.x + (aspectRatio - 1.78f) * 5.6f, XYLimits.y);
+            
             if (!Intro)
             {
                 rbVelocityTarget = Vector2.Lerp(rbVelocityTarget, Vector2.Scale(Target.Rb.velocity, new Vector2(4, 1)),

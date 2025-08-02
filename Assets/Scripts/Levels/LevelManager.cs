@@ -223,13 +223,13 @@ namespace Ribbon
         
         private IEnumerator RestartSequence()
         {
-            while (RestartTransition.localScale.x < .94f)
+            while (RestartTransition.localScale.x < .994f)
             {
                 RestartTransition.localScale =
-                    Vector3.Lerp(RestartTransition.localScale, Vector3.one, 8 * Time.unscaledDeltaTime);
+                    Vector3.Lerp(RestartTransition.localScale, Vector3.one, 9 * Time.unscaledDeltaTime);
                 yield return null;
             }
-            SceneManager.LoadScene("GameScene"); // gonna replace this with an IEnumerator for the transition soonish
+            SceneManager.LoadScene("GameScene");
             Time.timeScale = 1;
         }
         
