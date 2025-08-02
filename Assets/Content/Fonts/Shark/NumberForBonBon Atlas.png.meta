@@ -1,0 +1,1539 @@
+fileFormatVersion: 2
+guid: 199e55b718b7ef94299b731082869c50
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7745714614964252687
+    second: NumberForBonBon Atlas_0
+  - first:
+      213: 1467048740269027866
+    second: NumberForBonBon Atlas_1
+  - first:
+      213: -1637255924684632909
+    second: NumberForBonBon Atlas_2
+  - first:
+      213: -1131373846812989286
+    second: NumberForBonBon Atlas_3
+  - first:
+      213: 517792021249476869
+    second: NumberForBonBon Atlas_4
+  - first:
+      213: -3634085000294002976
+    second: NumberForBonBon Atlas_5
+  - first:
+      213: 7571014334601138691
+    second: NumberForBonBon Atlas_6
+  - first:
+      213: -6031391467434920501
+    second: NumberForBonBon Atlas_7
+  - first:
+      213: -2990581030016217116
+    second: NumberForBonBon Atlas_8
+  - first:
+      213: -437917007297647546
+    second: NumberForBonBon Atlas_9
+  - first:
+      213: -4392088531226169533
+    second: NumberForBonBon Atlas_10
+  - first:
+      213: 5854672361790893598
+    second: NumberForBonBon Atlas_11
+  - first:
+      213: -7473221648321464907
+    second: NumberForBonBon Atlas_12
+  - first:
+      213: -2116638140144766851
+    second: NumberForBonBon Atlas_13
+  - first:
+      213: -4135234070429300185
+    second: NumberForBonBon Atlas_14
+  - first:
+      213: 8963881928119712742
+    second: NumberForBonBon Atlas_15
+  - first:
+      213: -7972356249062186048
+    second: NumberForBonBon Atlas_16
+  - first:
+      213: 3916123695059373136
+    second: NumberForBonBon Atlas_17
+  - first:
+      213: 7923857169466815581
+    second: NumberForBonBon Atlas_18
+  - first:
+      213: 8726629131156370084
+    second: NumberForBonBon Atlas_19
+  - first:
+      213: -4882648496434922199
+    second: NumberForBonBon Atlas_20
+  - first:
+      213: -5218754118955477010
+    second: NumberForBonBon Atlas_21
+  - first:
+      213: 8348985738271205598
+    second: NumberForBonBon Atlas_22
+  - first:
+      213: 9091654141908541369
+    second: NumberForBonBon Atlas_23
+  - first:
+      213: -2176693549156571371
+    second: NumberForBonBon Atlas_24
+  - first:
+      213: -4695633465080708249
+    second: NumberForBonBon Atlas_25
+  - first:
+      213: -2790983711653137046
+    second: NumberForBonBon Atlas_26
+  - first:
+      213: 8068713066342706642
+    second: NumberForBonBon Atlas_27
+  - first:
+      213: -35162745579893918
+    second: NumberForBonBon Atlas_28
+  - first:
+      213: 6602547686504362226
+    second: NumberForBonBon Atlas_29
+  - first:
+      213: 1547034335838598182
+    second: NumberForBonBon Atlas_30
+  - first:
+      213: -8438074110072470236
+    second: NumberForBonBon Atlas_31
+  - first:
+      213: 1879351696468815515
+    second: NumberForBonBon Atlas_32
+  - first:
+      213: -187686225764717820
+    second: NumberForBonBon Atlas_33
+  - first:
+      213: 1284011513699552443
+    second: NumberForBonBon Atlas_34
+  - first:
+      213: 4355968357756782257
+    second: NumberForBonBon Atlas_35
+  - first:
+      213: -347389598633787936
+    second: NumberForBonBon Atlas_36
+  - first:
+      213: -8771011476321287098
+    second: NumberForBonBon Atlas_37
+  - first:
+      213: -930643015311507641
+    second: NumberForBonBon Atlas_38
+  - first:
+      213: 5252494866523442330
+    second: NumberForBonBon Atlas_39
+  - first:
+      213: 7850385638349659318
+    second: NumberForBonBon Atlas_40
+  - first:
+      213: -3695440550323882081
+    second: NumberForBonBon Atlas_41
+  - first:
+      213: -7228219826261837692
+    second: NumberForBonBon Atlas_42
+  - first:
+      213: -6232038043030635116
+    second: NumberForBonBon Atlas_43
+  - first:
+      213: 6011646856154179652
+    second: NumberForBonBon Atlas_44
+  - first:
+      213: 5325681375073636279
+    second: NumberForBonBon Atlas_45
+  - first:
+      213: 4866133651901815137
+    second: NumberForBonBon Atlas_46
+  - first:
+      213: 2543979477745845870
+    second: NumberForBonBon Atlas_47
+  - first:
+      213: 8175833434538884736
+    second: NumberForBonBon Atlas_48
+  - first:
+      213: 8316843425470454640
+    second: NumberForBonBon Atlas_49
+  - first:
+      213: 1395876247378930541
+    second: NumberForBonBon Atlas_50
+  - first:
+      213: 6062199532482912903
+    second: NumberForBonBon Atlas_51
+  - first:
+      213: -6175694601733171131
+    second: NumberForBonBon Atlas_52
+  - first:
+      213: -7512488480941481661
+    second: NumberForBonBon Atlas_53
+  - first:
+      213: -8599831903876504417
+    second: NumberForBonBon Atlas_54
+  - first:
+      213: 4841436784444040682
+    second: NumberForBonBon Atlas_55
+  - first:
+      213: 6156013952885526166
+    second: NumberForBonBon Atlas_56
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 191
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ff0183a891b18490800000000000000
+      internalID: -7745714614964252687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 203
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a127be77e010c5410800000000000000
+      internalID: 1467048740269027866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 167
+        width: 20
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bcc4ca396c4749e0800000000000000
+      internalID: -1637255924684632909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 189
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a986b880b7d8c40f0800000000000000
+      internalID: -1131373846812989286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 181
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5094b1699119f2700800000000000000
+      internalID: 517792021249476869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 203
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee86e942f2219dc0800000000000000
+      internalID: -3634085000294002976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 167
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3029a43ac65a11960800000000000000
+      internalID: 7571014334601138691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 193
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc538328a613c4ca0800000000000000
+      internalID: -6031391467434920501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 193
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ef8cd1e5625f76d0800000000000000
+      internalID: -2990581030016217116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 175
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64cebe25dc43ce9f0800000000000000
+      internalID: -437917007297647546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 181
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f623a40ca2c03c0800000000000000
+      internalID: -4392088531226169533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 167
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ee7d06e79ff3150800000000000000
+      internalID: 5854672361790893598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 177
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b53a047188c94890800000000000000
+      internalID: -7473221648321464907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 187
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70b0a273d030a2e0800000000000000
+      internalID: -2116638140144766851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 177
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a08f8b582bc96c0800000000000000
+      internalID: -4135234070429300185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 185
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb7e16fe1b166c70800000000000000
+      internalID: 8963881928119712742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 185
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c368c71b308c5190800000000000000
+      internalID: -7972356249062186048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 169
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c018c80cdd85630800000000000000
+      internalID: 3916123695059373136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 175
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54700dfc1237fd60800000000000000
+      internalID: 7923857169466815581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 175
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2b62985f63b1970800000000000000
+      internalID: 8726629131156370084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 161
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92db6e6df095d3cb0800000000000000
+      internalID: -4882648496434922199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 161
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee75d8967c24397b0800000000000000
+      internalID: -5218754118955477010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 151
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8257c4b4e8dd370800000000000000
+      internalID: 8348985738271205598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 151
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bfda2db54b0c2e70800000000000000
+      internalID: 9091654141908541369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 91
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51763a9efb4dac1e0800000000000000
+      internalID: -2176693549156571371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 113
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7638d66fd32c5deb0800000000000000
+      internalID: -4695633465080708249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 91
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65730df91f6449d0800000000000000
+      internalID: -2790983711653137046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 105
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dde8e1b8c3d9ff60800000000000000
+      internalID: 8068713066342706642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 91
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b02605ba3138ff0800000000000000
+      internalID: -35162745579893918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 113
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f07baa9326f0ab50800000000000000
+      internalID: 6602547686504362226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 99
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 624fdfa288b287510800000000000000
+      internalID: 1547034335838598182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 111
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425c5b0cd40f5ea80800000000000000
+      internalID: -8438074110072470236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 99
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9e2d04296cc41a10800000000000000
+      internalID: 1879351696468815515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 113
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b6f004f54356df0800000000000000
+      internalID: -187686225764717820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 91
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcc2913ba9b1d110800000000000000
+      internalID: 1284011513699552443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 93
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b64fe87422837c30800000000000000
+      internalID: 4355968357756782257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 91
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed74c62003dd2bf0800000000000000
+      internalID: -347389598633787936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 25
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644cef8788b174680800000000000000
+      internalID: -8771011476321287098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 49
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74fb8abbb11b513f0800000000000000
+      internalID: -930643015311507641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 43
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c41bf804c94e840800000000000000
+      internalID: 5252494866523442330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 15
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bcd8ab152c22fc60800000000000000
+      internalID: 7850385638349659318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 49
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97fe55166827bcc0800000000000000
+      internalID: -3695440550323882081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 25
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4883a316d5430bb90800000000000000
+      internalID: -7228219826261837692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 25
+        width: 6
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d307a2b6a5389a0800000000000000
+      internalID: -6232038043030635116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 51
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 448e920f6f8ad6350800000000000000
+      internalID: 6011646856154179652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 47
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf8d247efe98e940800000000000000
+      internalID: 5325681375073636279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 51
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1699e2746caf78340800000000000000
+      internalID: 4866133651901815137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 25
+        width: 6
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66ccee3bd70e4320800000000000000
+      internalID: 2543979477745845870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 17
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08eb378f035667170800000000000000
+      internalID: 8175833434538884736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 39
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b95bbe70d5b6370800000000000000
+      internalID: 8316843425470454640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 31
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6b2d632d062f5310800000000000000
+      internalID: 1395876247378930541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 15
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 782ee2b1b52412450800000000000000
+      internalID: 6062199532482912903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 15
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548956eda768b4aa0800000000000000
+      internalID: -6175694601733171131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 17
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341e44a87874eb790800000000000000
+      internalID: -7512488480941481661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 15
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f94ae51827247a880800000000000000
+      internalID: -8599831903876504417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 23
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae5eb4bba1d303340800000000000000
+      internalID: 4841436784444040682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NumberForBonBon Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 17
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e071ef21e8e6550800000000000000
+      internalID: 6156013952885526166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      NumberForBonBon Atlas_0: -7745714614964252687
+      NumberForBonBon Atlas_1: 1467048740269027866
+      NumberForBonBon Atlas_10: -4392088531226169533
+      NumberForBonBon Atlas_11: 5854672361790893598
+      NumberForBonBon Atlas_12: -7473221648321464907
+      NumberForBonBon Atlas_13: -2116638140144766851
+      NumberForBonBon Atlas_14: -4135234070429300185
+      NumberForBonBon Atlas_15: 8963881928119712742
+      NumberForBonBon Atlas_16: -7972356249062186048
+      NumberForBonBon Atlas_17: 3916123695059373136
+      NumberForBonBon Atlas_18: 7923857169466815581
+      NumberForBonBon Atlas_19: 8726629131156370084
+      NumberForBonBon Atlas_2: -1637255924684632909
+      NumberForBonBon Atlas_20: -4882648496434922199
+      NumberForBonBon Atlas_21: -5218754118955477010
+      NumberForBonBon Atlas_22: 8348985738271205598
+      NumberForBonBon Atlas_23: 9091654141908541369
+      NumberForBonBon Atlas_24: -2176693549156571371
+      NumberForBonBon Atlas_25: -4695633465080708249
+      NumberForBonBon Atlas_26: -2790983711653137046
+      NumberForBonBon Atlas_27: 8068713066342706642
+      NumberForBonBon Atlas_28: -35162745579893918
+      NumberForBonBon Atlas_29: 6602547686504362226
+      NumberForBonBon Atlas_3: -1131373846812989286
+      NumberForBonBon Atlas_30: 1547034335838598182
+      NumberForBonBon Atlas_31: -8438074110072470236
+      NumberForBonBon Atlas_32: 1879351696468815515
+      NumberForBonBon Atlas_33: -187686225764717820
+      NumberForBonBon Atlas_34: 1284011513699552443
+      NumberForBonBon Atlas_35: 4355968357756782257
+      NumberForBonBon Atlas_36: -347389598633787936
+      NumberForBonBon Atlas_37: -8771011476321287098
+      NumberForBonBon Atlas_38: -930643015311507641
+      NumberForBonBon Atlas_39: 5252494866523442330
+      NumberForBonBon Atlas_4: 517792021249476869
+      NumberForBonBon Atlas_40: 7850385638349659318
+      NumberForBonBon Atlas_41: -3695440550323882081
+      NumberForBonBon Atlas_42: -7228219826261837692
+      NumberForBonBon Atlas_43: -6232038043030635116
+      NumberForBonBon Atlas_44: 6011646856154179652
+      NumberForBonBon Atlas_45: 5325681375073636279
+      NumberForBonBon Atlas_46: 4866133651901815137
+      NumberForBonBon Atlas_47: 2543979477745845870
+      NumberForBonBon Atlas_48: 8175833434538884736
+      NumberForBonBon Atlas_49: 8316843425470454640
+      NumberForBonBon Atlas_5: -3634085000294002976
+      NumberForBonBon Atlas_50: 1395876247378930541
+      NumberForBonBon Atlas_51: 6062199532482912903
+      NumberForBonBon Atlas_52: -6175694601733171131
+      NumberForBonBon Atlas_53: -7512488480941481661
+      NumberForBonBon Atlas_54: -8599831903876504417
+      NumberForBonBon Atlas_55: 4841436784444040682
+      NumberForBonBon Atlas_56: 6156013952885526166
+      NumberForBonBon Atlas_6: 7571014334601138691
+      NumberForBonBon Atlas_7: -6031391467434920501
+      NumberForBonBon Atlas_8: -2990581030016217116
+      NumberForBonBon Atlas_9: -437917007297647546
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
