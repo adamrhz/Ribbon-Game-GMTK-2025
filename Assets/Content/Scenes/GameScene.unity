@@ -5159,7 +5159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -71.2}
+  m_AnchoredPosition: {x: 0, y: -89.7}
   m_SizeDelta: {x: 52.77191, y: 52.7719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1238427462
@@ -6279,8 +6279,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.3101, y: 0.000013709}
-  m_SizeDelta: {x: 248.6202, y: 50}
+  m_AnchoredPosition: {x: 102.61546, y: 0.000013709}
+  m_SizeDelta: {x: 377.231, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1550461110
 MonoBehaviour:
@@ -6302,10 +6302,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <mspace=25>00.00:00
+  m_text: <mspace=25>00:00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8e1b555830d0f514b908d105f801e60b, type: 2}
-  m_sharedMaterial: {fileID: -7682374733420372200, guid: 8e1b555830d0f514b908d105f801e60b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 90fdd2dc722af314284b0bcf23527114, type: 2}
+  m_sharedMaterial: {fileID: -5396341811810062207, guid: 90fdd2dc722af314284b0bcf23527114, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6339,7 +6339,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 32
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -7709,8 +7709,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 67.6, y: -8.8}
-  m_SizeDelta: {x: 99.8878, y: 50}
+  m_AnchoredPosition: {x: 109.3, y: -5}
+  m_SizeDelta: {x: 185.4422, y: 105.6367}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2045417196
 MonoBehaviour:
@@ -7732,10 +7732,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: <mspace=25><alpha=#55>00<alpha=#FF>0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8e1b555830d0f514b908d105f801e60b, type: 2}
-  m_sharedMaterial: {fileID: -7682374733420372200, guid: 8e1b555830d0f514b908d105f801e60b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 90fdd2dc722af314284b0bcf23527114, type: 2}
+  m_sharedMaterial: {fileID: -5396341811810062207, guid: 90fdd2dc722af314284b0bcf23527114, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7769,7 +7769,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 32
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

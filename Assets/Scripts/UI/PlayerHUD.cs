@@ -40,7 +40,7 @@ namespace Ribbon
             PausedText.offsetTime = Time.unscaledTime;
             string attachRingText = RING_COUNT_ATTACH_111_FORMAT;
 
-            int buttonCount = 0; // replace this with the actual button count
+            int buttonCount = Player.Instance.ButtonCount;
             
             if (buttonCount < 100) attachRingText = RING_COUNT_ATTACH_011_FORMAT;
             if (buttonCount < 10) attachRingText = RING_COUNT_ATTACH_001_FORMAT;

@@ -114,10 +114,10 @@ MonoBehaviour:
     m_FamilyName: NumberForBonBon
     m_StyleName: Regular
     m_PointSize: 16
-    m_Scale: 1
+    m_Scale: 0.4
     m_UnitsPerEM: 1024
     m_LineHeight: 16
-    m_AscentLine: 12
+    m_AscentLine: -24.16
     m_CapLine: 0
     m_MeanLine: -8
     m_Baseline: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
       m_HorizontalBearingY: 4
       m_HorizontalAdvance: 40
     m_GlyphRect:
-      m_X: 196
+      m_X: 190
       m_Y: 152
       m_Width: 28
       m_Height: 40
