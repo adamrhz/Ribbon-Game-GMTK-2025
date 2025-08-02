@@ -167,7 +167,7 @@ namespace Ribbon
                 }
 
                 playerCamera.discreteTarget = loopObject.transform.position;
-                while (Mathf.Abs(playerCamera.transform.position.x - loopObject.transform.position.x) > 5f && !Skip)
+                while (Mathf.Abs(playerCamera.transform.position.x - loopObject.transform.position.x) > 5f && !Skip && loopObject.PlayInIntro)
                 {
                     if (Player.Instance.Input.GetAnyButton(true))
                     {
@@ -185,7 +185,7 @@ namespace Ribbon
                 if (loopObject.Loop != loop)
                 {
                     bool difference = loopObject.OnGameStart(loop);
-                    if (ParticleEffectPrefab != null && difference)
+                    if (ParticleEffectPrefab != null && difference && loopObject.PlayInIntro)
                     {
                         ParticleEffectPrefab.InstantiateAsync(loopObject.transform.position, Quaternion.identity);
                     }

@@ -1,0 +1,1012 @@
+fileFormatVersion: 2
+guid: 96ca9f4e7dd9beb49a17d02aef983af3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4149167907356787257
+    second: 1-2-2Tilesl_0
+  - first:
+      213: 6377951579862549614
+    second: 1-2-2Tilesl_1
+  - first:
+      213: -3474287255227792846
+    second: 1-2-2Tilesl_2
+  - first:
+      213: -6775095952583387356
+    second: 1-2-2Tilesl_3
+  - first:
+      213: 232359161813936939
+    second: 1-2-2Tilesl_4
+  - first:
+      213: -3858507010772140054
+    second: 1-2-2Tilesl_5
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_0
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cd3c8085c13b66c0800000000000000
+      internalID: -4149167907356787257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_1
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 992
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6449588b29038850800000000000000
+      internalID: 6377951579862549614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_2
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2320b70262ad8cfc0800000000000000
+      internalID: -3474287255227792846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_3
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 960
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427941b80260af1a0800000000000000
+      internalID: -6775095952583387356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_4
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b2a343d61893300800000000000000
+      internalID: 232359161813936939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_5
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 928
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aef72932154d37ac0800000000000000
+      internalID: -3858507010772140054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_6
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbfec8e25de0acd4e8f8a293c5903219
+      internalID: -328806410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_7
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df3a0e7e77add2c4e9079f6c76a2168f
+      internalID: 1086002255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_8
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 864
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d3894558446ca409e29a613a6ad625
+      internalID: -1828496997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_9
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 864
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da218f57d3e29f847854ad282ab9947d
+      internalID: -1155386331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_10
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ff02c54abe586746bf8b571c96a7d87
+      internalID: -68326912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_11
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 832
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f17bc7bf6a21e4986ce0675a8ebc46
+      internalID: -1673857539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_12
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 800
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef71bc065212684d82828587a757f15
+      internalID: -655288457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_13
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 800
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbeb15b2a6874b4bbb0a326bbfbbaa4
+      internalID: -1175419312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_14
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c3cf93c1b508942ace6d8cd1cc2f72
+      internalID: -57190065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_15
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 768
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fb05bd9c58e444aae2e022c54eed02
+      internalID: 1904032745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_16
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 736
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8560979d48c513f45af90e5a14fed01d
+      internalID: -1205099884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_17
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e33422153f114f45877d8270affa92c
+      internalID: 534843532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_18
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0da3a3583285c54d991a33569e89fee
+      internalID: -258539192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_19
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 704
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee166ec11e6218e46b1b7d8f00d5f394
+      internalID: 1334890009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_20
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627715bc09f6f5a4bad37600af2d590a
+      internalID: 2139580179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_21
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7930eda9b6c6f9545ba472cdaa02556c
+      internalID: -499590821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_22
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6f9fea8e14375e4392678f5be7bf9a0
+      internalID: -1087428524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_23
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 448
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e723eb62c1c9248bd96025cc160d6c
+      internalID: -780452734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_24
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78dbb2c5f92a01b4f8d0a193d296693c
+      internalID: 506378642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_25
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d27c62f3d93d941a30f0214918fa08
+      internalID: -503205420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_26
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9207336c6bb555540b0dce4694488ce9
+      internalID: 1640432962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_27
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 416
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f311081eb46d449967bd26c851c31e
+      internalID: -1574637713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_28
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188bc1172da7e2d4bb9b4b187b5bacc1
+      internalID: 621379327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_29
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1a27aa33ee34174db857851bbd06bf5
+      internalID: -865223226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_30
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0b0c091ee5b034e8d39711bc5f6a59
+      internalID: 1002973932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_31
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6cd360286c7d3b449f46a8c8b6b7abf
+      internalID: 1406034086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_32
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddfc150d016180647a6a2c3d34f20e72
+      internalID: 33413193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_33
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f60bcc640d480499954a584c5f2f97
+      internalID: -1238991507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_34
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea735c8c5d3eae543b871dfd36b4614f
+      internalID: 1563858279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_35
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04afe41596fca64439c62f64f401dd6a
+      internalID: -885804543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_36
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45722b094cba87141ace4f86dfd5991e
+      internalID: 2134312656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_37
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93ea67aae27be54b919b2d532f59731
+      internalID: -1864214332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_38
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a650c010f6a054d81a522d8987c667
+      internalID: -1266568673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 1-2-2Tilesl_39
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 352
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d733c12690bc222428642a79a9269e3e
+      internalID: 1009904752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 58f70459833740e40912c763a7db4a0f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      1-2-2Tilesl_0: -4149167907356787257
+      1-2-2Tilesl_1: 6377951579862549614
+      1-2-2Tilesl_10: -68326912
+      1-2-2Tilesl_11: -1673857539
+      1-2-2Tilesl_12: -655288457
+      1-2-2Tilesl_13: -1175419312
+      1-2-2Tilesl_14: -57190065
+      1-2-2Tilesl_15: 1904032745
+      1-2-2Tilesl_16: -1205099884
+      1-2-2Tilesl_17: 534843532
+      1-2-2Tilesl_18: -258539192
+      1-2-2Tilesl_19: 1334890009
+      1-2-2Tilesl_2: -3474287255227792846
+      1-2-2Tilesl_20: 2139580179
+      1-2-2Tilesl_21: -499590821
+      1-2-2Tilesl_22: -1087428524
+      1-2-2Tilesl_23: -780452734
+      1-2-2Tilesl_24: 506378642
+      1-2-2Tilesl_25: -503205420
+      1-2-2Tilesl_26: 1640432962
+      1-2-2Tilesl_27: -1574637713
+      1-2-2Tilesl_28: 621379327
+      1-2-2Tilesl_29: -865223226
+      1-2-2Tilesl_3: -6775095952583387356
+      1-2-2Tilesl_30: 1002973932
+      1-2-2Tilesl_31: 1406034086
+      1-2-2Tilesl_32: 33413193
+      1-2-2Tilesl_33: -1238991507
+      1-2-2Tilesl_34: 1563858279
+      1-2-2Tilesl_35: -885804543
+      1-2-2Tilesl_36: 2134312656
+      1-2-2Tilesl_37: -1864214332
+      1-2-2Tilesl_38: -1266568673
+      1-2-2Tilesl_39: 1009904752
+      1-2-2Tilesl_4: 232359161813936939
+      1-2-2Tilesl_5: -3858507010772140054
+      1-2-2Tilesl_6: -328806410
+      1-2-2Tilesl_7: 1086002255
+      1-2-2Tilesl_8: -1828496997
+      1-2-2Tilesl_9: -1155386331
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

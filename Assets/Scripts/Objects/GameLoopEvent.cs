@@ -11,6 +11,9 @@ namespace Ribbon
     {
         public int[] LoopsIn = new int[0];
         public int Loop = 0;
+
+        public bool PlayInIntro = true;
+
         private void Start()
         {
             LevelManager.RegisterLoopObject(this);
@@ -54,6 +57,10 @@ namespace Ribbon
 
         public int CompareTo(GameLoopEvent other)
         {
+            if (!PlayInIntro)
+            {
+                return 1;
+            }
             return (int)Mathf.Sign(other.transform.position.x - transform.position.x);
         }
     }
