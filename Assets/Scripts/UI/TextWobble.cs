@@ -12,6 +12,10 @@ public class TextWobble : MonoBehaviour
 
 	TextContainer container;
 	TMP_Text text;
+
+	public bool UseGlobalTime;
+
+	private float time => UseGlobalTime ? Time.time : offsetTime;
 	
 	void Awake()
 	{
@@ -40,8 +44,8 @@ public class TextWobble : MonoBehaviour
 			var index = info.vertexIndex;
 			int meshIndex = info.materialReferenceIndex;
 
-
-			float evaluationTime = Mathf.Max(0, offsetTime - offsetTimePerCharacter * i);
+			
+			float evaluationTime = Mathf.Max(0, time - offsetTimePerCharacter * i);
 
 			vertices[index] += new Vector3(lateralMotion.Evaluate(evaluationTime), upwardMotion.Evaluate(evaluationTime));
 			vertices[index + 1] += new Vector3(lateralMotion.Evaluate(evaluationTime), upwardMotion.Evaluate(evaluationTime));
@@ -70,7 +74,7 @@ public class TextWobble : MonoBehaviour
 			int meshIndex = info.materialReferenceIndex;
 
 
-			float evaluationTime = Mathf.Max(0, offsetTime - offsetTimePerCharacter * i);
+			float evaluationTime = Mathf.Max(0, time - offsetTimePerCharacter * i);
 
 			var color = new Color(text.color.r, text.color.g, text.color.b, alphaOverTime.Evaluate(evaluationTime));
 

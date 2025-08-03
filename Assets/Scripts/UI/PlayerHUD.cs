@@ -22,6 +22,10 @@ namespace Ribbon
         public CanvasGroup PauseBackground;
 
         private float pauseAnchorY, pauseTooltipAnchorY;
+
+        [Header("Tutorial Stuff")] public CanvasGroup MoveJumpTutorial;
+        public CanvasGroup HoldSwingTutorial;
+        public CanvasGroup SpinToWinTutorial;
         
         private void Start()
         {
@@ -30,6 +34,8 @@ namespace Ribbon
             PausedText.GetComponent<RectTransform>().anchoredPosition = Tooltip.anchoredPosition = new Vector2(0, 50);
 
             HUDAlpha.alpha = 0;
+
+            MoveJumpTutorial.alpha = HoldSwingTutorial.alpha = SpinToWinTutorial.alpha = 0;
         }
         
         public void Update()

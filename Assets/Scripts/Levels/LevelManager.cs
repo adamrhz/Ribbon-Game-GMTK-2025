@@ -53,6 +53,8 @@ namespace Ribbon
         public delegate void LoopEndEvent();
         public event LoopEndEvent OnLoopEnd;
 
+        private int tutorialStageID;
+
         private void Awake()
         {
             Instance = this;
@@ -70,6 +72,36 @@ namespace Ribbon
         private void Start()
         {
             LevelTimer = 0;   
+        }
+
+        private void HandleTutorial()
+        {
+            if (tutorialStageID == 0 && Player.Instance.transform.position.x > 38.19935f)
+                tutorialStageID = 1;
+            
+            if (!Player.Instance.Input.BlockInput)
+            {
+                if (CurrentLevel.LevelName == "1-1")
+                {
+                    Player.Instance.HUD.MoveJumpTutorial.alpha =
+                        Mathf.Lerp(Player.Instance.HUD.MoveJumpTutorial.alpha, 
+                            tutorialStageID == 0 ? 1 : 0, 10 * Time.deltaTime);
+                    
+                    Player.Instance.HUD.HoldSwingTutorial.alpha =
+                        Mathf.Lerp(Player.Instance.HUD.HoldSwingTutorial.alpha, 
+                            tutorialStageID == 1 && Player.Instance.Controllers.SwingController.SwingingTarget  && 
+                                Player.Instance.Machine.CurrentState is not RB_PS_Swing ? 1 : 0, 10 * Time.deltaTime);
+                    Player.Instance.HUD.SpinToWinTutorial.alpha =
+                        Mathf.Lerp(Player.Instance.HUD.SpinToWinTutorial.alpha, 
+                            tutorialStageID == 1 && 
+                           Player.Instance.Machine.CurrentState is RB_PS_Swing ? 1 : 0, 10 * Time.deltaTime);
+                }
+            }
+            else
+            {
+                Player.Instance.HUD.SpinToWinTutorial.alpha =
+                    Mathf.Lerp(Player.Instance.HUD.SpinToWinTutorial.alpha, 0, 10 * Time.deltaTime);
+            }
         }
 
         public IEnumerator LevelStart()
@@ -108,6 +140,7 @@ namespace Ribbon
         }
         private void IncrementLoop()
         {
+            tutorialStageID = 2;
             if (CurrentLevel)
             {
                 if (CurrentLoop == CurrentLevel.LoopCounts - 1)
@@ -271,6 +304,8 @@ namespace Ribbon
         // Update is called once per frame
         void Update()
         {
+            HandleTutorial();
+            
             if (Player.Instance.Input.GetButtonDown("Pause"))
             {
                 GamePaused = !GamePaused;

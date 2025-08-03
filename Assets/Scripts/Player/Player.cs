@@ -49,6 +49,7 @@ namespace Ribbon
         public PlayerCollision Collision;
         public InputManager Input;
         public AudioBankHolder AudioBankHolder;
+        public PlayerHUD HUD;
 
         public Collider2D PlayerCollider;
         public SpringJoint2D SwingJoint;

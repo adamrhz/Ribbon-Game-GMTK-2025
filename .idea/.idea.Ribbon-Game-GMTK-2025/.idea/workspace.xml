@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87e467f5-7241-4f64-8e3d-938821fbefc6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ribbon-Game-GMTK-2025/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Fonts/CutePixel Bitmap.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Fonts/CutePixel Bitmap.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Levels/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHUD.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHUD.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/TextWobble.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TextWobble.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +51,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../Desktop/GMTK Tests/GMTK-2025-Ribbon-Game.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Desktop/GMTK Tests\Bon Bow Bon.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\bieft\Desktop\GMTK Tests" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -119,6 +125,7 @@
       <workItem from="1754117517240" duration="7090000" />
       <workItem from="1754127372510" duration="3800000" />
       <workItem from="1754145401697" duration="5927000" />
+      <workItem from="1754216958209" duration="1372000" />
     </task>
     <servers />
   </component>
