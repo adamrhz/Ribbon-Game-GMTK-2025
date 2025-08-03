@@ -22,7 +22,7 @@ namespace Ribbon
             int index = 0;
             foreach(RawImage parallaxImage in parallaxImages)
             {
-                Vector2 offset = new Vector2(transform.position.x, Mathf.Clamp(transform.position.y, YMinClamp, YClamp)) * parallaxFactor[index];
+                Vector2 offset = new Vector2(transform.position.x, Mathf.Clamp(transform.position.y, YMinClamp, YClamp)) * parallaxFactor[index]/10f;
                 parallaxImage.uvRect = new Rect(offset, parallaxImage.uvRect.size);
                 index++;
             }
