@@ -337,7 +337,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 13256713}
-  - component: {fileID: 13256712}
   - component: {fileID: 13256711}
   m_Layer: 0
   m_Name: Lap3
@@ -361,18 +360,6 @@ MonoBehaviour:
   LoopsIn: 02000000
   Loop: 0
   PlayInIntro: 0
---- !u!156049354 &13256712
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13256710}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &13256713
 Transform:
   m_ObjectHideFlags: 0
@@ -1109,8 +1096,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 4880
-    height: 1024
+    width: 2059
+    height: 376
   lastOffset: {x: 0, y: 0}
   lastPixelsPerUnit: 32
   lastFlipX: 0
@@ -1154,7 +1141,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
-    oldSize: {x: 152.5, y: 32}
+    oldSize: {x: 64.34375, y: 11.75}
     newSize: {x: 152.5, y: 32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1162,11 +1149,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 57.01563, y: 7.015625}
+    - - {x: 57.015625, y: 7.015625}
       - {x: 62.984375, y: 7.015625}
       - {x: 62.984375, y: 10.984375}
-      - {x: 57.01563, y: 10.984375}
-      - {x: 57.01563, y: 7.390625}
+      - {x: 57.015625, y: 10.984375}
+      - {x: 57.015625, y: 7.3906245}
   m_UseDelaunayMesh: 0
 --- !u!1001 &211804488
 PrefabInstance:
@@ -2240,7 +2227,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 350529483}
-  - component: {fileID: 350529482}
   - component: {fileID: 350529481}
   m_Layer: 0
   m_Name: Lap2
@@ -2264,18 +2250,6 @@ MonoBehaviour:
   LoopsIn: 01000000
   Loop: 0
   PlayInIntro: 0
---- !u!156049354 &350529482
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350529480}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &350529483
 Transform:
   m_ObjectHideFlags: 0
@@ -3001,7 +2975,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542406520}
-  - component: {fileID: 542406519}
   - component: {fileID: 542406518}
   m_Layer: 0
   m_Name: Lap1
@@ -3025,18 +2998,6 @@ MonoBehaviour:
   LoopsIn: 00000000
   Loop: 0
   PlayInIntro: 0
---- !u!156049354 &542406519
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 542406517}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &542406520
 Transform:
   m_ObjectHideFlags: 0
@@ -5127,7 +5088,7 @@ SpriteRenderer:
   m_Size: {x: 236, y: 64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &904459054

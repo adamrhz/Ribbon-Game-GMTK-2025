@@ -946,7 +946,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99542141}
-  - component: {fileID: 99542140}
   - component: {fileID: 99542139}
   m_Layer: 0
   m_Name: Lap1
@@ -970,18 +969,6 @@ MonoBehaviour:
   LoopsIn: 00000000
   Loop: 0
   PlayInIntro: 0
---- !u!156049354 &99542140
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 99542138}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &99542141
 Transform:
   m_ObjectHideFlags: 0
@@ -1069,7 +1056,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103494904}
-  - component: {fileID: 103494903}
   m_Layer: 0
   m_Name: Constant
   m_TagString: Untagged
@@ -1077,18 +1063,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!156049354 &103494903
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103494902}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &103494904
 Transform:
   m_ObjectHideFlags: 0
@@ -5638,7 +5612,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879546467}
-  - component: {fileID: 879546466}
   - component: {fileID: 879546465}
   m_Layer: 0
   m_Name: Lap2
@@ -5662,18 +5635,6 @@ MonoBehaviour:
   LoopsIn: 01000000
   Loop: 0
   PlayInIntro: 0
---- !u!156049354 &879546466
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879546464}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &879546467
 Transform:
   m_ObjectHideFlags: 0
@@ -10631,7 +10592,7 @@ SpriteRenderer:
   m_Size: {x: 236, y: 64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1835164652

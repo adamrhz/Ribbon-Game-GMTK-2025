@@ -1819,8 +1819,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 4900
-    height: 1024
+    width: 3626
+    height: 509
   lastOffset: {x: 0, y: 0}
   lastPixelsPerUnit: 32
   lastFlipX: 0
@@ -1864,7 +1864,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
-    oldSize: {x: 153.125, y: 32}
+    oldSize: {x: 113.3125, y: 15.90625}
     newSize: {x: 153.125, y: 32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3331,7 +3331,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 717410323}
-  - component: {fileID: 717410322}
   - component: {fileID: 717410324}
   m_Layer: 0
   m_Name: Lap3Grid
@@ -3340,18 +3339,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!156049354 &717410322
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 717410321}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &717410323
 Transform:
   m_ObjectHideFlags: 0
@@ -4361,7 +4348,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 971790043}
-  - component: {fileID: 971790042}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -4369,18 +4355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!156049354 &971790042
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 971790041}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &971790043
 Transform:
   m_ObjectHideFlags: 0
@@ -4819,7 +4793,7 @@ SpriteRenderer:
   m_Size: {x: 153.125, y: 32.000732}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1013586065
@@ -5322,7 +5296,7 @@ SpriteRenderer:
   m_Size: {x: 153.125, y: 32.000732}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1118642085
@@ -5555,7 +5529,7 @@ SpriteRenderer:
   m_Size: {x: 153.125, y: 32.000732}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1185407392
@@ -8029,7 +8003,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1708682004}
-  - component: {fileID: 1708682003}
   - component: {fileID: 1708682005}
   m_Layer: 0
   m_Name: Lap2Grid
@@ -8038,18 +8011,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!156049354 &1708682003
-Grid:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708682002}
-  m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
-  m_CellGap: {x: 0, y: 0, z: 0}
-  m_CellLayout: 0
-  m_CellSwizzle: 0
 --- !u!4 &1708682004
 Transform:
   m_ObjectHideFlags: 0
