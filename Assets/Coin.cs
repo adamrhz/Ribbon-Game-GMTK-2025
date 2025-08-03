@@ -17,8 +17,8 @@ namespace Ribbon
 
         private void Update()
         {
-            transform.position += new Vector3(0, Mathf.Cos(Time.time) * 0.001f, 0);
         }
+
         public void OnTouchIt(Player player)
         {
             if (player == null) return;

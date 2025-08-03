@@ -58,8 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d5af27cb9836874a85e229a26c4d3c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllFileToSave:
-  - {fileID: 11400000, guid: 9e707beea8c79014c8920f5621533441, type: 2}
+  AllFileToSave: []
 --- !u!1 &5836969411575715116
 GameObject:
   m_ObjectHideFlags: 0

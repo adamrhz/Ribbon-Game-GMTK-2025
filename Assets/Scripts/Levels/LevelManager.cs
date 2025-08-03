@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Ribbon
 {
@@ -76,10 +77,12 @@ namespace Ribbon
             Player.Instance.Init();
             PlayerCamera playerCamera = Camera.main?.GetComponent<PlayerCamera>();
             playerCamera.Intro = true;
+            yield return SideScrollTransition();
             yield return SceneManager.LoadSceneAsync(CurrentLevel.SceneName, LoadSceneMode.Additive);
             playerCamera.discreteTarget = GameObject.Find("SwingGoal")?.transform.position ?? Vector3.zero;
             playerCamera.ForcePosition(playerCamera.discreteTarget);
             yield return new WaitForEndOfFrame();
+            yield return SideScrollFadeTransition();
             yield return NotifyLoopChange(CurrentLoop);
             TimerActive = false;
             Player.Instance.Input.BlockInput = true;
@@ -91,6 +94,7 @@ namespace Ribbon
             TimerActive = true;
 
         }
+
         public static void RegisterLoopObject(GameLoopEvent loopObject)
         {
             if (!LoopObjects.Contains(loopObject))
@@ -223,16 +227,40 @@ namespace Ribbon
         
         private IEnumerator RestartSequence()
         {
+            yield return SideScrollTransition();
+            SceneManager.LoadScene("GameScene");
+            Time.timeScale = 1;
+        }
+
+        public IEnumerator SideScrollTransition()
+        {
+            Image image = RestartTransition.gameObject.GetComponent<Image>();
+            Color color = image.color;
+            color.a = 1;
+            image.color = color;
             while (RestartTransition.localScale.x < .994f)
             {
                 RestartTransition.localScale =
                     Vector3.Lerp(RestartTransition.localScale, Vector3.one, 9 * Time.unscaledDeltaTime);
                 yield return null;
             }
-            SceneManager.LoadScene("GameScene");
-            Time.timeScale = 1;
+            RestartTransition.localScale = Vector3.one;
         }
-        
+
+        public IEnumerator SideScrollFadeTransition()
+        {
+            Image image = RestartTransition.gameObject.GetComponent<Image>();
+            Color target = image.color;
+            target.a = 0;
+            while (image.color.a > .006f)
+            {
+                image.color =
+                    Color.Lerp(image.color, target, 9 * Time.unscaledDeltaTime);
+                yield return null;
+            }
+            image.color = target;
+        }
+
         // Update is called once per frame
         void Update()
         {

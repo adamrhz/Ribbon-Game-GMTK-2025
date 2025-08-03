@@ -609,111 +609,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153288734}
   m_CullTransparentMesh: 1
---- !u!1001 &154185484
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1118658534}
-    m_Modifications:
-    - target: {fileID: 1031847178632069174, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_text
-      value: Tutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 1439783030737424839, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: AttachedLevel
-      value: 
-      objectReference: {fileID: 11400000, guid: 9e707beea8c79014c8920f5621533441, type: 2}
-    - target: {fileID: 4136963401188911334, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_Name
-      value: Tutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 750.44995
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 120.41199
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.0024414
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 29
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
 --- !u!1 &234780338
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +735,7 @@ MonoBehaviour:
   BestTimeCanvas: {fileID: 1175624741}
   isBestTimeVisible: 0
   MenuAnimator: {fileID: 269885401}
+  MainMenuGrid: {fileID: 932176068}
   Menus:
   - {fileID: 1865965203}
   - {fileID: 1118658533}
@@ -1049,6 +945,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1439783030737424839, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
+      propertyPath: AttachedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 9e707beea8c79014c8920f5621533441, type: 2}
     - target: {fileID: 4136963401188911334, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
       propertyPath: m_Name
       value: StageButton (1)
@@ -4852,7 +4752,6 @@ RectTransform:
   m_Children:
   - {fileID: 948081554}
   - {fileID: 891840547}
-  - {fileID: 1804920964}
   - {fileID: 1747078907}
   - {fileID: 1419249250}
   - {fileID: 1175624740}
@@ -4887,6 +4786,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1439783030737424839, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
+      propertyPath: AttachedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 73dc64244983a154682b60c5c0119d23, type: 2}
     - target: {fileID: 4136963401188911334, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
       propertyPath: m_Name
       value: StageButton (4)
@@ -6659,7 +6562,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0024109, y: -168}
+  m_AnchoredPosition: {x: -0.0024109, y: -86}
   m_SizeDelta: {x: 750.45, y: 120.412}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1751144547
@@ -6954,11 +6857,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 25.2598}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!224 &1804920964 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
-  m_PrefabInstance: {fileID: 154185484}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1811017853 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5494266630794126155, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
@@ -7021,6 +6919,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1439783030737424839, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
+      propertyPath: AttachedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: 5543c4525dc205a4e81a8a4282a25b8c, type: 2}
     - target: {fileID: 4136963401188911334, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
       propertyPath: m_Name
       value: StageButton (3)
@@ -7197,6 +7099,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1439783030737424839, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
+      propertyPath: AttachedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: dae0e2dfd5edba342a038b2c5995e0a8, type: 2}
     - target: {fileID: 4136963401188911334, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
       propertyPath: m_Name
       value: StageButton (2)
@@ -8044,6 +7950,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1747078907}
     m_Modifications:
+    - target: {fileID: 1439783030737424839, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
+      propertyPath: AttachedLevel
+      value: 
+      objectReference: {fileID: 11400000, guid: c9814edaaca3fa244bb62436b196e99b, type: 2}
     - target: {fileID: 4136963401188911334, guid: 52307f245b5be5142b6e342855007a7b, type: 3}
       propertyPath: m_Name
       value: StageButton

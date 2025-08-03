@@ -20,6 +20,7 @@ namespace Ribbon
 
         private bool isPlaying;
 
+        public GameObject MainMenuGrid;
 
         public GameObject[] Menus;
 
@@ -60,6 +61,7 @@ namespace Ribbon
         {
             yield return new WaitForSecondsRealtime(0.5f);
             LevelManager.Instance.CurrentLevel = Target;
+            MainMenuGrid?.SetActive(false);
             LevelManager.Instance.BeginLevel();
         }
     }

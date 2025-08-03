@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559d3f89254892d4690947a13dac1cc8, type: 3}
+  m_Name: 1-3
+  m_EditorClassIdentifier: 
+  UID: f313559cc3bba794a97c9a7dda94ec81
+  LevelName: 1-3
+  LoopCounts: 3
+  SceneName: 1-3
+  MusicTrack: {fileID: 8300000, guid: a151509b26069aa43b0dfe17dc60ca0c, type: 3}
+  FinalLapMusicTrack: {fileID: 8300000, guid: 1f0449fb070b0cb448c46c1b37db51c0, type: 3}
+  ID: 0
+  BestTime: -1
+  SecretStartPicked: 0

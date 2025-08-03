@@ -65,9 +65,9 @@ namespace Ribbon
             }
         }
 
-        public void ForcePosition(Vector3 discreteTarget)
+        public void ForcePosition(Vector3 target)
         {
-            transform.position = new(discreteTarget.x, discreteTarget.y -ZDepth);
+            transform.position = new(target.x, target.y -ZDepth);
         }
     }
 }

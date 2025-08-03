@@ -162,7 +162,15 @@ namespace Ribbon
                 {
                     debugOutput += $"  {kvp2.Key}: {kvp2.Value}\n";
                 }
-                Saves[uid]?.SetSavableFields(data);
+                try
+                {
+
+                    Saves[uid]?.SetSavableFields(data);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Error setting savable fields for {uid}: {e.Message}");
+                }
             }
 
         }
