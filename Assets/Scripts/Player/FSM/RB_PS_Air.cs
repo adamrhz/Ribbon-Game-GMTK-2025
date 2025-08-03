@@ -23,6 +23,7 @@ namespace Ribbon
             {
                 if (IsJumpDouble == false)
                 {
+                    Player.AudioBankHolder.Play("JumpVoice");
                     Visual.Play("Jump");
                 }
                 Player.AudioBankHolder.Play("Jump");

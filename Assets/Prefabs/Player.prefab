@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 5446088516510383764}
   - component: {fileID: 6982658979428381172}
   - component: {fileID: 8132593927548898375}
+  - component: {fileID: 9104202492523724405}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -404,6 +405,50 @@ MonoBehaviour:
   Intro: 0
   discreteTarget: {x: 0, y: 0, z: 0}
   IntroLerpSpeed: 20
+--- !u!114 &9104202492523724405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3449549135053148559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &3797659561417188344
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +596,20 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 628d8033b44c6d24ea09743ae11fed59, type: 3}
   - AudioName: ReadySetGo
     AudioClip: {fileID: 8300000, guid: 4af63a0884dab4e4090a1344036f98ea, type: 3}
+  - AudioName: Hey
+    AudioClip: {fileID: 8300000, guid: 9ec5a0a0132007f41a572f11e155de9c, type: 3}
+  - AudioName: Hurt
+    AudioClip: {fileID: 8300000, guid: 8ad4a8e262c8338469ad830d3c318f2b, type: 3}
+  - AudioName: JumpVoice
+    AudioClip: {fileID: 8300000, guid: 1c94cd77daf9477419a351d2f476cf74, type: 3}
+  - AudioName: Swing
+    AudioClip: {fileID: 8300000, guid: 38174ee2c46f7b349aa6abe4f1c9a263, type: 3}
+  - AudioName: Yeah
+    AudioClip: {fileID: 8300000, guid: bac62282936b9cb43bfd781439308cbb, type: 3}
+  - AudioName: Yippee
+    AudioClip: {fileID: 8300000, guid: 8903587e61a8f884daac083cc8176ea7, type: 3}
+  - AudioName: MFY
+    AudioClip: {fileID: 8300000, guid: 7b8c3597063204e4ba6a174d761251e6, type: 3}
   AudioSource: {fileID: 2826055702350262604}
 --- !u!1 &5054813750930596595
 GameObject:
@@ -1114,6 +1173,8 @@ MonoBehaviour:
       SwingingRadius: 5
       SwingingTarget: {fileID: 0}
       LockOnCoolDownTimer: 0
+  Health: 5
+  ButtonCount: 0
   Rb: {fileID: 1154875393032585071}
   Machine: {fileID: 6356481640432650362}
   PhysicsInfo: {fileID: 11400000, guid: 647deb927355c5745883125a58d4d6ca, type: 2}
@@ -1131,6 +1192,12 @@ MonoBehaviour:
   PlayerCollider: {fileID: 2984570759265443678}
   SwingJoint: {fileID: 2127717048935483659}
   Direction: 0
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnButtonAmountChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6356481640432650362
 MonoBehaviour:
   m_ObjectHideFlags: 0

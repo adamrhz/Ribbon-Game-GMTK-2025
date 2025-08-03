@@ -16,8 +16,8 @@ MonoBehaviour:
   LevelName: 1-1
   LoopCounts: 3
   SceneName: 1-1
-  MusicTrack: {fileID: 0}
-  FinalLapMusicTrack: {fileID: 0}
+  MusicTrack: {fileID: 8300000, guid: a151509b26069aa43b0dfe17dc60ca0c, type: 3}
+  FinalLapMusicTrack: {fileID: 8300000, guid: 1f0449fb070b0cb448c46c1b37db51c0, type: 3}
   ID: 0
   BestTime: -1
   SecretStartPicked: 0

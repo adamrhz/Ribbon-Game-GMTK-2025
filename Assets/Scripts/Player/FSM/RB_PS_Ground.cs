@@ -50,6 +50,7 @@ namespace Ribbon
                 _idleTimer += Time.deltaTime;
                 if(_idleTimer >= 6f)
                 {
+                    Player.AudioBankHolder.Play("Hey");
                     Visual.Play(_idleAnim);
                     _idleTimer = 0;
                 }

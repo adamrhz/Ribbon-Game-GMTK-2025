@@ -45,7 +45,10 @@ namespace Ribbon
             Visual.ToggleIndicatorLine(null);
             Player.SwingJoint.frequency = 0.01f;
 
-
+            if(UnityEngine.Random.Range(0, 2) == 0)
+            {
+                Player.AudioBankHolder.Play("Swing");
+            }
 
             if (SwingingTarget.TryGetComponent(out SwingGoal SwingGoal))
             {

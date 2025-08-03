@@ -24,11 +24,13 @@ namespace Ribbon
 
         public GameObject[] Menus;
 
+        public AudioClip MainMenuMusic;
+
         // Start is called before the first frame update
         void Start()
         {
             Instance = this;
-            MusicPlayer.Stop();
+            MusicPlayer.MPlayer.PlaySong(MainMenuMusic, true);
             SetMenu(0);
         }
 

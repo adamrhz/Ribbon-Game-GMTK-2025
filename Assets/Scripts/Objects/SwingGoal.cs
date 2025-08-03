@@ -69,6 +69,7 @@ namespace Ribbon
         {
             if (player.Input.BlockInput)
             {
+                player.AudioBankHolder.Play("Yippee");
                 player.Rb.velocity = new(0, player.PhysicsInfo.JumpStrength);
                 LoopsAround = 0;
                 AngleTotal = 0;

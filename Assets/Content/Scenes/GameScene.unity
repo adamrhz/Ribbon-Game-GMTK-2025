@@ -5697,6 +5697,7 @@ GameObject:
   - component: {fileID: 1238427466}
   - component: {fileID: 1238427465}
   - component: {fileID: 1238427464}
+  - component: {fileID: 1238427467}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -5790,6 +5791,22 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1238427467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238427462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf554d2d3e004e4c9cca3506985eacb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSlider: {fileID: 899510834}
+  sfxSlider: {fileID: 1955277028}
+  SFXMixer: {fileID: -7894804820174757958, guid: 977cba0f2c2b7594ea41decd821633e8, type: 2}
+  MusicMixer: {fileID: 7109242020625998192, guid: 977cba0f2c2b7594ea41decd821633e8, type: 2}
 --- !u!1 &1284307066
 GameObject:
   m_ObjectHideFlags: 0
@@ -5800,7 +5817,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1284307067}
   - component: {fileID: 1284307068}
-  - component: {fileID: 1284307069}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -5846,22 +5862,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1284307069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1284307066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbf554d2d3e004e4c9cca3506985eacb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSlider: {fileID: 899510834}
-  sfxSlider: {fileID: 1955277028}
-  SFXMixer: {fileID: -7894804820174757958, guid: 977cba0f2c2b7594ea41decd821633e8, type: 2}
-  MusicMixer: {fileID: 7109242020625998192, guid: 977cba0f2c2b7594ea41decd821633e8, type: 2}
 --- !u!1 &1287989137
 GameObject:
   m_ObjectHideFlags: 0
