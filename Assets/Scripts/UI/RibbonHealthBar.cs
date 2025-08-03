@@ -26,8 +26,8 @@ namespace Ribbon
         {
             player.OnHealthChanged.AddListener(SetHealth); // Subscribe to the player's health change event
             player.OnButtonAmountChanged.AddListener(SetButtonCount); // Subscribe to the player's health change event
-            MaxHealth = player.Health; // Initialize MaxHealth from the player's health
-            SetHealth(MaxHealth); // Set the initial health to MaxHealth
+            MaxHealth = player.MaxHealth; // Initialize MaxHealth from the player's health
+            SetHealth(player.Health); // Set the initial health to MaxHealth
         }
 
         public void SetButtonCount(int amount)
