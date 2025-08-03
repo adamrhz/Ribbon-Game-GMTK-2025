@@ -18,12 +18,12 @@ namespace Ribbon
     {
         public static int SFXVolume
         {
-            get => Get(nameof(SFXVolume), 100);
+            get => Get(nameof(SFXVolume), 60);
             set => Set(nameof(SFXVolume), value);
         }
         public static int MusicVolume
         {
-            get => Get(nameof(MusicVolume), 100);
+            get => Get(nameof(MusicVolume), 60);
             set => Set(nameof(MusicVolume), value);
         }
         public static bool FullScreen
