@@ -50,6 +50,9 @@ namespace Ribbon
 
         private float holdMenuTimer;
 
+        public delegate void LoopEndEvent();
+        public event LoopEndEvent OnLoopEnd;
+
         private void Awake()
         {
             Instance = this;
@@ -118,9 +121,12 @@ namespace Ribbon
             StartCoroutine(NotifyLoopChange(CurrentLoop));
         }
 
+        public bool IsLevelFinished;
+        
         public IEnumerator LevelFinished()
         {
             TimerActive = false;
+            IsLevelFinished = true;
             Player.Instance.Input.BlockInput = true;
 
             if (CurrentLevel)
@@ -132,6 +138,7 @@ namespace Ribbon
                 }
             }
 
+            OnLoopEnd?.Invoke();
 
             yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
             if (Player.Instance.Machine.IsCurrentState<RB_PS_Ground>())
