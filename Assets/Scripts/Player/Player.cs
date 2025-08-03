@@ -40,6 +40,7 @@ namespace Ribbon
         public PlayerControllers Controllers = new PlayerControllers();
 
         public int Health = 5;
+        public int MaxHealth = 5;
         public int ButtonCount = 0;
 
         public Rigidbody2D Rb;
@@ -112,7 +113,7 @@ namespace Ribbon
 
         public void SetHealth(int amount)
         {
-            Health = amount;
+            Health = Mathf.Clamp(amount, 0, MaxHealth);
             OnHealthChanged.Invoke(Health);
         }
 
@@ -154,6 +155,10 @@ namespace Ribbon
         {
             AudioBankHolder.Play("CoinPickup");
             ButtonCount++;
+            if(ButtonCount % 10 == 0)
+            {
+                SetHealth(Health + 1);
+            }
             OnButtonAmountChanged.Invoke(ButtonCount);
         }
 
