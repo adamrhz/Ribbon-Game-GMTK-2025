@@ -12,7 +12,7 @@ namespace Ribbon
         private bool InCompleteState = false;
         public GameObject SpriteObject;
         private Animator SprAnim;
-
+        
         public void Start()
         {
             SprAnim = SpriteObject.GetComponent<Animator>();
@@ -48,12 +48,20 @@ namespace Ribbon
                 {
                     Debug.Log("Swing Goal Completed!");
                     LevelManager.LoopEnd();
+                    StartCoroutine(ResetAnimation());
                     LoopsAround = 0;
                     AngleTotal = 0;
                     InCompleteState = true;
                 }
             }
 
+            AnimationChecks();
+        }
+
+        private IEnumerator ResetAnimation()
+        {
+            yield return new WaitForSeconds(2);
+            if (!LevelManager.Instance.IsLevelFinished) InCompleteState = false;
             AnimationChecks();
         }
 
