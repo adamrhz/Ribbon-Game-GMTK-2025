@@ -31,7 +31,6 @@ namespace Ribbon
         {
             if (player.Input.BlockInput) return;
             RB_PS_Swing swing = player.Machine.Get<RB_PS_Swing>();
-            Debug.Log(swing.Direction + " " + Direction + " ");
             if ((int)Mathf.Sign(swing.Direction) != (int)Mathf.Sign(Direction))
             {
                 LoopsAround = 0;
@@ -46,12 +45,17 @@ namespace Ribbon
 
                 if (LoopsAround >= LoopsToComplete)
                 {
+                    player.AudioBankHolder.Play("HighDing");
                     Debug.Log("Swing Goal Completed!");
                     LevelManager.LoopEnd();
                     StartCoroutine(ResetAnimation());
                     LoopsAround = 0;
                     AngleTotal = 0;
                     InCompleteState = true;
+                }
+                else
+                {
+                    player.AudioBankHolder.Play("LowDing");
                 }
             }
 

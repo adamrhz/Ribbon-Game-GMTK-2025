@@ -99,6 +99,7 @@ namespace Ribbon
         public void TriggerDamage()
         {
             if(IsInvulnerable || Machine.IsCurrentState<RB_PS_Death>()) return;
+            AudioBankHolder.Play("Hurt");
             SetHealth(Health - 1);
             if (Health <= 0)
             {
@@ -151,6 +152,7 @@ namespace Ribbon
 
         public void AddButton()
         {
+            AudioBankHolder.Play("CoinPickup");
             ButtonCount++;
             OnButtonAmountChanged.Invoke(ButtonCount);
         }

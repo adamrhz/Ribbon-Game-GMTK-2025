@@ -610,6 +610,14 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: 8903587e61a8f884daac083cc8176ea7, type: 3}
   - AudioName: MFY
     AudioClip: {fileID: 8300000, guid: 7b8c3597063204e4ba6a174d761251e6, type: 3}
+  - AudioName: LowDing
+    AudioClip: {fileID: 8300000, guid: 0793401e964c9a4468580183267a4be7, type: 3}
+  - AudioName: HighDing
+    AudioClip: {fileID: 8300000, guid: 06e19beb488097b4bb652b6a3a884518, type: 3}
+  - AudioName: Hurt
+    AudioClip: {fileID: 8300000, guid: 8ad4a8e262c8338469ad830d3c318f2b, type: 3}
+  - AudioName: CoinPickup
+    AudioClip: {fileID: 8300000, guid: d636fddbd8a4462459b5a744d65aeeeb, type: 3}
   AudioSource: {fileID: 2826055702350262604}
 --- !u!1 &5054813750930596595
 GameObject:
@@ -1189,6 +1197,7 @@ MonoBehaviour:
     IsGrounded: 0
   Input: {fileID: 6188476604504174700}
   AudioBankHolder: {fileID: 1277356636219153561}
+  HUD: {fileID: 0}
   PlayerCollider: {fileID: 2984570759265443678}
   SwingJoint: {fileID: 2127717048935483659}
   Direction: 0

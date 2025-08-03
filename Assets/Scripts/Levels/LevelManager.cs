@@ -49,7 +49,7 @@ namespace Ribbon
         public bool GamePaused = false;
 
         private float holdMenuTimer;
-
+        public AudioClip LevelClearTheme;
         public delegate void LoopEndEvent();
         public event LoopEndEvent OnLoopEnd;
 
@@ -161,7 +161,12 @@ namespace Ribbon
             TimerActive = false;
             IsLevelFinished = true;
             Player.Instance.Input.BlockInput = true;
-
+            while(Player.Instance.HUD.LevelCleared.alpha < 0.99f)
+            {
+                Player.Instance.HUD.LevelCleared.alpha = Mathf.Lerp(Player.Instance.HUD.LevelCleared.alpha, 1, 10 * Time.unscaledDeltaTime);
+                yield return null;
+            }
+            Player.Instance.HUD.LevelCleared.alpha = 1;
             if (CurrentLevel)
             {
                 if(CurrentLevel.BestTime < 0 || LevelTimer < CurrentLevel.BestTime)
@@ -171,6 +176,8 @@ namespace Ribbon
                 }
             }
 
+            MusicPlayer.MPlayer.PlaySong(LevelClearTheme);
+
             OnLoopEnd?.Invoke();
 
             yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
@@ -178,9 +185,19 @@ namespace Ribbon
             {
                 Player.Instance.Visual.Play("Ness");
             }
-            yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
+
+            yield return WaitForInput();
+
             StartCoroutine(RestartSequence());
 
+        }
+
+        public IEnumerator WaitForInput()
+        {
+            while(!Player.Instance.Input.GetAnyButton(true))
+            {
+                yield return null;
+            }
         }
         public IEnumerator NotifyLoopChange(int loop)
         {
@@ -268,6 +285,8 @@ namespace Ribbon
         private IEnumerator RestartSequence()
         {
             yield return SideScrollTransition();
+
+            Player.Instance.HUD.LevelCleared.alpha = 0;
             SceneManager.LoadScene("GameScene");
             Time.timeScale = 1;
         }

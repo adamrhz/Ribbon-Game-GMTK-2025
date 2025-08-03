@@ -49,9 +49,7 @@ namespace Ribbon
             {
                 return;
             }
-
-            AudioSource.clip = AudioDictionary[audioName];
-            AudioSource.Play();
+            AudioSource.PlayOneShot(AudioDictionary[audioName]);
         }
 
     }
