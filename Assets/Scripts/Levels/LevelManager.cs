@@ -116,6 +116,7 @@ namespace Ribbon
             yield return SceneManager.LoadSceneAsync(CurrentLevel.SceneName, LoadSceneMode.Additive);
             playerCamera.discreteTarget = GameObject.Find("SwingGoal")?.transform.position ?? Vector3.zero;
             playerCamera.ForcePosition(playerCamera.discreteTarget);
+            Player.Instance.Rb.velocity = Vector2.zero;
             yield return new WaitForEndOfFrame();
             yield return SideScrollFadeTransition();
             yield return NotifyLoopChange(CurrentLoop);
@@ -276,6 +277,10 @@ namespace Ribbon
                 }
             }
             TimerActive = true;
+            resetPlayerPosition = true;
+            Player.Instance.Direction = 1;
+            Player.Instance.transform.position = SpawnPoint;
+            Player.Instance.Rb.velocity = Vector2.zero;
 
         }
         
