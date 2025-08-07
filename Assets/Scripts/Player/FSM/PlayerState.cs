@@ -46,7 +46,7 @@ namespace Ribbon
         }
         public void SetDirection(float xspeed)
         {
-            if (xspeed != 0)
+            if (Mathf.Abs(xspeed) > .001f)
             {
                 Player.Direction = (int)Mathf.Sign(xspeed);
             }

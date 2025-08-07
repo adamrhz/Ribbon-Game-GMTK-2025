@@ -11,7 +11,10 @@ namespace Ribbon
     {
         public Player Player;
         public LayerMask CollisionMask;
-        public float GroundRaycastDistance = 1.1f, AirRaycastDistance = 0.5f;
+        public float GroundRaycastDistance = 1.1f, AirRaycastDistance = 0.5f, WallRaycastDistance = .25f;
+
+        public float WallRaycastSpacing = .25f;
+
 
         public bool IsGrounded;
 
@@ -37,14 +40,56 @@ namespace Ribbon
             
             return false;
         }
+        public bool DoSlideCeilingCollision()
+        {
+            var groundRay = Physics2D.Raycast(Player.transform.position,
+                Vector3.up, GroundRaycastDistance/4,
+                CollisionMask);
+            Debug.DrawRay(Player.transform.position, Vector3.up * GroundRaycastDistance/4, Color.blue);
+
+            if (groundRay)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public bool DoWallCollision()
+        {
+
+            Vector2 center = Player.transform.position;
+
+            var upper = Physics2D.Raycast(center + Vector2.up * WallRaycastSpacing,
+                Vector2.right * Player.Direction, WallRaycastDistance,
+                CollisionMask);
+            var lower = Physics2D.Raycast(center + Vector2.down * WallRaycastSpacing,
+                Vector2.right * Player.Direction, WallRaycastDistance,
+                CollisionMask);
+
+            if (upper && lower)
+            {
+
+                var winnerPoint = Vector3.Lerp(upper.point, lower.point, 0.5f);
+                var winnerNormal = Vector3.Lerp(upper.normal, lower.normal, 0.5f);
+
+                if(Mathf.Abs(Vector2.Dot(winnerNormal, Vector2.right)) > .9f && upper.collider.gameObject.tag == "WallJumpable"){
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
         
-        public bool DoAirCollision()
+        public bool DoAirGroundCollision()
         {
             var airRay = Physics2D.Raycast(Player.transform.position, 
                 Vector3.down, AirRaycastDistance,
                 CollisionMask);
 
-            if (airRay && Player.Rb.velocity.y <= 0)
+            if (airRay)
             {
                 Player.transform.position = airRay.point + Vector2.up * .5f;
                 Player.SurfaceAngle = CalculateAngle(airRay.normal);

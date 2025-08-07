@@ -16,13 +16,13 @@ namespace Ribbon
 
             Player.Rb.velocity = new(5 * -Player.Direction, 5);
 
-            Input.BlockInput = true;
+            Player.SetDefinitiveInputLock(true);
         }
 
 
         public override void OnExit()
         {
-            Input.BlockInput = false;
+            Player.SetDefinitiveInputLock(false);
         }
 
         public override void OnUpdate()
@@ -45,7 +45,7 @@ namespace Ribbon
         }
         private void GroundCheck()
         {
-            if (Collision.DoAirCollision() && Player.YSpeed <= 0)
+            if (Collision.DoAirGroundCollision() && Player.YSpeed <= 0)
             {
                 Player.YSpeed = 0;
                 Machine.Set<RB_PS_Ground>();

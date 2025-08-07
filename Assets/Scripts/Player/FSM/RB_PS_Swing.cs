@@ -107,6 +107,7 @@ namespace Ribbon
                 Machine.Get<RB_PS_Air>().JumpRequested = false;
                 Machine.Set<RB_PS_Air>();
                 Visual.Play("Double Jump");
+                Player.ObjectDisableInput(.25f);
             }
         }
 
@@ -121,7 +122,7 @@ namespace Ribbon
         }
         private void GroundCheck()
         {
-            if (Collision.DoAirCollision())
+            if (Collision.DoAirGroundCollision())
             {
                 Player.YSpeed = 0;
                 Player.GroundSpeed = RelativeSpeed;

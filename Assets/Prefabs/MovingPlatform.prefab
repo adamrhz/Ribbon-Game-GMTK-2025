@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6070bc66d0e93a48b2d7756fd466832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExposeEvents: 0
+  ExposeEvents: 1
   OnEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -213,7 +213,19 @@ MonoBehaviour:
       m_Calls: []
   OnPlayerLand:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 443022047990491597}
+        m_TargetAssemblyTypeName: Ribbon.MovingPlatform, Assembly-CSharp
+        m_MethodName: OnPlayerLandOn
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnPlayerStand:
     m_PersistentCalls:
       m_Calls:

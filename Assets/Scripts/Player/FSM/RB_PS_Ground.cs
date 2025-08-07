@@ -15,8 +15,14 @@ namespace Ribbon
         public RB_PS_Ground() : base(0)
         {
         }
+        public RB_PS_Ground(int i) : base(i)
+        {
+        }
         public override void OnEnter()
         {
+
+            Machine.Get<RB_PS_WallHug>().ResetWallCling();
+
             ZAngle = 0;
             Transform.localScale = Vector3.one;
             CoyoteTime = PhysicsInfo.CoyoteTime;
@@ -55,6 +61,14 @@ namespace Ribbon
                     _idleTimer = 0;
                 }
             }
+
+            if(Input.GetAxis2D(GamePreference.MoveInput).y < 0 && Mathf.Abs(Player.GroundSpeed) > 3)
+            {
+                Machine.Set<RB_PS_Slide>();
+            }
+
+
+
             SetDirection(Player.GroundSpeed);
         }
 
@@ -69,14 +83,19 @@ namespace Ribbon
                 Machine.Set<RB_PS_Air>();
                 return;
             }
-            GroundCheck();
+            if (!GroundCheck())
+            {
+                return;
+            }
             GroundMovement();
-            
+            SlopeRepel();
+
+
             Player.XSpeed = Mathf.Cos(Player.SurfaceAngle * Mathf.Deg2Rad) * Player.GroundSpeed;
             Player.YSpeed = Mathf.Sin(Player.SurfaceAngle * Mathf.Deg2Rad) * Player.GroundSpeed;
         }
 
-        private void GroundCheck()
+        private bool GroundCheck()
         {
             if (!Collision.DoGroundCollision())
             {
@@ -84,14 +103,36 @@ namespace Ribbon
                 if(CoyoteTime <= 0)
                 {
                     Machine.Set<RB_PS_Air>();
+                    return false;
                 }
             }
             else
             {
                 CoyoteTime = PhysicsInfo.CoyoteTime;
             }
+            return true;
         }
 
+        private void SlopeRepel()
+        {
+            float AngleValue = Time.fixedDeltaTime * Mathf.Sin(Player.SurfaceAngle * Mathf.Deg2Rad);
+            if (Mathf.Sign(Player.GroundSpeed) == Mathf.Sign(AngleValue))
+            {
+                AngleValue *= PhysicsInfo.SlopeRepelUpHill;
+            }
+            else
+            {
+                AngleValue *= PhysicsInfo.SlopeRepelDownHill;
+            }
+
+            Player.GroundSpeed -= AngleValue;
+
+            if (Mathf.Abs(Player.GroundSpeed) > PhysicsInfo.TopSpeed)
+            {
+                Player.GroundSpeed = PhysicsInfo.TopSpeed * Player.Direction;
+            }
+
+        }
         private void GroundMovement()
         {
             Vector2 MoveInput = Input.GetAxis2D("Move");
@@ -100,7 +141,14 @@ namespace Ribbon
             
             if (MoveInput.x == 0)
             {
-                Player.GroundSpeed -= Mathf.Sign(Player.GroundSpeed) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.GroundSpeed));
+                if(Player.GroundSpeed != 0)
+                {
+                    Player.GroundSpeed -= Mathf.Sign(Player.Direction) * Mathf.Min(PhysicsInfo.Friction * Time.fixedDeltaTime, Mathf.Abs(Player.GroundSpeed));
+                    if (Mathf.Abs(Player.GroundSpeed) < .0001f)
+                    {
+                        Player.GroundSpeed = 0;
+                    }
+                }
             }
             else if (MoveInput.x > 0)
             {

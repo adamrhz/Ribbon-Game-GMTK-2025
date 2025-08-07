@@ -1013,12 +1013,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2912497392000292465, guid: 4bba0fe0ec1d0d8408aa3b6fe510fdb7, type: 3}
+  m_Sprite: {fileID: -8644889942409211090, guid: 40fafabd1f9e03240b04d95b0fd292bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1170,6 +1170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   <SurfaceAngle>k__BackingField: 0
+  SurfaceNormal: {x: 0, y: 0}
   GroundSpeed: 0
   Controllers:
     Controllers: []
@@ -1182,6 +1183,7 @@ MonoBehaviour:
       SwingingTarget: {fileID: 0}
       LockOnCoolDownTimer: 0
   Health: 5
+  MaxHealth: 5
   ButtonCount: 0
   Rb: {fileID: 1154875393032585071}
   Machine: {fileID: 6356481640432650362}
@@ -1194,6 +1196,8 @@ MonoBehaviour:
       m_Bits: 513
     GroundRaycastDistance: 1.1
     AirRaycastDistance: 0.5
+    WallRaycastDistance: 0.25
+    WallRaycastSpacing: 0.25
     IsGrounded: 0
   Input: {fileID: 6188476604504174700}
   AudioBankHolder: {fileID: 1277356636219153561}
@@ -1207,6 +1211,8 @@ MonoBehaviour:
   OnButtonAmountChanged:
     m_PersistentCalls:
       m_Calls: []
+  InputDisableTimer: 0
+  DefinitiveInputLock: 0
 --- !u!114 &6356481640432650362
 MonoBehaviour:
   m_ObjectHideFlags: 0

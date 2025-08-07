@@ -16,7 +16,7 @@ namespace Ribbon
         {
             DeathTimer = 2f;
             LevelManager.Instance.TimerActive = false;
-            Input.BlockInput = true;
+            Player.SetDefinitiveInputLock(true);
             Player.PlayerCollider.enabled = false;
             Rb.velocity = new Vector2(0, 10);
         }
@@ -25,7 +25,7 @@ namespace Ribbon
         public override void OnExit()
         {
             Player.SetHealth(5);
-            Input.BlockInput = false;
+            Player.SetDefinitiveInputLock(false);
             LevelManager.Instance.TimerActive = true;
             Player.ToggleInvulnerability(1);
         }
@@ -60,7 +60,7 @@ namespace Ribbon
         }
         private void GroundCheck()
         {
-            if (Collision.DoAirCollision() && Player.YSpeed <= 0)
+            if (Collision.DoAirGroundCollision() && Player.YSpeed <= 0)
             {
                 Player.YSpeed = 0;
                 Machine.Set<RB_PS_Ground>();

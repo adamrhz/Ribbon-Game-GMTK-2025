@@ -16,6 +16,15 @@ MonoBehaviour:
   Deceleration: 100
   Friction: 40
   MaxSpeed: 9.706667
+  TopSpeed: 33.65
+  SlopeRepelDownHill: 20
+  SlopeRepelUpHill: 20
+  StandingBounds:
+    size: {x: 0.4, y: 0.6}
+    offset: {x: 0, y: 0}
+  SlidingBounds:
+    size: {x: 0.2, y: 0.2}
+    offset: {x: 0, y: 0}
   AirAcceleration: 15
   AirDeceleration: 80
   AirDrag: 10

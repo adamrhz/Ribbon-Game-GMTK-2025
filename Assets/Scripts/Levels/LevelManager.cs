@@ -79,7 +79,7 @@ namespace Ribbon
             if (tutorialStageID == 0 && Player.Instance.transform.position.x > 38.19935f)
                 tutorialStageID = 1;
             
-            if (!Player.Instance.Input.BlockInput)
+            if (!Player.Instance.DefinitiveInputLock)
             {
                 if (CurrentLevel.LevelName == "1-1")
                 {
@@ -108,7 +108,7 @@ namespace Ribbon
         {
             LevelTimer = 0;
             TimerActive = false;
-            Player.Instance.Input.BlockInput = true;
+            Player.Instance.SetDefinitiveInputLock(true);
             Player.Instance.Init();
             PlayerCamera playerCamera = Camera.main?.GetComponent<PlayerCamera>();
             playerCamera.Intro = true;
@@ -121,12 +121,13 @@ namespace Ribbon
             yield return SideScrollFadeTransition();
             yield return NotifyLoopChange(CurrentLoop);
             TimerActive = false;
-            Player.Instance.Input.BlockInput = true;
+            Player.Instance.SetDefinitiveInputLock(true);
             Player.Instance.Visual.Play("IdleMad");
             yield return new WaitForSecondsRealtime(.5f); // Simulating whatever cool wait ending sequence you want here
             Player.Instance.AudioBankHolder.Play("ReadySetGo");
             yield return new WaitForSecondsRealtime(2f); // Simulating whatever cool wait ending sequence you want here
-            Player.Instance.Input.BlockInput = false;
+
+            Player.Instance.SetDefinitiveInputLock(false);
             TimerActive = true;
 
         }
@@ -161,8 +162,8 @@ namespace Ribbon
         {
             TimerActive = false;
             IsLevelFinished = true;
-            Player.Instance.Input.BlockInput = true;
-            while(Player.Instance.HUD.LevelCleared.alpha < 0.99f)
+            Player.Instance.SetDefinitiveInputLock(true);
+            while (Player.Instance.HUD.LevelCleared.alpha < 0.99f)
             {
                 Player.Instance.HUD.LevelCleared.alpha = Mathf.Lerp(Player.Instance.HUD.LevelCleared.alpha, 1, 10 * Time.unscaledDeltaTime);
                 yield return null;
@@ -205,7 +206,7 @@ namespace Ribbon
             bool Skip = false;
             TimerActive = false;
             List<GameLoopEvent> LoopObjects = new List<GameLoopEvent>(LevelManager.LoopObjects);
-            Player.Instance.Input.BlockInput = true;
+            Player.Instance.SetDefinitiveInputLock(true);
             yield return new WaitForSecondsRealtime(.4f); // Simulating whatever cool wait ending sequence you want here
             Vector3 SpawnPoint = Vector3.zero;
 
@@ -267,7 +268,7 @@ namespace Ribbon
             }
             playerCamera.Intro = false;
             yield return new WaitForSecondsRealtime(1f); // Ensure all updates are processed before notifying
-            Player.Instance.Input.BlockInput = false;
+            Player.Instance.SetDefinitiveInputLock(false);
 
             if (CurrentLevel)
             {

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace Ribbon
 {
@@ -76,8 +77,8 @@ namespace Ribbon
         {
             Transform.rotation = Quaternion.Lerp(Transform.rotation,
                 Quaternion.identity, 5 * Time.deltaTime);
-            
-            if(JumpRequested && CanDoubleJump)
+
+            if (JumpRequested && CanDoubleJump)
             {
                 Player.YSpeed = PhysicsInfo.JumpStrength * PhysicsInfo.DoubleJumpMultiplier;
                 IsJump = true;
@@ -90,24 +91,42 @@ namespace Ribbon
                 return;
             }
             AirMovement();
-            GroundCheck();
+            if (GroundCheck())
+            {
+                return;
+            }
+            WallHugCheck();
             Transform.localScale = Vector3.Lerp(Transform.localScale,
                 Vector3.one, 10 * Time.deltaTime);
         }
-        private void GroundCheck()
+
+        private void WallHugCheck()
         {
-            if (Collision.DoAirCollision() && Player.YSpeed <= 0)
+            if (Collision.DoWallCollision() && Player.YSpeed <= PhysicsInfo.JumpCutoff)
             {
-                Player.YSpeed = 0;
-                Machine.Set<RB_PS_Ground>();
-                Player.GroundSpeed = Player.XSpeed;
+                Machine.Get<RB_PS_WallHug>().AttachToWall(Player.Direction);
             }
+        }
+
+        private bool GroundCheck()
+        {
+            if (Player.YSpeed <= PhysicsInfo.JumpCutoff)
+            {
+                if (Collision.DoAirGroundCollision())
+                {
+                    Player.YSpeed = 0;
+                    Machine.Set<RB_PS_Ground>();
+                    Player.GroundSpeed = Player.XSpeed;
+                    return true;
+                }
+            }
+            return false;
         }
 
 
         private void AirMovement()
         {
-            if(IsJump && !CanAscend && Player.YSpeed > PhysicsInfo.JumpCutoff && Machine.PreviousState is not RB_PS_Swing)
+            if (IsJump && !CanAscend && Player.YSpeed > PhysicsInfo.JumpCutoff && Machine.PreviousState is not RB_PS_Swing)
             {
                 Player.YSpeed = PhysicsInfo.JumpCutoff;
             }
@@ -116,12 +135,12 @@ namespace Ribbon
             Vector2 MoveInput = canApplyInput ? Input.GetAxis2D("Move") : Vector2.zero;
             int Sign = (int)Mathf.Sign(MoveInput.x);
             float targetXSpeed = Player.XSpeed;
-            
+
             if (MoveInput.x == 0)
             {
                 targetXSpeed -= Mathf.Sign(targetXSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(targetXSpeed));
             }
-            else
+            else if (Player.InputDisableTimer <= 0)
             {
                 if (Mathf.Approximately(Mathf.Sign(MoveInput.x), Mathf.Sign(targetXSpeed)))
                 {
@@ -132,12 +151,12 @@ namespace Ribbon
                 }
                 else
                 {
-                    targetXSpeed += Mathf.Sign(MoveInput.x) * 
-                                    PhysicsInfo.AirDeceleration 
+                    targetXSpeed += Mathf.Sign(MoveInput.x) *
+                                    PhysicsInfo.AirDeceleration
                                     * Time.fixedDeltaTime;
                 }
             }
-            
+
             Player.XSpeed = targetXSpeed;
         }
     }

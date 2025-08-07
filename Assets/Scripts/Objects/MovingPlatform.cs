@@ -59,6 +59,10 @@ namespace Ribbon
         {
             Debug.Log("Standing on moving platform");
             //player.transform.position += (Vector3)Rb.velocity * Time.fixedDeltaTime;
+        }
+
+        public void OnPlayerLandOn(Player player)
+        {
             player.transform.SetParent(transform);
             player.Machine.OnChangeState += MachineOnOnChangeState;
         }

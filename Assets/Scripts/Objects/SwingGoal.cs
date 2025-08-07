@@ -29,7 +29,7 @@ namespace Ribbon
         }
         public void WhileSwinging(Player player)
         {
-            if (player.Input.BlockInput) return;
+            if (player.DefinitiveInputLock) return;
             RB_PS_Swing swing = player.Machine.Get<RB_PS_Swing>();
             if ((int)Mathf.Sign(swing.Direction) != (int)Mathf.Sign(Direction))
             {
@@ -71,7 +71,7 @@ namespace Ribbon
 
         public void OnStopSwinging(Player player)
         {
-            if (player.Input.BlockInput)
+            if (player.DefinitiveInputLock)
             {
                 player.AudioBankHolder.Play("Yippee");
                 player.Rb.velocity = new(0, player.PhysicsInfo.JumpStrength);

@@ -34,6 +34,7 @@ namespace Ribbon
 
         [field: SerializeField] 
         public float SurfaceAngle { get; set; }
+        public Vector2 SurfaceNormal;
 
         [field: SerializeField] public float GroundSpeed;
         
@@ -69,7 +70,11 @@ namespace Ribbon
 
         public bool IsInvulnerable => _invulnerabilityTimer > 0f;
 
+        public float InputDisableTimer = 0f;
+
         private float _invulnerabilityTimer = 0f;
+
+        public bool DefinitiveInputLock = false;
 
         public void Init()
         {
@@ -81,17 +86,19 @@ namespace Ribbon
             Machine.Init();
             Controllers.Init(this);
             transform.position = GameObject.Find("SpawnPoint")?.transform.position ?? Vector3.zero;
+            SurfaceNormal = Vector2.up;
         }
 
         // Start is called before the first frame update
         void Start()
         {
             Init();
-            Input.BlockInput = true;
+            SetDefinitiveInputLock(true);
 
             if(!LevelManager.Instance)
             {
-                Debug.LogError("LevelManager instance is null. Please ensure it is initialized before Player starts.");
+                SetDefinitiveInputLock(false);
+                Debug.LogWarning("LevelManager instance is null. Please ensure it is initialized before Player starts.");
                 return;
             }
         }
@@ -133,6 +140,13 @@ namespace Ribbon
         {
             Controllers.Update();
             HandleTimer(ref _invulnerabilityTimer);
+            if(!DefinitiveInputLock)
+            {
+                if(HandleTimer(ref InputDisableTimer))
+                {
+                    ObjectEnableInput();
+                }
+            }
 
             //Debug.LogFormat("rb sqrvelocity: {0}", Rb.velocity.sqrMagnitude);
         }
@@ -144,6 +158,7 @@ namespace Ribbon
                 timer = Mathf.Clamp(timer - Time.deltaTime, 0f, timer);
                 if(timer <= 0f)
                 {
+                    timer = 0;
                     return true;
                 }
             }
@@ -170,6 +185,27 @@ namespace Ribbon
                 Machine.Get<RB_PS_Air>().IsJump = false;
                 Machine.Set<RB_PS_Air>(); return;
             }
+        }
+
+        public void SetDefinitiveInputLock(bool inputLocked)
+        {
+            DefinitiveInputLock = inputLocked;
+            Input.BlockInput = DefinitiveInputLock;
+        }
+
+        public void ObjectEnableInput()
+        {
+
+            InputDisableTimer = 0;
+            Input.BlockInput = DefinitiveInputLock || false;
+        }
+
+
+        public void ObjectDisableInput(float time)
+        {
+            
+            InputDisableTimer = time;
+            Input.BlockInput = true;
         }
     }
 }
