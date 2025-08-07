@@ -65,7 +65,7 @@ namespace Ribbon
         private IEnumerator ResetAnimation()
         {
             yield return new WaitForSeconds(2);
-            if (!LevelManager.Instance.IsLevelFinished) InCompleteState = false;
+            if (!LevelManager.Instance?.IsLevelFinished ?? false) InCompleteState = false;
             AnimationChecks();
         }
 

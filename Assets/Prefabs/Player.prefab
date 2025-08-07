@@ -282,9 +282,8 @@ GameObject:
   - component: {fileID: 3407786714877854418}
   - component: {fileID: 1695827512245445748}
   - component: {fileID: 5446088516510383764}
-  - component: {fileID: 6982658979428381172}
   - component: {fileID: 8132593927548898375}
-  - component: {fileID: 9104202492523724405}
+  - component: {fileID: 4592815267721939812}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -316,8 +315,8 @@ Camera:
   m_GameObject: {fileID: 3449549135053148559}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.5137255, g: 0.827451, b: 0.7294118, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -366,26 +365,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3449549135053148559}
   m_Enabled: 1
---- !u!114 &6982658979428381172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3449549135053148559}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a160d838ff8b4b4693ac20007e008c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AssetsPPU: 100
-  m_RefResolutionX: 1920
-  m_RefResolutionY: 1080
-  m_UpscaleRT: 0
-  m_PixelSnapping: 0
-  m_CropFrameX: 0
-  m_CropFrameY: 0
-  m_StretchFill: 0
 --- !u!114 &8132593927548898375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +384,7 @@ MonoBehaviour:
   Intro: 0
   discreteTarget: {x: 0, y: 0, z: 0}
   IntroLerpSpeed: 20
---- !u!114 &9104202492523724405
+--- !u!114 &4592815267721939812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -821,7 +800,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: cfff9f4e0d3609b4ab5270466c62c29c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -863,19 +842,19 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0, a: 1}
-      key1: {r: 0.9245283, g: 0.3162266, b: 0, a: 1}
-      key2: {r: 1, g: 0.8021469, b: 0, a: 0}
+      key0: {r: 0.9725491, g: 0.8470589, b: 0.65882355, a: 1}
+      key1: {r: 0.65882355, g: 0, b: 0.0627451, a: 1}
+      key2: {r: 0.98980415, g: 0.73650134, b: 0, a: 0}
       key3: {r: 0.98980415, g: 0.73650134, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0.98980415, g: 0.73650134, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 1542
-      ctime1: 30455
-      ctime2: 54934
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 64571
       ctime3: 64571
-      ctime4: 0
+      ctime4: 64571
       ctime5: 0
       ctime6: 0
       ctime7: 0
@@ -888,14 +867,14 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 4
+      m_ColorSpace: 0
+      m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 1
-    textureMode: 2
-    textureScale: {x: 1, y: 1}
+    textureMode: 1
+    textureScale: {x: 3, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
@@ -1113,7 +1092,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.40889725, y: 0.61}
+  m_Size: {x: 0.4, y: 0.6}
   m_Direction: 0
 --- !u!1 &6993752539164626153
 GameObject:
