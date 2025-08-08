@@ -43,7 +43,7 @@ namespace Ribbon
                 Player.YSpeed = PhysicsInfo.JumpCutoff/2;
             }else if(Player.YSpeed < 0)
             {
-                Player.YSpeed = -PhysicsInfo.JumpCutoff/2;
+                Player.YSpeed = 0;
             }
             Player.XSpeed = 0;
         }
@@ -78,8 +78,8 @@ namespace Ribbon
         {
 
 
-            Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity / 4f * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity) / 2;
-            if(Player.YSpeed < -PhysicsInfo.Gravity * 2)
+            Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity/6 * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity);
+            if(Player.YSpeed < -PhysicsInfo.Gravity)
             {
                 CanAttach = false;
                 Machine.Set<RB_PS_Air>();

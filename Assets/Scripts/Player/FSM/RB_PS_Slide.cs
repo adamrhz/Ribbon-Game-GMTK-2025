@@ -14,7 +14,6 @@ namespace Ribbon
         public override void OnEnter()
         {
             base.OnEnter();
-            Debug.Log("Ayo?");
             CapsuleCollider2D Collider = Player.PlayerCollider as CapsuleCollider2D;
             if (!Collider)
             {
@@ -28,7 +27,6 @@ namespace Ribbon
         public override void OnExit()
         {
             base.OnExit();
-            Debug.Log("Oya?");
             CapsuleCollider2D Collider = Player.PlayerCollider as CapsuleCollider2D;
             if (!Collider)
             {

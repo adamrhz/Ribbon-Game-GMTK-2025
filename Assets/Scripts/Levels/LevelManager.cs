@@ -331,7 +331,7 @@ namespace Ribbon
         {
             HandleTutorial();
             
-            if (Player.Instance.Input.GetButtonDown("Pause"))
+            if (Player.Instance.Input.GetButtonDown(GamePreference.PauseButton))
             {
                 GamePaused = !GamePaused;
                 Time.timeScale = GamePaused ? Mathf.Epsilon : 1;
@@ -339,7 +339,7 @@ namespace Ribbon
 
             if (GamePaused)
             {
-                if (Input.anyKey && !Player.Instance.Input.GetButton("Pause"))
+                if (Input.anyKey && !Player.Instance.Input.GetButton(GamePreference.PauseButton))
                 {
                     holdMenuTimer += Time.unscaledDeltaTime;
                     if (holdMenuTimer >= 0.5f)

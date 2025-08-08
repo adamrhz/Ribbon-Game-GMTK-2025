@@ -135,7 +135,7 @@ namespace Ribbon
         }
         private void GroundMovement()
         {
-            Vector2 MoveInput = Input.GetAxis2D("Move");
+            Vector2 MoveInput = Input.GetAxis2D(GamePreference.MoveInput);
 
             float maxSpeed = PhysicsInfo.MaxSpeed + Mathf.Sin(Player.SurfaceAngle * Mathf.Deg2Rad) * 3;
             

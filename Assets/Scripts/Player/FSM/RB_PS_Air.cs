@@ -67,7 +67,7 @@ namespace Ribbon
 
         public void CheckInput()
         {
-            if (IsJump && CanAscend && !Input.GetButton("Jump"))
+            if (IsJump && CanAscend && !Input.GetButton(GamePreference.JumpButton))
             {
                 CanAscend = false;
             }
@@ -132,7 +132,7 @@ namespace Ribbon
             }
             Player.YSpeed = Mathf.Clamp(Player.YSpeed - PhysicsInfo.Gravity * Time.fixedDeltaTime, -PhysicsInfo.MaxFallSpeed, Mathf.Infinity);
 
-            Vector2 MoveInput = canApplyInput ? Input.GetAxis2D("Move") : Vector2.zero;
+            Vector2 MoveInput = canApplyInput ? Input.GetAxis2D(GamePreference.MoveInput) : Vector2.zero;
             int Sign = (int)Mathf.Sign(MoveInput.x);
             float targetXSpeed = Player.XSpeed;
 

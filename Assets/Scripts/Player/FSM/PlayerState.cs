@@ -39,7 +39,7 @@ namespace Ribbon
         }
         public override void OnUpdate()
         {
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown(GamePreference.JumpButton))
             {
                 JumpRequested = true;
             }

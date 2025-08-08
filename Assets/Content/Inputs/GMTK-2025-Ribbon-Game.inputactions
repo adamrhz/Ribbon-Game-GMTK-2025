@@ -24,6 +24,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Swing",
+                    "type": "Button",
+                    "id": "9f3f98d2-3f7e-4082-816b-34870d89bd00",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "4e324552-3893-4501-a04f-7e7f7ec13686",
@@ -196,6 +205,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea654dbd-c1cf-4582-bc8b-a4785d97359c",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Swing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -100,7 +100,7 @@ namespace Ribbon
 
         public void CheckInput()
         {
-            if (!Input.GetButton("Jump"))
+            if (!Input.GetButton(GamePreference.SwingButton))
             {
 
                 Machine.Get<RB_PS_Air>().IsJump = false;
@@ -151,9 +151,14 @@ namespace Ribbon
             float angularAcceleration = (PhysicsInfo.Gravity / ropeLength) * Mathf.Sin(SwingAngle); //adam youre getting the sine of a deg angle using a rad function
             
             RelativeSpeed += angularAcceleration * Time.fixedDeltaTime;
-            Vector2 MoveInput = Input.GetAxis2D("Move");
+            Vector2 MoveInput = Input.GetAxis2D(GamePreference.MoveInput);
             int Sign = (int)Mathf.Sign(MoveInput.x);
-            
+            //if(MoveInput.y != 0)
+            //{
+            //    Player.SwingJoint.distance = Mathf.Clamp(Mathf.Lerp(Player.SwingJoint.distance, Player.SwingJoint.distance + 10f * Mathf.Sign(MoveInput.y), Time.fixedDeltaTime/3),1, 4);
+
+            //}
+
             //if (MoveInput.x == 0)
             //{
             //    RelativeSpeed -= Mathf.Sign(RelativeSpeed) * Mathf.Min(PhysicsInfo.AirDrag * Time.fixedDeltaTime, Mathf.Abs(RelativeSpeed));
@@ -176,7 +181,13 @@ namespace Ribbon
             //Too lazy this shit is ass frl;
             //Strix do it pls -Adam
             Rb.velocity += Vector2.down * (PhysicsInfo.Gravity / ropeLength * 2.6f * Time.fixedDeltaTime);
-            Rb.AddForce(SwingTangent * MoveInput.x * (200 * ropeLength) * Time.fixedDeltaTime, ForceMode2D.Force);
+            int force = 200;
+            if (Sign != Mathf.Sign(deltaAngle) && Mathf.Abs(RelativeSpeed) > 8f && Vector2.Dot(SwingNormal.normalized, Vector2.up) > .3f)
+            {
+                Debug.Log("Decel");
+                force = 400;
+            }
+            Rb.AddForce(SwingTangent * MoveInput.x * (force * ropeLength) * Time.fixedDeltaTime, ForceMode2D.Force);
             Rb.velocity = Vector2.ClampMagnitude(Rb.velocity, PhysicsInfo.MaxSwingSpeed);
             Debug.DrawLine(Transform.position, (Vector2)Transform.position + SwingTangent.normalized);
 

@@ -32,10 +32,11 @@ namespace Ribbon
 
                 if (Player.Machine.IsCurrentState<RB_PS_Air>())
                 {
-                    if (Player.Input.GetButtonDown("Jump"))
+                    if (Player.Input.GetButtonDown(GamePreference.SwingButton))
                     {
                         Player.Machine.Get<RB_PS_Swing>().SwingingTarget = SwingingTarget;
                         Player.Machine.Set<RB_PS_Swing>();
+                        return;
                     }
 
                     Player.Visual.ToggleIndicatorLine(SwingingTarget.transform.position);

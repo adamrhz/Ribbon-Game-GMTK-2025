@@ -26,6 +26,7 @@ namespace Ribbon
 
             if (groundRay)
             {
+                Player.YSpeed = 0;
                 Player.Rb.position = Vector3.ProjectOnPlane(Player.Rb.position, Vector3.up) 
                                             + (groundRay.point.y + 0.5f) * Vector3.up;
                 Player.SurfaceAngle = CalculateAngle(groundRay.normal);
