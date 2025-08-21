@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626bd21bf52aff442b70abee26e3b573, type: 3}
   m_Name: Physics
   m_EditorClassIdentifier: 
-  Acceleration: 20
+  Acceleration: 15
   Deceleration: 100
   Friction: 40
   MaxSpeed: 9.706667
@@ -35,6 +35,6 @@ MonoBehaviour:
   JumpCutoff: 4
   MaxFallSpeed: 20
   CoyoteTime: 0.15
-  MaxSwingSpeed: 20
+  MaxSwingSpeed: 21
   SwingAccelerationDown: 0
   SwingDecelerationUp: 0

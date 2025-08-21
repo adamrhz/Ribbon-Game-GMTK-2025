@@ -66,7 +66,6 @@ namespace Ribbon
 
         public override void OnFixedUpdate()
         {
-            Debug.Log("FixedSlign");
             if (JumpRequested)
             {
                 Player.YSpeed = PhysicsInfo.JumpStrength;
@@ -77,7 +76,6 @@ namespace Ribbon
                 return;
             }
 
-            Debug.Log("FixedSlignAfter");
 
             SlopeRepel();
             if (!Machine.IsCurrentState<RB_PS_Slide>())
